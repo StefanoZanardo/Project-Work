@@ -1,6 +1,4 @@
--- Creazione Database
-CREATE DATABASE RailwayDB;
-\c RailwayDB;
+
 
 -- Creazione tabella CATEGORY
 CREATE TABLE CATEGORY (

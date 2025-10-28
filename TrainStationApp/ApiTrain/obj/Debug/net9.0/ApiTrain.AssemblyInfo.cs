@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("f9688a0b-e7be-46a7-8112-7320a92dae98")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiTrain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40ab99bd0a36bd895da0a20b119d96b3185cd79c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01cbc2863edb3b177dc17b34dea69bbb7f44c49e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiTrain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiTrain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

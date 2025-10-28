@@ -1,50 +1,47 @@
 
-namespace ApiTrain
+using ApiTrain;
+using ApiTrain.EndPoints;
+using ApiTrain.Services;
+using Microsoft.AspNetCore.OpenApi;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Security.Claims;
+using System.Text;
+   
+var builder = WebApplication.CreateBuilder(args);
+
+
+
+builder.Services.AddDbContext<DbContest>(options =>
+options.UseNpgsql(builder.Configuration.GetConnectionString("db")));
+// Add services to the container.
+builder.Services.AddAuthorization();
+
+builder.Services.AddScoped<ProvaQueryEF>();
+
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+app.UseSwagger();
+
+app.MapOpenApi();
+
+app.UseSwaggerUI(setup =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+    setup.SwaggerEndpoint("/openapi/v1.json", builder.Environment.ApplicationName);//In non si dovrebbe più usare swagger UI
+});
 
-            // Add services to the container.
-            builder.Services.AddAuthorization();
 
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+app.UseHttpsRedirection();
 
-            var app = builder.Build();
+app.UseAuthorization();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.MapOpenApi();
-            }
+app.MapEndPointProva();
 
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-            var summaries = new[]
-            {
-                "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-            };
-
-            app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                    new WeatherForecast
-                    {
-                        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                        TemperatureC = Random.Shared.Next(-20, 55),
-                        Summary = summaries[Random.Shared.Next(summaries.Length)]
-                    })
-                    .ToArray();
-                return forecast;
-            })
-            .WithName("GetWeatherForecast");
-
-            app.Run();
-        }
-    }
-}
+app.Run();
+       
+    
