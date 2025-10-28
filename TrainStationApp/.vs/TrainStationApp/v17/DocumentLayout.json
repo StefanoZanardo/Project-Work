@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d84ee353-0bef-5a41-a649-8f89aca5d84d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\appsettings.json",
+              "RelativeDocumentMoniker": "ApiTrain\\appsettings.json",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\appsettings.json",
+              "RelativeToolTip": "ApiTrain\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T10:01:07.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Program.cs",
+              "RelativeDocumentMoniker": "ApiTrain\\Program.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Program.cs",
+              "RelativeToolTip": "ApiTrain\\Program.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAhwC4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T09:55:18.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ApiTrain\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ApiTrain\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T09:51:41.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "ApiTrain\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\WeatherForecast.cs",
+              "RelativeToolTip": "ApiTrain\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T09:51:34.879Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

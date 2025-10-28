@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "n/dt9DWlUjo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Zanardo Stefano\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\Zanardo Stefano\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
