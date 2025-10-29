@@ -1,6 +1,50 @@
 [
   {
     "ContainingType": "ApiTrain.EndPoints.EndPointTest",
+    "Method": "DeleteProvaEndPoint",
+    "RelativePath": "Prova/cancella/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiTrain.EndPoints.EndPointTest",
+    "Method": "PostProvaEndpoint",
+    "RelativePath": "Prova/inserisci/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rail",
+        "Type": "ApiTrain.Models.Rail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiTrain.EndPoints.EndPointTest",
     "Method": "GetProvaAsync",
     "RelativePath": "Prova/OttieniEntrate",
     "HttpMethod": "GET",

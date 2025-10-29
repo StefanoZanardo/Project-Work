@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiTrain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01cbc2863edb3b177dc17b34dea69bbb7f44c49e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2863e602ebead326b6dfe98b3ac3399218a57ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiTrain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiTrain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

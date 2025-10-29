@@ -10,13 +10,13 @@
         public DateTime arrivalTrain { get; set; }
     }
 
-    //public class Trains
-    //{
-    //    public int TrainID { get; set; }
-    //    public string? Destination { get; set; }
-    //    public int Vagons { get; set; }
-    //    public int Category { get; set; }
-    //}
+    public class Trains
+    {
+        public int trainID { get; set; }
+        public string? destination { get; set; }
+        public int vagons { get; set; }
+        public int category { get; set; }
+    }
 
     public class Rail
     {
