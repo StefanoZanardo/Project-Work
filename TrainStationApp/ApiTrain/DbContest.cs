@@ -13,7 +13,7 @@ namespace ApiTrain
         public DbSet<Category> category { get; set; }
         public DbSet<Trains> trains { get; set; }
         public DbSet<Rail> rail { get; set; }
-        public DbSet<SegmentRail> segmentRails { get; set; }
+        public DbSet<SegmentRail> segmentrail { get; set; }
         public DbSet<Crossroads> crossroads { get; set; }
         public DbSet<Stoplight> stoplights { get; set; }
         public DbSet<Wagon> wagons { get; set; }

@@ -14,6 +14,7 @@ namespace ApiTrain.EndPoints
             endpoint.MapPost("inserisci/",PostProvaEndpoint);
             endpoint.MapDelete("cancella/{id:int}", DeleteProvaEndPoint);
             endpoint.MapGet("Leftjointprova", GetProvaQueryAsync);
+            endpoint.MapGet("ProvaQuery", ProvaQuery);
 
             return route;
         }
@@ -62,6 +63,12 @@ namespace ApiTrain.EndPoints
 
             var response = await service.LeftJointQueryProva();
 
+            return TypedResults.Ok(response);
+        }
+
+        private static async Task<IResult> ProvaQuery(HttpContext context, ProvaQueryEF service)
+        {
+            var response = await service.QueryCompose();
             return TypedResults.Ok(response);
         }
 

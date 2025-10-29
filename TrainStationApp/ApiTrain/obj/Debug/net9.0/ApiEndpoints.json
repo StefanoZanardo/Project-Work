@@ -74,5 +74,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ApiTrain.EndPoints.EndPointTest",
+    "Method": "ProvaQuery",
+    "RelativePath": "Prova/ProvaQuery",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

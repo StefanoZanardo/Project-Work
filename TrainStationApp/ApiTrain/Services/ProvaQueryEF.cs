@@ -47,5 +47,25 @@ namespace ApiTrain.Services
 
             return TypedResults.Ok(response);
         }
+
+        public async Task<IResult> QueryCompose()
+        {
+            var response = await contestoDB.crossroads.Include(a=>a.SegmentRail1).Include(a=>a.SegmentRail2).Select
+                (a=> new CrossRoadTraitDTO
+                {
+                    crossroadid = a.crossroadid,
+                    changelane = a.changelane,
+                    isoccupied = a.isoccupied,
+                    segmenttrait1 = a.segmenttrait1,
+                    segmenttrait2 = a.segmenttrait2,
+                    rail = a.SegmentRail1 ,
+                    rail2 = a.SegmentRail2 
+                  
+                }
+
+                ).ToListAsync();
+
+            return TypedResults.Ok(response);
+        }
     }
 }
