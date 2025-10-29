@@ -45,6 +45,22 @@
   },
   {
     "ContainingType": "ApiTrain.EndPoints.EndPointTest",
+    "Method": "GetProvaQueryAsync",
+    "RelativePath": "Prova/Leftjointprova",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiTrain.EndPoints.EndPointTest",
     "Method": "GetProvaAsync",
     "RelativePath": "Prova/OttieniEntrate",
     "HttpMethod": "GET",

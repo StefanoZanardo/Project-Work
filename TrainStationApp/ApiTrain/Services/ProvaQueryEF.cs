@@ -1,4 +1,5 @@
 ﻿using ApiTrain.Models;
+using ApiTrain.Models.NewFolder;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiTrain.Services
@@ -32,6 +33,19 @@ namespace ApiTrain.Services
             await contestoDB.rail.Where(a=>a.railid==id).ExecuteDeleteAsync();
 
             return TypedResults.Ok(rail);
+        }
+        public async Task<IResult> LeftJointQueryProva()
+        {
+            var response = await contestoDB.trains.Include(a=>a.category)
+                .Select(a=> new ProvaDTO
+                {
+                    TrainId = a.trainid,
+                    Destination = a.destination,
+                    CategoryName = a.category.traincategory
+
+                }).FirstAsync();
+
+            return TypedResults.Ok(response);
         }
     }
 }
