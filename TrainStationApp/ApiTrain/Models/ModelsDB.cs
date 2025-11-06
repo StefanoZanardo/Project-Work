@@ -5,9 +5,7 @@
         public int categoryid { get; set; }
         public string? traincategory { get; set; }
         public int priorityvalue { get; set; }
-        public int timedelay { get; set; }
-        public DateTime departuretrain { get; set; }
-        public DateTime arrivaltrain { get; set; }
+        
 
         public ICollection<Trains> trains { get; set; } = new List<Trains>();
     }
@@ -17,8 +15,10 @@
         public int trainid { get; set; }
         public string? destination { get; set; }
         public int vagons { get; set; }
+        public int timedelay { get; set; }
+        public DateTime departuretrain { get; set; }
+        public DateTime arrivaltrain { get; set; }
         public int categoryid { get; set; }
-
         public Category category {  get; set; }
     }
 

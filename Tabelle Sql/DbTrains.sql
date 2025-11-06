@@ -1,13 +1,9 @@
-
-
 -- Creazione tabella CATEGORY
 CREATE TABLE CATEGORY (
     CategoryID SERIAL PRIMARY KEY,
     TrainCategory VARCHAR(50) NOT NULL UNIQUE,
-    PriorityValue INT NOT NULL,
-    TimeDelay INT NOT NULL,
-    DepartureTrain TIMESTAMP NOT NULL,
-    ArrivalTrain TIMESTAMP NOT NULL
+    PriorityValue INT NOT NULL
+    
 );
 
 -- Creazione tabella TRAINS
@@ -15,6 +11,9 @@ CREATE TABLE TRAINS (
     TrainID SERIAL PRIMARY KEY,
     Destination VARCHAR(100) NOT NULL,
     Vagons INT CHECK (Vagons BETWEEN 5 AND 15),
+    TimeDelay INT NOT NULL,
+    DepartureTrain TIMESTAMP NOT NULL,
+    ArrivalTrain TIMESTAMP NOT NULL
     CategoryID INT REFERENCES CATEGORY(CategoryID) ON DELETE SET NULL
 );
 
@@ -55,3 +54,11 @@ CREATE TABLE WAGONS (
     WagonsSegment INT REFERENCES SEGMENTRAIL(SegmentRailID) ON DELETE SET NULL,
     Capacity INT NOT NULL
 );
+
+INSERT INTO public.category(
+	 traincategory, priorityvalue)
+	VALUES ('transito', 5),
+		 ('freccia', 4),
+		 ('veloce', 3),
+		 ('regionale', 2),
+		 ('stazionario', 1);
