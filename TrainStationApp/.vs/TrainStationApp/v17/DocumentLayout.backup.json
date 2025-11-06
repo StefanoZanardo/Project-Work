@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\dbcontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\dbcontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\models\\modelsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\models\\modelsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\services\\provaqueryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\services\\provaqueryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\models\\dto\\provadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\models\\dto\\provadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\dbcontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\dbcontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\endpoints\\endpointtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\endpoints\\endpointtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\models\\modelsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\models\\modelsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\models\\dto\\provadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|solutionrelative:apitrain\\models\\dto\\provadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A5469508-87C4-4BB8-BFBC-106C6AD2894C}|ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project work\\trainstationapp\\apitrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -53,7 +53,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ProvaDTO.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Models\\DTO\\ProvaDTO.cs",
               "RelativeDocumentMoniker": "ApiTrain\\Models\\DTO\\ProvaDTO.cs",
@@ -77,8 +77,7 @@
               "RelativeToolTip": "ApiTrain\\Models\\DTO\\ProvaDTO.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAkwBMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T15:41:51.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T15:41:51.912Z"
             },
             {
               "$type": "Document",
@@ -88,7 +87,7 @@
               "RelativeDocumentMoniker": "ApiTrain\\EndPoints\\EndPointTest.cs",
               "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\EndPoints\\EndPointTest.cs",
               "RelativeToolTip": "ApiTrain\\EndPoints\\EndPointTest.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAkwEcAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowD8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T11:57:36.985Z",
               "EditorCaption": ""
@@ -101,7 +100,7 @@
               "RelativeDocumentMoniker": "ApiTrain\\Services\\ProvaQueryEF.cs",
               "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Services\\ProvaQueryEF.cs",
               "RelativeToolTip": "ApiTrain\\Services\\ProvaQueryEF.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowDQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAlwCQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T11:54:04.027Z",
               "EditorCaption": ""
@@ -119,26 +118,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ModelsDB.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Models\\ModelsDB.cs",
               "RelativeDocumentMoniker": "ApiTrain\\Models\\ModelsDB.cs",
               "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\Models\\ModelsDB.cs",
               "RelativeToolTip": "ApiTrain\\Models\\ModelsDB.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAgwC8AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAA3wC8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T11:34:13.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DbContest.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\DbContest.cs",
               "RelativeDocumentMoniker": "ApiTrain\\DbContest.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\DbContest.cs*",
-              "RelativeToolTip": "ApiTrain\\DbContest.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAcwA8AAAAtAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\DbContest.cs",
+              "RelativeToolTip": "ApiTrain\\DbContest.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwBgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T11:32:02.181Z",
               "EditorCaption": ""
