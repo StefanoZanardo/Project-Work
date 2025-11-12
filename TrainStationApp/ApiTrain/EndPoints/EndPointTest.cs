@@ -10,7 +10,7 @@ namespace ApiTrain.EndPoints
         {
             var endpoint = route.MapGroup("Prova/");
 
-            endpoint.MapGet("OttieniEntrate", GetProvaAsync);
+            endpoint.MapGet("Categorie", GetProvaAsync);
             endpoint.MapPost("inserisci/",PostProvaEndpoint);
             endpoint.MapDelete("cancella/{id:int}", DeleteProvaEndPoint);
             endpoint.MapGet("Leftjointprova", GetProvaQueryAsync);

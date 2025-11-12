@@ -14,7 +14,7 @@ namespace ApiTrain.Services
 
         public async Task<IResult> GetTrainsDB()
         {
-            var result = await contestoDB.rail.ToListAsync();
+            var result = await contestoDB.category.ToListAsync();
             return TypedResults.Ok(result);
         } 
 
@@ -67,5 +67,7 @@ namespace ApiTrain.Services
 
             return TypedResults.Ok(response);
         }
+
+
     }
 }
