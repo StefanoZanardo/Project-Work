@@ -15,7 +15,7 @@
         public int trainid { get; set; }
         public string? destination { get; set; }
         public int vagons { get; set; }
-        public int timedelay { get; set; }
+        public int timedelay { get; set; } //indica minuti di ritardo es. 30, 60, 120
         public DateTime departuretrain { get; set; }
         public DateTime arrivaltrain { get; set; }
         public int categoryid { get; set; }

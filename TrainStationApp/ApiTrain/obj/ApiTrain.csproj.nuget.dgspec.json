@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj": {}
+    "C:\\Users\\Leonardo Iuliano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj": {
+    "C:\\Users\\Leonardo Iuliano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
+        "projectUniqueName": "C:\\Users\\Leonardo Iuliano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
         "projectName": "ApiTrain",
-        "projectPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
-        "packagesPath": "C:\\Users\\Zanardo Stefano\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project Work\\TrainStationApp\\ApiTrain\\obj\\",
+        "projectPath": "C:\\Users\\Leonardo Iuliano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
+        "packagesPath": "C:\\Users\\Leonardo Iuliano\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leonardo Iuliano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leonardo Iuliano\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
