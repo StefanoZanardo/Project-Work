@@ -53,7 +53,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,10 +62,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -85,8 +81,8 @@
               "Title": "EndPointTest.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\EndPoints\\EndPointTest.cs",
               "RelativeDocumentMoniker": "ApiTrain\\EndPoints\\EndPointTest.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\EndPoints\\EndPointTest.cs*",
-              "RelativeToolTip": "ApiTrain\\EndPoints\\EndPointTest.cs*",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationApp\\ApiTrain\\EndPoints\\EndPointTest.cs",
+              "RelativeToolTip": "ApiTrain\\EndPoints\\EndPointTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T11:57:36.985Z",
@@ -102,8 +98,7 @@
               "RelativeToolTip": "ApiTrain\\Services\\ProvaQueryEF.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T11:54:04.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T11:54:04.027Z"
             },
             {
               "$type": "Document",
@@ -126,8 +121,7 @@
               "RelativeToolTip": "ApiTrain\\Models\\ModelsDB.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAqwBEAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T11:34:13.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T11:34:13.34Z"
             },
             {
               "$type": "Document",
@@ -200,6 +194,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-10-28T09:51:41.933Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
