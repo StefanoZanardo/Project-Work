@@ -1,5 +1,6 @@
 using DashBoardTrains.Components;
 using DashBoardTrains.Components.Pages;
+using DashBoardTrains.Models.MockUp_Models;
 
 namespace DashBoardTrains
 {
@@ -9,7 +10,7 @@ namespace DashBoardTrains
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            
+            builder.Services.AddSingleton<DbFalso>();
 
             // Add services to the container.
             builder.Services.AddRazorComponents()
