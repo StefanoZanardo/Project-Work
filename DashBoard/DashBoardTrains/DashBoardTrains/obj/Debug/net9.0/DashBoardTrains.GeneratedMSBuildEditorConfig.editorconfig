@@ -11,53 +11,53 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DashBoardTrains
 build_property.RootNamespace = DashBoardTrains
-build_property.ProjectDir = C:\Users\Dev\Desktop\TestProject\Project-Work\DashBoard\DashBoardTrains\DashBoardTrains\
+build_property.ProjectDir = C:\Users\Zanardo Stefano\Desktop\AAA\Project-Work\DashBoard\DashBoardTrains\DashBoardTrains\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Dev\Desktop\TestProject\Project-Work\DashBoard\DashBoardTrains\DashBoardTrains
+build_property.MSBuildProjectDirectory = C:\Users\Zanardo Stefano\Desktop\AAA\Project-Work\DashBoard\DashBoardTrains\DashBoardTrains
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/App.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Counter.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Error.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Home.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/MockUpGrid.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/MockUpGrid.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNb2NrVXBHcmlkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Trains.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Pages/Trains.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUcmFpbnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Routes.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/_Imports.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Layout/MainLayout.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-g8jfsr09ye
 
-[C:/Users/Dev/Desktop/TestProject/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Layout/NavMenu.razor]
+[C:/Users/Zanardo Stefano/Desktop/AAA/Project-Work/DashBoard/DashBoardTrains/DashBoardTrains/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-qr20ryqnv1
