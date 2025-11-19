@@ -1,61 +1,97 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\",
+  "WorkspaceRootPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\trains.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\trains.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\services\\crude\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\services\\crude\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\dashboardtrains.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\dashboardtrains.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\services\\crude\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\services\\crude\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\mockupgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\mockupgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\trainpages\\trains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\trainpages\\trains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\trains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\trains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\trainpages\\trains.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\trainpages\\trains.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\trainpages\\categorytrains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\trainpages\\categorytrains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\trainpages\\categorytrains.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\trainpages\\categorytrains.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\Microsoft\\UserSecrets\\dba2ec90-9e9a-443d-af42-d07d15c7d3c5\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\mockupgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\mockupgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\models\\mockup_models\\scelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\models\\mockup_models\\scelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\services\\editformmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\services\\editformmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\models\\mockup_models\\dbfalso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\models\\mockup_models\\dbfalso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\infrastracture\\newimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\infrastracture\\newimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\filejson.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\filejson.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\dashboardtrains.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\dashboardtrains.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\aaa\\project-work\\dashboard\\dashboardtrains\\dashboardtrains\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76754EC7-583B-464A-BA79-FDA0D5FBBD61}|DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,7 +101,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -77,171 +113,302 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Models\\Products.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\Products.cs",
+              "RelativeToolTip": "DashBoardTrains\\Models\\Products.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T09:29:31.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DashBoardTrains.csproj",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
-              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains.csproj",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
-              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-18T21:44:56.13Z"
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
+              "RelativeToolTip": "DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T14:06:18.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MockUpGrid.razor",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
-              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T21:44:56.204Z"
+              "Title": "Trains.razor.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs*",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T13:11:51.793Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\Category.cs",
-              "RelativeToolTip": "DashBoardTrains\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "CategoryTrains.razor.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwBUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T21:44:56.208Z"
+              "WhenOpened": "2025-11-18T21:44:56.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Program.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Program.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Program.cs",
+              "RelativeToolTip": "DashBoardTrains\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T21:44:56.224Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "RelativeToolTip": "DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:42:55.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Trains.razor",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Trains.razor",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\Trains.razor",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Trains.razor",
-              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\Trains.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAXAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T13:11:37.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\Category.cs",
+              "RelativeToolTip": "DashBoardTrains\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T21:44:56.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoryTrains.razor",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-18T21:44:56.21Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T21:44:56.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Trains.razor.cs",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Trains.razor.cs",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\Trains.razor.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Trains.razor.cs",
-              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\Trains.razor.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwDEAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T21:44:56.214Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "DashBoardTrains\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.Development.json",
-              "RelativeToolTip": "DashBoardTrains\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-18T21:44:56.215Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Properties\\launchSettings.json",
-              "RelativeToolTip": "DashBoardTrains\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-18T21:44:56.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\Microsoft\\UserSecrets\\dba2ec90-9e9a-443d-af42-d07d15c7d3c5\\secrets.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\dba2ec90-9e9a-443d-af42-d07d15c7d3c5\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\dba2ec90-9e9a-443d-af42-d07d15c7d3c5\\secrets.json",
               "ToolTip": "C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\Microsoft\\UserSecrets\\dba2ec90-9e9a-443d-af42-d07d15c7d3c5\\secrets.json",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\dba2ec90-9e9a-443d-af42-d07d15c7d3c5\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\dba2ec90-9e9a-443d-af42-d07d15c7d3c5\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAADpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-14T14:58:26.16Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Program.cs",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Program.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Program.cs",
-              "RelativeToolTip": "DashBoardTrains\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T21:44:56.224Z"
+              "WhenOpened": "2025-11-14T14:58:26.16Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Error.razor",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Error.razor",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\Error.razor",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Error.razor",
-              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\Error.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T21:44:56.226Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Counter.razor",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Counter.razor",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\Counter.razor",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Counter.razor",
-              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\Counter.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T21:44:56.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.json",
-              "RelativeDocumentMoniker": "DashBoardTrains\\appsettings.json",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.json",
-              "RelativeToolTip": "DashBoardTrains\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-18T21:44:56.229Z"
+              "WhenOpened": "2025-11-18T21:44:56.231Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "DashBoardTrains\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Title": "Scelta.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\MockUp_Models\\Scelta.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Models\\MockUp_Models\\Scelta.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\MockUp_Models\\Scelta.cs",
+              "RelativeToolTip": "DashBoardTrains\\Models\\MockUp_Models\\Scelta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T09:28:31.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DbFalso.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\MockUp_Models\\DbFalso.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Models\\MockUp_Models\\DbFalso.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Models\\MockUp_Models\\DbFalso.cs",
+              "RelativeToolTip": "DashBoardTrains\\Models\\MockUp_Models\\DbFalso.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwHIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T09:28:17.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T21:44:56.231Z"
+              "WhenOpened": "2025-11-18T21:44:56.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MockUpGrid.razor",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T21:44:56.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EditFormModel.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Services\\EditFormModel.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Services\\EditFormModel.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Services\\EditFormModel.cs",
+              "RelativeToolTip": "DashBoardTrains\\Services\\EditFormModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:50:41.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NewImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Infrastracture\\NewImplementation.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Infrastracture\\NewImplementation.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Infrastracture\\NewImplementation.cs",
+              "RelativeToolTip": "DashBoardTrains\\Infrastracture\\NewImplementation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T09:27:45.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "filejson.json",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\filejson.json",
+              "RelativeDocumentMoniker": "DashBoardTrains\\filejson.json",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\filejson.json",
+              "RelativeToolTip": "DashBoardTrains\\filejson.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-19T09:59:30.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "DashBoardTrains\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.Development.json",
+              "RelativeToolTip": "DashBoardTrains\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-18T21:44:56.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DashBoardTrains.csproj",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
+              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains.csproj",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
+              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-18T21:44:56.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Properties\\launchSettings.json",
+              "RelativeToolTip": "DashBoardTrains\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-18T21:44:56.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Error.razor",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Error.razor",
+              "RelativeDocumentMoniker": "DashBoardTrains\\Components\\Pages\\Error.razor",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\Error.razor",
+              "RelativeToolTip": "DashBoardTrains\\Components\\Pages\\Error.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T21:44:56.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.json",
+              "RelativeDocumentMoniker": "DashBoardTrains\\appsettings.json",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\appsettings.json",
+              "RelativeToolTip": "DashBoardTrains\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-18T21:44:56.229Z",
+              "EditorCaption": ""
             }
           ]
         }

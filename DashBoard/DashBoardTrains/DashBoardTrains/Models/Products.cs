@@ -20,8 +20,14 @@ namespace DashBoardTrains.Models
         public decimal Price { get; set; }
 
         public int categoryId { get; set; }
+        
         public Category Category { get; set; } 
 
 
+    }
+
+    public class  filejson
+    {
+        public string nome { get; set; }
     }
 }

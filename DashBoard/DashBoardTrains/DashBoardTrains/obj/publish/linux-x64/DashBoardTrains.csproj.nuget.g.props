@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\Zanardo Stefano\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.quickgrid\9.0.11\buildTransitive\Microsoft.AspNetCore.Components.QuickGrid.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.quickgrid\9.0.11\buildTransitive\Microsoft.AspNetCore.Components.QuickGrid.props')" />
+  </ImportGroup>
 </Project>

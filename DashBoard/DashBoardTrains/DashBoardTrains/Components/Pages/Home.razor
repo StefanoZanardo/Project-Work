@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using DashBoardTrains.Services
 @using Microsoft.AspNetCore.Components.QuickGrid
 @using DashBoardTrains.Models.MockUp_Models
 @using static DashBoardTrains.Models.MockUp_Models.Scelta
@@ -30,7 +31,10 @@
             <EditForm Model="@scelta" OnSubmit="SubmitForm">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
-
+                @* @foreach(var field in formStack)
+                {
+                    @((MarkupString)field)
+                } *@
                 <div class="row g-3">
                     @if (scelta is Entrate e)
                     {
@@ -57,7 +61,7 @@
                             <InputText @bind-Value="d.Description" class="form-control" placeholder="Descrizione" />
                         </div>
                     }
-                </div>
+                </div> 
 
                 <div class="mt-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -105,7 +109,12 @@
 	private string alertMessage = string.Empty;
     private string tipoCorrente = "Entrate"; 
     private Scelta scelta = new Entrate();
+    private Stack<string> formStack = new Stack<string>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        formStack = EditFormModel.GenEditFormTable(scelta, "scelta");
+    }
 
     private IEnumerable<Scelta> scelte => tipoCorrente switch
     {

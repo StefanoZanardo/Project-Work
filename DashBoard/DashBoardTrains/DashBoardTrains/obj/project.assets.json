@@ -1924,11 +1924,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
+      "projectUniqueName": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
       "projectName": "DashBoardTrains",
-      "projectPath": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
+      "projectPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
       "packagesPath": "C:\\Users\\Zanardo Stefano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zanardo Stefano\\Desktop\\AAA\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\obj\\",
+      "outputPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\DashBoard\\DashBoardTrains\\DashBoardTrains\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

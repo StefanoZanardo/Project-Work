@@ -1,0 +1,73 @@
+﻿@page "/trains"
+@using DashBoardTrains.Services.CRUDE
+@inject IConfiguration config
+@inject CategoryService _categoryService
+@inject ProductService _productService
+<h3>Trains</h3>
+<PageTitle>Trains</PageTitle>
+
+<EditForm Model="@_product" OnValidSubmit="InserisciProdotto">
+    <DataAnnotationsValidator />
+    <ValidationSummary class="text-danger mb-3" />
+
+    <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <InputText id="productName" class="form-control" @bind-Value="@_product.Name" placeholder="Nome Prodotto" />
+    </div>
+    <div class="mb-3">
+        <label for="productName" class="form-label">Descrizione Prodotto</label>
+        <InputText id="productName" class="form-control" @bind-Value="@_product.Description" placeholder="Descrizione" />
+    </div>
+    <div class="mb-3">
+        <label for="productName" class="form-label">Codice Prodotto</label>
+        <InputText id="productName" class="form-control" @bind-Value="@_product.Code" placeholder="Codice Prodotto" />
+    </div>
+    <div class="mb-3 row">
+        <div class="col-md-6">
+            <label for="productPrice" class="form-label">Prezzo</label>
+            <InputNumber id="productPrice" class="form-control" @bind-Value="@_product.Price" />
+        </div>
+        <div class="col-md-6">
+            <label for="productCategory" class="form-label">Categoria</label>
+            <InputSelect id="productCategory" class="form-select" @bind-Value="@_product.categoryId">
+                @foreach (var category in _categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</EditForm>
+
+<table class="table table-striped table-hover mb-0 text-center align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>Id</th>
+            <th>Nome Prodotto</th>
+            <th>Descrizione</th>
+            <th>Codice</th>
+            <th>Prezzo</th>
+            <th>Categoria</th>
+            <th>Categoria ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in _products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Code</td>
+                <td>@product.Price</td>
+                <td>@product.Category?.Name</td>
+                <td>@product.categoryId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
