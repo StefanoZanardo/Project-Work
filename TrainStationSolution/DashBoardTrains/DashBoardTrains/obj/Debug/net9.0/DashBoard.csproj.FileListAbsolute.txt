@@ -1,0 +1,8 @@
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoard.csproj.AssemblyReference.cache
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoard.AssemblyInfoInputs.cache
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoard.AssemblyInfo.cs
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoard.csproj.CoreCompileInputs.cache
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoard.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoard.sourcelink.json

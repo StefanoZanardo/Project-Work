@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DashBoardTrains")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e497a411107771392f2e1462bd6ad7eb0ac92a56")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cf38dae444e74cde879d68bdd5eaca96ae161ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("DashBoardTrains")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DashBoardTrains")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

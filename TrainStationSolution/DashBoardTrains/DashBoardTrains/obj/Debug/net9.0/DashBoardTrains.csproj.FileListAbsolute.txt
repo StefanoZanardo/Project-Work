@@ -546,8 +546,8 @@ C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrai
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\filejson.json
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\package-lock.json
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\package.json
-C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\DashBoardTrains.staticwebassets.endpoints.json
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\DashBoardTrains.staticwebassets.runtime.json
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\DashBoardTrains.staticwebassets.endpoints.json
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\DashBoardTrains.exe
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\DashBoardTrains.deps.json
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\bin\Debug\net9.0\DashBoardTrains.runtimeconfig.json
@@ -679,10 +679,10 @@ C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrai
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\staticwebassets.build.endpoints.json
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\swae.build.ex.cache
-C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoar.238EB77A.Up2Date
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoardTrains.dll
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\refint\DashBoardTrains.dll
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoardTrains.pdb
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\DashBoardTrains.genruntimeconfig.cache
 C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\ref\DashBoardTrains.dll
+C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

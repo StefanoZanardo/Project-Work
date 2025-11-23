@@ -1,12 +1,14 @@
 ﻿using Dapper;
 using DashBoardTrains.Models;
 using Microsoft.Data.SqlClient;
+using System.Net;
+using System.Net.Http.Json;
 
 namespace DashBoardTrains.Services.CRUDE
 {
     public class CategoryService
     {
-        public HttpClient _http;   
+        private readonly HttpClient _http;   
 
         public CategoryService(HttpClient httpClient)
         {
@@ -20,6 +22,27 @@ namespace DashBoardTrains.Services.CRUDE
                 return new List<Category>();
             }
             return result;
+        }
+
+        public async Task PostCategoryAsync(Category category)
+        {
+            using var result = await _http.PostAsJsonAsync("/Category/Post/", category);
+
+            if (result.StatusCode == HttpStatusCode.NotFound)
+            {
+                throw new Exception("Non si è riuscito a inserire nel db");
+
+            }
+        }
+
+        public async Task DeleteCategoryAsync(int id) 
+        {
+            using var result = await _http.DeleteAsync($"/Category/Delete/{id}");
+            if (result.StatusCode == HttpStatusCode.NotFound)
+            {
+                throw new Exception("Non si è riuscito a cancellare ricontrolla");
+            }
+
         }
 
 
