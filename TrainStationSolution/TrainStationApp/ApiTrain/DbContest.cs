@@ -21,6 +21,7 @@ namespace ApiTrain
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Serve ad Entity FrameWork per capire quali sono le chiavi primarie e come si chiamano le tabelle
             modelBuilder.Entity<Rail>().ToTable("RAIL").HasKey(c => c.RailId);
             modelBuilder.Entity<Category>().ToTable("CATEGORY").HasKey(c=>c.CategoryId);
             modelBuilder.Entity<Train>().ToTable("TRAINS").HasKey(c => c.TrainId);

@@ -13,7 +13,7 @@ namespace DashBoardTrains.Components.Pages.TrainPages
     {
         private Category categoria { get; set; } = NewImplementation.NewClass<Category>();
 
-        public List<Category>? categories {  get; set; } = new List<Category>();
+        public List<Category> categories {  get; set; } = new List<Category>();
 
         public string errorMessage { get; set; } = string.Empty;
 
