@@ -1,4 +1,6 @@
-﻿using ApiTrain.Interfaces.CRUDE;
+﻿using ApiTrain.EndPoints.CRUDE;
+using ApiTrain.Interfaces.CRUDE;
+using ApiTrain.Models;
 using ApiTrain.Services.CRUDE;
 using ApiTrain.Services.Mock;
 
@@ -11,7 +13,19 @@ namespace ApiTrain.DependecyInjection
         {
 
             services.AddScoped<ProvaQueryEF>();
-            services.AddScoped<ICategoriesService, CategoriesService>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        }
+
+        public static void appEndPoints(this WebApplication app) 
+        {
+            
+            app.MapGenericEndPointsCrude<Category>("/category");
+            app.MapGenericEndPointsCrude<Train>("/train");
+            app.MapGenericEndPointsCrude<Rail>("/rail");
+            app.MapGenericEndPointsCrude<SegmentRail>("/segmentrail");
+            app.MapGenericEndPointsCrude<Crossroad>("/crossroad");
+            app.MapGenericEndPointsCrude<Stoplight>("/stoplight");
+            app.MapGenericEndPointsCrude<Wagon>("/wagon");
         }
     }
 }

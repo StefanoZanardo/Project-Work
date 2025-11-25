@@ -4,6 +4,7 @@ using ApiTrain.DependecyInjection;
 using ApiTrain.EndPoints.CRUDE;
 using ApiTrain.EndPoints.Mock;
 using ApiTrain.Interfaces.CRUDE;
+using ApiTrain.Models;
 using ApiTrain.Services.CRUDE;
 using ApiTrain.Services.Mock;
 using Microsoft.AspNetCore.OpenApi;
@@ -52,8 +53,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapEndPointProva();
-app.MapEndCategories();
+//app.MapEndPointProva();
+
+app.appEndPoints();
 
 app.Run();
        

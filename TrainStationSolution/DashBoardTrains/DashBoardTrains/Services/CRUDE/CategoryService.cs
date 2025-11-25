@@ -16,7 +16,7 @@ namespace DashBoardTrains.Services.CRUDE
         }
         public async Task<List<Category>> GetAllCategory()
         {
-            var result = await _http.GetFromJsonAsync<List<Category>>("/Category/GetAll");
+            var result = await _http.GetFromJsonAsync<List<Category>>("/category");
             if (result == null) 
             {
                 return new List<Category>();
@@ -26,7 +26,7 @@ namespace DashBoardTrains.Services.CRUDE
 
         public async Task PostCategoryAsync(Category category)
         {
-            using var result = await _http.PostAsJsonAsync("/Category/Post/", category);
+            using var result = await _http.PostAsJsonAsync("/category", category);
 
             if (result.StatusCode == HttpStatusCode.NotFound)
             {
@@ -37,7 +37,7 @@ namespace DashBoardTrains.Services.CRUDE
 
         public async Task DeleteCategoryAsync(int id) 
         {
-            using var result = await _http.DeleteAsync($"/Category/Delete/{id}");
+            using var result = await _http.DeleteAsync($"/category/{id}");
             if (result.StatusCode == HttpStatusCode.NotFound)
             {
                 throw new Exception("Non si è riuscito a cancellare ricontrolla");
