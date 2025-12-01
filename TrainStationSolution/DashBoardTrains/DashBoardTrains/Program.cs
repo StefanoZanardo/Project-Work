@@ -1,7 +1,9 @@
 using DashBoardTrains.Components;
 using DashBoardTrains.Components.Pages;
+using DashBoardTrains.Models;
 using DashBoardTrains.Models.MockUp_Models;
 using DashBoardTrains.Services.CRUDE;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DashBoardTrains
 {
@@ -17,6 +19,14 @@ namespace DashBoardTrains
             {
                 opt.BaseAddress = new Uri("https://apitrainsprojectwork.azurewebsites.net");
             });
+
+            builder.Services.AddHttpClient("GenericHttpClient", opt => 
+            {
+                opt.BaseAddress = new Uri("https://apitrainsprojectwork.azurewebsites.net");
+
+            }
+            );
+            builder.Services.AddScoped(typeof(ServicesGenerics<>));
 
             builder.Services.AddScoped<ProductService>();   
 

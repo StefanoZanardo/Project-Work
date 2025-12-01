@@ -15,6 +15,8 @@ namespace DashBoardTrains.Components.Pages.TrainPages
 
         public List<Category> categories {  get; set; } = new List<Category>();
 
+
+
         public string errorMessage { get; set; } = string.Empty;
 
         protected override async Task OnInitializedAsync()
