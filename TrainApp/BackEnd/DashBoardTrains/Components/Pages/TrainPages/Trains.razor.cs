@@ -7,31 +7,41 @@ namespace DashBoardTrains.Components.Pages.TrainPages
 {
     public partial class Trains
     {
-        private string _connectionString = "";
+        private Train _train = new Train()
+        {
+            DepartureTrain = DateTime.Now,
+            ArrivalTrain = DateTime.Now.AddHours(1)
+        };
 
-        private List<Category> _categories = new List<Category>();
-        private Products _product { get; set; } = NewImplementation.NewClass<Products>();
-
-        private List<Products> _products = new List<Products>();
-
+        private List<Category> _categories = new();
 
         protected override async Task OnInitializedAsync()
         {
-            _connectionString = config.GetConnectionString("db");
-            _categories = await _categoryService.GetAllCategory();
-            _products = await _productService.GetAllProducts();
-            StateHasChanged();
+            try
+            {
+
+                _categories = await _serviceCategory.GetList("/category");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Errore caricamento categorie: {ex.Message}");
+            }
         }
- 
-        private async Task InserisciProdotto()
+
+        private async Task InserisciTreno()
         {
-            var query = """
-                INSERT INTO Products (Code, Name, Description, Price, CategoryId)
-                VALUES (@Code, @Name, @Description, @Price, @categoryId)
-                """;
-            using var connection = new SqlConnection(_connectionString);
-            var response = await connection.ExecuteAsync(query, _product);
-            StateHasChanged();
+            try
+            {
+
+                await _serviceTrain.PostAsync("/train", _train); 
+
+                NavManager.NavigateTo("/dashboard");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Errore salvataggio: {ex.Message}");
+
+            }
         }
     }
 }

@@ -17,12 +17,12 @@ namespace DashBoardTrains
 
             builder.Services.AddHttpClient<CategoryService>(opt =>
             {
-                opt.BaseAddress = new Uri("https://apitrainsprojectwork.azurewebsites.net");
+                opt.BaseAddress = new Uri("https://alexi-its.azurewebsites.net");
             });
 
             builder.Services.AddHttpClient("GenericHttpClient", opt => 
             {
-                opt.BaseAddress = new Uri("https://apitrainsprojectwork.azurewebsites.net");
+                opt.BaseAddress = new Uri("https://alexi-its.azurewebsites.net");
 
             }
             );

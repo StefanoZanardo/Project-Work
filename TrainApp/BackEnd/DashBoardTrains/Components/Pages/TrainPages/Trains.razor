@@ -1,73 +1,60 @@
 ﻿@page "/trains"
 @using DashBoardTrains.Services.CRUDE
 @inject IConfiguration config
-@inject CategoryService _categoryService
-@inject ProductService _productService
-<h3>Trains</h3>
-<PageTitle>Trains</PageTitle>
+@inject ServicesGenerics<Train> _serviceTrain
+@inject ServicesGenerics<Category> _serviceCategory
+@inject NavigationManager NavManager
 
-<EditForm Model="@_product" OnValidSubmit="InserisciProdotto">
+<PageTitle>Gestione Treni</PageTitle>
+
+<h3>Aggiungi Nuovo Treno</h3>
+
+<EditForm Model="@_train" OnValidSubmit="InserisciTreno">
     <DataAnnotationsValidator />
     <ValidationSummary class="text-danger mb-3" />
 
-    <div class="mb-3">
-        <label for="productName" class="form-label">Product Name</label>
-        <InputText id="productName" class="form-control" @bind-Value="@_product.Name" placeholder="Nome Prodotto" />
-    </div>
-    <div class="mb-3">
-        <label for="productName" class="form-label">Descrizione Prodotto</label>
-        <InputText id="productName" class="form-control" @bind-Value="@_product.Description" placeholder="Descrizione" />
-    </div>
-    <div class="mb-3">
-        <label for="productName" class="form-label">Codice Prodotto</label>
-        <InputText id="productName" class="form-control" @bind-Value="@_product.Code" placeholder="Codice Prodotto" />
-    </div>
-    <div class="mb-3 row">
-        <div class="col-md-6">
-            <label for="productPrice" class="form-label">Prezzo</label>
-            <InputNumber id="productPrice" class="form-control" @bind-Value="@_product.Price" />
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="destination" class="form-label">Destinazione</label>
+            <InputText id="destination" class="form-control" @bind-Value="@_train.Destination" placeholder="Es. Roma Termini" />
         </div>
-        <div class="col-md-6">
-            <label for="productCategory" class="form-label">Categoria</label>
-            <InputSelect id="productCategory" class="form-select" @bind-Value="@_product.categoryId">
-                @foreach (var category in _categories)
+
+        <div class="col-md-6 mb-3">
+            <label for="category" class="form-label">Categoria Treno</label>
+            <InputSelect id="category" class="form-select" @bind-Value="@_train.CategoryId">
+                <option value="">-- Seleziona Categoria --</option>
+                @if (_categories != null)
                 {
-                    <option value="@category.categoryId">@category.trainCategory</option>
+                    @foreach (var cat in _categories)
+                    {
+                        <option value="@cat.categoryId">@cat.trainCategory</option>
+                    }
                 }
             </InputSelect>
         </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="vagons" class="form-label">Numero Vagoni</label>
+            <InputNumber id="vagons" class="form-control" @bind-Value="@_train.Vagons" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="delay" class="form-label">Ritardo (minuti)</label>
+            <InputNumber id="delay" class="form-control" @bind-Value="@_train.TimeDelay" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="departure" class="form-label">Data e Ora Partenza</label>
+            <InputDate Type="InputDateType.DateTimeLocal" id="departure" class="form-control" @bind-Value="@_train.DepartureTrain" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="arrival" class="form-label">Data e Ora Arrivo</label>
+            <InputDate Type="InputDateType.DateTimeLocal" id="arrival" class="form-control" @bind-Value="@_train.ArrivalTrain" />
+        </div>
     </div>
 
-    <div class="d-grid">
-        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    <div class="d-grid gap-2 mt-4">
+        <button type="submit" class="btn btn-primary btn-lg">Inserisci Treno</button>
     </div>
 </EditForm>
-
-<table class="table table-striped table-hover mb-0 text-center align-middle">
-    <thead class="table-light">
-        <tr>
-            <th>Id</th>
-            <th>Nome Prodotto</th>
-            <th>Descrizione</th>
-            <th>Codice</th>
-            <th>Prezzo</th>
-            <th>Categoria</th>
-            <th>Categoria ID</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var product in _products)
-        {
-            <tr>
-                <td>@product.Id</td>
-                <td>@product.Name</td>
-                <td>@product.Description</td>
-                <td>@product.Code</td>
-                <td>@product.Price</td>
-                <td>@product.Category?.trainCategory</td>
-                <td>@product.categoryId</td>
-            </tr>
-        }
-    </tbody>
-</table>
-

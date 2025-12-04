@@ -23,5 +23,30 @@
                 throw new Exception("Lista vuota");
             }
         }
+
+        public async Task PostAsync(string connection, T insert)
+        {
+            var response = await _httpClient.PostAsJsonAsync<T>(connection, insert);
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Non è riuscito a inserire nel db");
+            }
+        }
+
+        public async Task DeleteRow(int id, string connection)
+        {
+            try
+            {
+                var response = await _httpClient.DeleteAsync($"{connection}/{id}");
+                if (response == null)
+                {
+                    throw new Exception("Non è riuscito a cancellare la riga");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

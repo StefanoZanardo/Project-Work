@@ -1,0 +1,77 @@
+﻿@page "/dashboard"
+@using DashBoardTrains.Models
+@using DashBoardTrains.Components.Pages.TrainPages
+
+<PageTitle>Dashboard Treni</PageTitle>
+
+<div class="container-fluid">
+    <h1>Dashboard Generale</h1>
+    <hr />
+
+    <div class="mb-4">
+        <label class="form-label fw-bold">Seleziona la tabella da visualizzare:</label>
+        <select class="form-select w-auto" @bind="_option">
+            <option value="tutto">--- Vedi Tutto ---</option>
+            <option value="train">Treni</option>
+            <option value="category">Categorie</option>
+            <option value="wagon">Vagoni</option>
+            <option value="stoplight">Semafori</option>
+            <option value="rail">Binari</option>
+            <option value="segment">Pezzi di binario</option>
+            <option value="crossroad">Incroci</option>
+        </select>
+    </div>
+
+    <div class="row">
+
+        @if (_option == "tutto" || _option == "train")
+        {
+            <div class="col-md-6 mb-4">
+                <ShowTable T="Train" ApiUrl="/train" Title="Lista Treni" />
+            </div>
+        }
+
+        @if (_option == "tutto" || _option == "category")
+        {
+            <div class="col-md-6 mb-4">
+                <ShowTable T="Category" ApiUrl="/category" Title="Categorie" />
+            </div>
+        }
+
+        @if (_option == "tutto" || _option == "wagon")
+        {
+            <div class="col-md-6 mb-4">
+                <ShowTable T="Wagon" ApiUrl="/wagon" Title="Vagoni" />
+            </div>
+        }
+
+        @if (_option == "tutto" || _option == "stoplight")
+        {
+            <div class="col-md-6 mb-4">
+                <ShowTable T="Stoplight" ApiUrl="/stoplight" Title="Semafori" />
+            </div>
+        }
+
+        @if (_option == "tutto" || _option == "rail")
+        {
+            <div class="col-md-6 mb-4">
+                <ShowTable T="Rail" ApiUrl="/rail" Title="Binari" />
+            </div>
+        }
+
+        @if (_option == "tutto" || _option == "segment")
+        {
+            <div class="col-md-6 mb-4">
+                <ShowTable T="SegmentRail" ApiUrl="/segmentrail" Title="Pezzi di binario" />
+            </div>
+        }
+
+        @if (_option == "tutto" || _option == "crossroad")
+        {
+            <div class="col-md-6 mb-4">
+                <ShowTable T="Crossroad" ApiUrl="/crossroad" Title="Incroci" />
+            </div>
+        }
+
+    </div>
+</div>

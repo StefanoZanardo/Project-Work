@@ -1,0 +1,44 @@
+﻿@typeparam T
+@using System.Reflection
+
+<div class="card mb-3">
+    <div class="card-header bg-primary text-white">
+        <h5>@Title</h5>
+    </div>
+    <div class="card-body">
+        @if (Items == null)
+        {
+            <p><em>Caricamento in corso...</em></p>
+        }
+        else if (Items.Count == 0)
+        {
+            <p>Nessun dato trovato.</p>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            @foreach (var prop in Properties)
+                            {
+                                <th>@prop.Name</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Items)
+                        {
+                            <tr>
+                                @foreach (var prop in Properties)
+                                {
+                                    <td>@prop.GetValue(item)</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
