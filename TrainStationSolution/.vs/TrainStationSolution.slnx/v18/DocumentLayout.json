@@ -7,6 +7,13 @@
       "RelativeMoniker": "D:0:0:{03B191A5-A5BA-383D-64FB-7A30E1A7804E}|DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\dashboardtrains\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\Microsoft\\UserSecrets\\f9688a0b-e7be-46a7-8112-7320a92dae98\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{417F6C03-F175-27D1-47EF-8E4736DD859F}|TrainStationApp\\ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainstationsolution\\trainstationapp\\apitrain\\services\\crude\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{417F6C03-F175-27D1-47EF-8E4736DD859F}|TrainStationApp\\ApiTrain\\ApiTrain.csproj|solutionrelative:trainstationapp\\apitrain\\services\\crude\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03B191A5-A5BA-383D-64FB-7A30E1A7804E}|DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainstationsolution\\dashboardtrains\\dashboardtrains\\services\\crude\\servicesgenerics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03B191A5-A5BA-383D-64FB-7A30E1A7804E}|DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\dashboardtrains\\services\\crude\\servicesgenerics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,9 +32,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{03B191A5-A5BA-383D-64FB-7A30E1A7804E}|DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainstationsolution\\dashboardtrains\\dashboardtrains\\components\\pages\\trainpages\\categorytrains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03B191A5-A5BA-383D-64FB-7A30E1A7804E}|DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:dashboardtrains\\dashboardtrains\\components\\pages\\trainpages\\categorytrains.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\Microsoft\\UserSecrets\\f9688a0b-e7be-46a7-8112-7320a92dae98\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{417F6C03-F175-27D1-47EF-8E4736DD859F}|TrainStationApp\\ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainstationsolution\\trainstationapp\\apitrain\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -52,10 +56,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{417F6C03-F175-27D1-47EF-8E4736DD859F}|TrainStationApp\\ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainstationsolution\\trainstationapp\\apitrain\\dependecyinjection\\dependecyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{417F6C03-F175-27D1-47EF-8E4736DD859F}|TrainStationApp\\ApiTrain\\ApiTrain.csproj|solutionrelative:trainstationapp\\apitrain\\dependecyinjection\\dependecyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{417F6C03-F175-27D1-47EF-8E4736DD859F}|TrainStationApp\\ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainstationsolution\\trainstationapp\\apitrain\\services\\crude\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{417F6C03-F175-27D1-47EF-8E4736DD859F}|TrainStationApp\\ApiTrain\\ApiTrain.csproj|solutionrelative:trainstationapp\\apitrain\\services\\crude\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03B191A5-A5BA-383D-64FB-7A30E1A7804E}|DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainstationsolution\\dashboardtrains\\dashboardtrains\\components\\pages\\trainpages\\trains.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -226,14 +226,74 @@
               "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Program.cs",
               "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Program.cs",
               "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAmwBwAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA8wBwAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T14:56:37.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Trains.razor.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
+              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:55:53.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoryTrains.razor",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T15:47:37.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoryTrains.razor.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:47:42.006Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:07:31.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
+              "RelativeDocumentMoniker": "TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
+              "RelativeToolTip": "TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T20:24:02.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\Microsoft\\UserSecrets\\f9688a0b-e7be-46a7-8112-7320a92dae98\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\f9688a0b-e7be-46a7-8112-7320a92dae98\\secrets.json",
@@ -246,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ServicesGenerics.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ServicesGenerics.cs",
               "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ServicesGenerics.cs",
@@ -254,64 +314,11 @@
               "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ServicesGenerics.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T16:06:22.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T16:06:22.974Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Trains.razor.cs",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
-              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
-              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBMAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T19:55:53.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryTrains.razor",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
-              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
-              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-23T15:47:37.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CategoryTrains.razor.cs",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
-              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
-              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T15:47:42.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
-              "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
-              "RelativeToolTip": "DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:07:31.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ApiTrain.csproj",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
               "RelativeDocumentMoniker": "TrainStationApp\\ApiTrain\\ApiTrain.csproj",
@@ -323,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "dependecyInjection.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\DependecyInjection\\dependecyInjection.cs",
               "RelativeDocumentMoniker": "TrainStationApp\\ApiTrain\\DependecyInjection\\dependecyInjection.cs",
@@ -335,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
               "RelativeDocumentMoniker": "DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
@@ -347,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TrainStationApp\\ApiTrain\\appsettings.Development.json",
@@ -359,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\appsettings.json",
               "RelativeDocumentMoniker": "TrainStationApp\\ApiTrain\\appsettings.json",
@@ -371,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CrudeEndPointGenerics.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\EndPoints\\CRUDE\\CrudeEndPointGenerics.cs",
               "RelativeDocumentMoniker": "TrainStationApp\\ApiTrain\\EndPoints\\CRUDE\\CrudeEndPointGenerics.cs",
@@ -380,18 +387,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T20:21:37.441Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
-              "RelativeDocumentMoniker": "TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
-              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
-              "RelativeToolTip": "TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T20:24:02.091Z"
             },
             {
               "$type": "Document",

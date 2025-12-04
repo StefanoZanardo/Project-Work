@@ -1,4 +1,4 @@
-INSERT INTO public.category(
+INSERT INTO CATEGORY(
 	 traincategory, priorityvalue)
 	VALUES ('transito', 5),
 		 ('freccia', 4),
