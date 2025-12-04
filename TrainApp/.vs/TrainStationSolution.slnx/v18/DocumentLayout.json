@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{015693AF-0F2E-1860-292F-6CFF70978064}|BackEnd\\DashBoardTrains\\DashBoardTrains.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainapp\\backend\\dashboardtrains\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{015693AF-0F2E-1860-292F-6CFF70978064}|BackEnd\\DashBoardTrains\\DashBoardTrains.csproj|solutionrelative:backend\\dashboardtrains\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{327E46DA-E408-6276-6ED3-F3536E4F102C}|FrontApp\\ApiTrain\\ApiTrain.csproj|c:\\users\\zanardo stefano\\desktop\\project-work\\trainapp\\frontapp\\apitrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{327E46DA-E408-6276-6ED3-F3536E4F102C}|FrontApp\\ApiTrain\\ApiTrain.csproj|solutionrelative:frontapp\\apitrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -192,6 +200,32 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainApp\\BackEnd\\DashBoardTrains\\Program.cs",
+              "RelativeDocumentMoniker": "BackEnd\\DashBoardTrains\\Program.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainApp\\BackEnd\\DashBoardTrains\\Program.cs",
+              "RelativeToolTip": "BackEnd\\DashBoardTrains\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T11:45:28.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainApp\\FrontApp\\ApiTrain\\Program.cs",
+              "RelativeDocumentMoniker": "FrontApp\\ApiTrain\\Program.cs",
+              "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainApp\\FrontApp\\ApiTrain\\Program.cs",
+              "RelativeToolTip": "FrontApp\\ApiTrain\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T11:45:23.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Program.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Program.cs",
               "ToolTip": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Program.cs",
@@ -201,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Trains.razor.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor.cs",
@@ -213,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CategoryTrains.razor",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor",
@@ -225,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CategoryTrains.razor.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\CategoryTrains.razor.cs",
@@ -237,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ProductService.cs",
@@ -249,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\CRUDE\\Repository.cs",
@@ -261,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\AppData\\Roaming\\Microsoft\\UserSecrets\\f9688a0b-e7be-46a7-8112-7320a92dae98\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\f9688a0b-e7be-46a7-8112-7320a92dae98\\secrets.json",
@@ -273,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ServicesGenerics.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ServicesGenerics.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\ServicesGenerics.cs",
@@ -285,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ApiTrain.csproj",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\ApiTrain.csproj",
@@ -297,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "dependecyInjection.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\DependecyInjection\\dependecyInjection.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\DependecyInjection\\dependecyInjection.cs",
@@ -309,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\CRUDE\\CategoryService.cs",
@@ -321,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\appsettings.Development.json",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\appsettings.Development.json",
@@ -333,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\appsettings.json",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\appsettings.json",
@@ -345,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CrudeEndPointGenerics.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\EndPoints\\CRUDE\\CrudeEndPointGenerics.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\EndPoints\\CRUDE\\CrudeEndPointGenerics.cs",
@@ -357,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Trains.razor",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\TrainPages\\Trains.razor",
@@ -369,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Interfaces\\CRUDE\\IRepository.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Interfaces\\CRUDE\\IRepository.cs",
@@ -381,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "DbContest.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\DbContest.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\DbContest.cs",
@@ -393,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "ModelsDB.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Models\\ModelsDB.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Models\\ModelsDB.cs",
@@ -405,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Program.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Program.cs",
@@ -417,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "EditFormModel.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\EditFormModel.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Services\\EditFormModel.cs",
@@ -429,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "ProvaQueryEF.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\Mock\\ProvaQueryEF.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\Services\\Mock\\ProvaQueryEF.cs",
@@ -441,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "MockUpGrid.razor",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Pages\\MockUpGrid.razor",
@@ -453,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ClientProxyExtensions.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\AppData\\Local\\Temp\\.vsdbgsrc\\c5b2729678e1a03df19e65899b4ad191802bd617a3623b940d97308bcc2b98d9\\ClientProxyExtensions.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\c5b2729678e1a03df19e65899b4ad191802bd617a3623b940d97308bcc2b98d9\\ClientProxyExtensions.cs",
@@ -466,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "App.razor",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\App.razor",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\App.razor",
@@ -478,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Routes.razor",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\Routes.razor",
@@ -490,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\_Imports.razor",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Components\\_Imports.razor",
@@ -502,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "input.css",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Styles\\input.css",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Styles\\input.css",
@@ -514,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "output.css",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Style\\output.css",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Style\\output.css",
@@ -526,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "DashBoardTrains.csproj",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\DashBoardTrains.csproj",
@@ -538,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Models\\Category.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Models\\Category.cs",
@@ -550,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "EndPointTest.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\TrainStationApp\\ApiTrain\\EndPoints\\Mock\\EndPointTest.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\TrainStationApp\\ApiTrain\\EndPoints\\Mock\\EndPointTest.cs",
@@ -562,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\Users\\Zanardo Stefano\\Desktop\\Project-Work\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Models\\Products.cs",
               "RelativeDocumentMoniker": "..\\TrainStationSolution\\DashBoardTrains\\DashBoardTrains\\Models\\Products.cs",
