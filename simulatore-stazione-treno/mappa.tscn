@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://vrek7qx8er1a"]
+
+[ext_resource type="Script" uid="uid://c7ojc0nmeymlt" path="res://Treno.cs" id="1_4qhbo"]
+[ext_resource type="Texture2D" uid="uid://d2lp4vsrxknru" path="res://Assets/RedTrain.png" id="2_8eu3w"]
+[ext_resource type="Texture2D" uid="uid://c07bmsxgq4i5o" path="res://Assets/NormalRails.png" id="3_dem48"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i8iyn"]
+
+[sub_resource type="Curve2D" id="Curve2D_8eu3w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 249, 143, 0, 0, 0, 0, 864, 144)
+}
+point_count = 2
+
+[node name="Mappa" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_i8iyn")
+position = Vector2(-25.88474, 55.49992)
+scale = Vector2(0.97575706, 0.597223)
+points = PackedVector2Array(247, 144, 360, 144, 432, 144, 468, 144, 504, 144, 576, 144, 611.2727, 144.00003, 756, 144, 792, 144, 864, 144, 900, 144, 972, 144)
+width = 36.0
+texture = ExtResource("3_dem48")
+texture_mode = 1
+
+[node name="Binari" type="Path2D" parent="."]
+curve = SubResource("Curve2D_8eu3w")
+
+[node name="Treno" type="PathFollow2D" parent="Binari"]
+position = Vector2(249, 143)
+rotation = 0.0016260148
+script = ExtResource("1_4qhbo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Binari/Treno"]
+position = Vector2(-0.24149732, -1.316244)
+scale = Vector2(0.020449523, 0.043380607)
+texture = ExtResource("2_8eu3w")
