@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="BackEnd/DashBoardTrains/DashBoardTrains.csproj" />
-  <Project Path="FrontApp/ApiTrain/ApiTrain.csproj" />
-</Solution>
