@@ -15,6 +15,7 @@ namespace DashBoardTrains.Models
     public class Train
     {
         public int TrainId { get; set; }
+        
         public string? Destination { get; set; }
         public int Vagons { get; set; }
         public int TimeDelay { get; set; }

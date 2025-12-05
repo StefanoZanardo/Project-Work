@@ -32,17 +32,20 @@ texture = ExtResource("2_epypp")
 texture_mode = 1
 
 [node name="BiforcutedRails3" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(504.00006, 192)
 rotation = 3.1415927
 scale = Vector2(-0.02559028, 0.030674523)
 texture = ExtResource("3_0hol4")
 
 [node name="BiforcutedRails" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(351.0772, 153.25343)
 scale = Vector2(0.02559028, -0.030674523)
 texture = ExtResource("3_0hol4")
 
 [node name="BiforcutedRails2" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(684, 154)
 scale = Vector2(0.02559028, -0.030674523)
 texture = ExtResource("3_0hol4")

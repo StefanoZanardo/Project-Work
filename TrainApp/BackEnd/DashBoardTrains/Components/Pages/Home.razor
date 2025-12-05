@@ -4,6 +4,7 @@
 @using DashBoardTrains.Models.MockUp_Models
 @using static DashBoardTrains.Models.MockUp_Models.Scelta
 @inject DbFalso Db
+@inject NavigationManager _nav
 
 
 <h1 class="text-3xl font-bold underline">
@@ -109,14 +110,15 @@
 
 
 @code {
-	private bool isAlertVisible = false;
-	private string alertMessage = string.Empty;
+    private bool isAlertVisible = false;
+    private string alertMessage = string.Empty;
     private string tipoCorrente = "Entrate"; 
     private Scelta scelta = new Entrate();
     private Stack<string> formStack = new Stack<string>();
 
     protected override async Task OnInitializedAsync()
     {
+        _nav.NavigateTo("/dashboard", forceLoad: true);
         formStack = EditFormModel.GenEditFormTable(scelta, "scelta");
     }
 

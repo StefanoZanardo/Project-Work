@@ -2,6 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainStationSolution\DashBoardTrains\DashBoardTrains\Properties\PublishProfiles\DashBoardTrains - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Zanardo Stefano\Desktop\Project-Work\TrainApp\BackEnd\DashBoardTrains\Properties\PublishProfiles\ApiTrainsProjectWork - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

@@ -44,5 +44,10 @@ namespace DashBoardTrains.Components.Pages.TrainPages
                 }
             }
         }
+
+        //private async Task Canc(int id)
+        //{
+        //    await Service.DeleteRow()
+        //}
     }
 }
