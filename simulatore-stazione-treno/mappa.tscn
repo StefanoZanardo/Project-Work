@@ -8,9 +8,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_8eu3w"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 249, 143, 0, 0, 0, 0, 864, 144)
+"points": PackedVector2Array(0, 0, 0, 0, 249, 143, 0, 0, 0, 0, 343, 143, 0, 0, 0, 0, 383, 179, 0, 0, 0, 0, 798, 181, 0, 0, 0, 0, 902, 180, 0, 0, 0, 0, 941, 181)
 }
-point_count = 2
+point_count = 6
 
 [node name="Mappa" type="Node2D"]
 
@@ -29,7 +29,6 @@ curve = SubResource("Curve2D_8eu3w")
 
 [node name="Treno" type="PathFollow2D" parent="Binari"]
 position = Vector2(249, 143)
-rotation = 0.0016260148
 script = ExtResource("2_dem48")
 
 [node name="Sprite2D" type="Sprite2D" parent="Binari/Treno"]

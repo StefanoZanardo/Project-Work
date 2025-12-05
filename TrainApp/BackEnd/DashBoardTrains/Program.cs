@@ -14,42 +14,43 @@ namespace DashBoardTrains
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddSingleton<DbFalso>();
+            builder.Services.AddHttpClient<CategoryService>(opt => { opt.BaseAddress = new Uri("https://alexi-its.azurewebsites.net"); });
+            builder.Services.AddHttpClient("GenericHttpClient", opt => { opt.BaseAddress = new Uri("https://alexi-its.azurewebsites.net"); });
+            builder.Services.AddScoped(typeof(ServicesGenerics<>));
+            builder.Services.AddScoped<ProductService>();
+            builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
-            builder.Services.AddHttpClient<CategoryService>(opt =>
+            var app = builder.Build();
+
+            app.Use(async (context, next) =>
             {
-                opt.BaseAddress = new Uri("https://alexi-its.azurewebsites.net");
+                context.Response.Headers.Append("Cross-Origin-Opener-Policy", "same-origin");
+                context.Response.Headers.Append("Cross-Origin-Embedder-Policy", "require-corp");
+                await next();
             });
 
-            builder.Services.AddHttpClient("GenericHttpClient", opt => 
+            var provider = new Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider();
+            provider.Mappings[".pck"] = "application/octet-stream";
+            provider.Mappings[".wasm"] = "application/wasm";
+
+
+            app.UseStaticFiles(new StaticFileOptions
             {
-                opt.BaseAddress = new Uri("https://alexi-its.azurewebsites.net");
+                ContentTypeProvider = provider
+            });
 
-            }
-            );
-            builder.Services.AddScoped(typeof(ServicesGenerics<>));
 
-            builder.Services.AddScoped<ProductService>();   
 
-            // Add services to the container.
-            builder.Services.AddRazorComponents()
-                .AddInteractiveServerComponents();
-
-            
-            var app = builder.Build();
-                
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
-
             app.UseAntiforgery();
 
-            app.MapStaticAssets();
+           
             app.MapRazorComponents<App>()
                 .AddInteractiveServerRenderMode();
 

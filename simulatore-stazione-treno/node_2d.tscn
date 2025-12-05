@@ -12,10 +12,11 @@
 position = Vector2(0, -8)
 
 [node name="Line2D" type="Line2D" parent="."]
+show_behind_parent = true
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
-position = Vector2(-25.969898, 96.00001)
-scale = Vector2(0.9761606, 0.5347209)
+position = Vector2(-26.499386, 96.00001)
+scale = Vector2(0.97866994, 0.5347209)
 points = PackedVector2Array(247, 144, 270.44104, 144, 360, 144, 432, 144, 468, 144, 504, 144, 576, 144, 611.2727, 144.00003, 756, 144, 792, 144, 864, 144, 900, 144, 972, 144)
 width = 36.0
 texture = ExtResource("2_epypp")
@@ -24,8 +25,18 @@ texture_mode = 1
 [node name="Line2D" type="Line2D" parent="Line2D"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
-position = Vector2(1.9073486e-06, 44.883263)
-scale = Vector2(0.99104744, 1.1482702)
+position = Vector2(-2.5551147, 59.844284)
+scale = Vector2(1.0049343, 1.1607169)
+points = PackedVector2Array(247, 144, 270.44104, 144, 341.79016, 144.00006, 360, 144, 432, 144, 468, 144, 504, 144, 576, 144, 611.2727, 144.00003, 756, 144, 792, 144, 864, 144, 900, 144, 972, 144)
+width = 36.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="Line2D" type="Line2D" parent="Line2D/Line2D"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_q6r6c")
+position = Vector2(-2.9301434, 43.539036)
+scale = Vector2(1.0049343, 1.1607169)
 points = PackedVector2Array(247, 144, 270.44104, 144, 341.79016, 144.00006, 360, 144, 432, 144, 468, 144, 504, 144, 576, 144, 611.2727, 144.00003, 756, 144, 792, 144, 864, 144, 900, 144, 972, 144)
 width = 36.0
 texture = ExtResource("2_epypp")
