@@ -28,7 +28,7 @@ namespace DashBoardTrains.Components.Pages.TrainPages
         {
 
             Properties = typeof(T).GetProperties()
-                .Where(p => p.GetCustomAttribute<JsonIgnoreAttribute>() == null)
+                .Where(p => p.GetCustomAttribute<JsonIgnoreAttribute>() == null && !p.Name.Contains("Id", StringComparison.OrdinalIgnoreCase))
                 .ToList();
 
 
