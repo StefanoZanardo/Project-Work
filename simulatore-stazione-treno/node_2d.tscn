@@ -9,23 +9,71 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RailSegment" type="Node2D" parent="."]
-position = Vector2(15, 101.82)
+[node name="RailSegment1" type="Node2D" parent="."]
+position = Vector2(15, 100)
 script = ExtResource("1_epypp")
 
-[node name="Line2D" type="Line2D" parent="RailSegment"]
+[node name="Line2D" type="Line2D" parent="RailSegment1"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 scale = Vector2(0.97866994, 0.5347209)
-points = PackedVector2Array(0, 0, 970, 0)
+points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
+[node name="RailSegment2" type="Node2D" parent="."]
+position = Vector2(16, 150)
+script = ExtResource("1_epypp")
+
+[node name="Line2D" type="Line2D" parent="RailSegment2"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_q6r6c")
+scale = Vector2(0.97866994, 0.5347209)
+points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+width = 36.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="RailSegment3" type="Node2D" parent="."]
+position = Vector2(16, 200)
+script = ExtResource("1_epypp")
+
+[node name="Line2D" type="Line2D" parent="RailSegment3"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_q6r6c")
+scale = Vector2(0.97866994, 0.5347209)
+points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+width = 36.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="RailSegment4" type="Node2D" parent="."]
+position = Vector2(16, 250)
+scale = Vector2(0.97866994, 0.5347209)
+script = ExtResource("1_epypp")
+
+[node name="Line2D" type="Line2D" parent="RailSegment4"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_q6r6c")
+position = Vector2(0.66147506, 1.0384989)
+scale = Vector2(0.9970443, 0.9639145)
+points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+width = 36.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="CrossRoad" type="Node2D" parent="."]
+position = Vector2(697.00006, 102.000015)
+scale = Vector2(0.95779485, 0.5154252)
+
+[node name="Line2D" type="Line2D" parent="CrossRoad"]
+points = PackedVector2Array(1.0440063, -3.0517578e-05, 56.379456, 102.8277)
+
 [node name="Train" type="Node2D" parent="."]
-position = Vector2(18, 100)
+position = Vector2(14, 103)
 script = ExtResource("4_q6r6c")
-current_segment_path = NodePath("../RailSegment")
+line_2d = NodePath("../RailSegment1/Line2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Train"]
 scale = Vector2(0.021019522, 0.02812844)

@@ -1,33 +1,37 @@
-extends Node2D
+extends Node2D 
+@export var speed : float = 200.0
+@export var line_2d : NodePath
+var line_node : Line2D
+var rail_point : PackedVector2Array
+var current_point_index : int = 0
 
-@export var current_segment_path : NodePath
-var current_segment : Node = null
-var t := 0.0
-var speed := 200.0
-var stopped := false
+
 
 func _ready():
-	if current_segment_path != null:
-		current_segment = get_node(current_segment_path)
-		# Posiziona il treno sul primo punto del segmento
-		position = current_segment.to_global(current_segment.points[0])
-		z_index = 1  # sopra la Line2D
-
-		# opzionale: correggi lo spessore della Line2D se necessario
-		# position.y -= current_segment.$Line2D.width / 2
-
-func _physics_process(delta):
-	if current_segment == null or stopped:
-		return
-
-	# posizione globale dei punti
-	var start_pos = current_segment.to_global(current_segment.points[0])
-	var end_pos = current_segment.to_global(current_segment.points[1])
-
-	t += speed * delta / current_segment.length()
-	if t >= 1.0:
-		t = 1.0
-		stopped = true  # ferma il treno
-
-	position = start_pos.lerp(end_pos, t)
-	rotation = (end_pos - start_pos).angle()
+	if line_2d:
+		line_node = get_node(line_2d)
+	
+	rail_point = line_node.get_global_transform()*line_node.points
+	print(rail_point)
+	
+	global_position = rail_point[0]
+	current_point_index = 1
+	
+func _physics_process(delta: float) -> void:
+	if current_point_index < rail_point.size():
+		var target_point:Vector2 = rail_point[current_point_index]
+		var direction: Vector2 = (target_point - global_position).normalized()
+		var distance_to_travel : float = delta * speed
+		var distance_to_target_point : float = global_position.distance_to(target_point)
+		if distance_to_travel >= distance_to_target_point:
+			global_position = target_point
+			current_point_index += 1
+			if current_point_index > rail_point.size():
+				set_process(false)
+		else:
+			print(direction)
+			print(distance_to_travel)
+			global_position += direction*distance_to_travel
+			rotation = direction.angle()
+			
+		

@@ -1,54 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://vrek7qx8er1a"]
+[gd_scene load_steps=4 format=3 uid="uid://vrek7qx8er1a"]
 
-[ext_resource type="Texture2D" uid="uid://d2lp4vsrxknru" path="res://Assets/RedTrain.png" id="2_8eu3w"]
-[ext_resource type="Texture2D" uid="uid://c07bmsxgq4i5o" path="res://Assets/NormalRails.png" id="3_dem48"]
+[sub_resource type="Curve2D" id="Curve2D_c4ipf"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i8iyn"]
+[sub_resource type="GDScript" id="GDScript_0pjtc"]
+script/source = "# RailSegment.gd
+extends Path2D
 
-[sub_resource type="Curve2D" id="Curve2D_8eu3w"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 249, 143, 0, 0, 0, 0, 343, 143, 0, 0, 0, 0, 383, 179, 0, 0, 0, 0, 798, 181, 0, 0, 0, 0, 902, 180, 0, 0, 0, 0, 941, 181)
-}
-point_count = 6
-
-[sub_resource type="GDScript" id="GDScript_epypp"]
-script/source = "extends PathFollow2D
-
-# Velocità in pixel al secondo
-# @export rende la variabile modificabile dall'Inspector di Godot
-@export var speed: float = 100.0
+@export var next_segments: Array[Path2D] = [] # Qui trascini i binari successivi dall'editor
 
 func _ready():
-	# Disabilita il loop se vuoi che il treno si fermi alla fine
-	# Lascialo a true se è un circuito chiuso
-	loop = true
+	# Opzionale: disegna la Line2D usando i punti della curva del Path
+	if has_node(\"Line2D\"):
+		$Line2D.points = curve.get_baked_points()"
 
-func _process(delta):
-	# Muove il treno lungo il percorso
-	# \"progress\" è la proprietà nativa di PathFollow2D (equivalente a Progress in C#)
-	progress += speed * delta
-"
+[sub_resource type="Curve2D" id="Curve2D_4qhbo"]
 
 [node name="Mappa" type="Node2D"]
 
-[node name="Line2D" type="Line2D" parent="."]
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_i8iyn")
-position = Vector2(-36, 53.000004)
-scale = Vector2(0.97575706, 0.597223)
-points = PackedVector2Array(247, 144, 360, 144, 432, 144, 468, 144, 504, 144, 576, 144, 611.2727, 144.00003, 667.0561, 143.16275, 756, 144, 792, 144, 864, 144, 900, 144, 972, 144)
-width = 36.0
-texture = ExtResource("3_dem48")
-texture_mode = 1
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_c4ipf")
+script = SubResource("GDScript_0pjtc")
 
-[node name="Binari" type="Path2D" parent="."]
-curve = SubResource("Curve2D_8eu3w")
+[node name="RailSegment" type="Path2D" parent="Path2D"]
+curve = SubResource("Curve2D_4qhbo")
 
-[node name="Treno" type="PathFollow2D" parent="Binari"]
-position = Vector2(249, 143)
-script = SubResource("GDScript_epypp")
-
-[node name="Sprite2D" type="Sprite2D" parent="Binari/Treno"]
-position = Vector2(-0.24149732, -1.316244)
-scale = Vector2(0.020449523, 0.043380607)
-texture = ExtResource("2_8eu3w")
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D/RailSegment"]
