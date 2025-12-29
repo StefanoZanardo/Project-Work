@@ -1,17 +1,19 @@
 extends Node2D
 class_name RailSegment
-@export var line_path: NodePath
-var line_node: Line2D
-var points_global: PackedVector2Array = []
-
-func _ready():
-	if line_path:
-		line_node = get_node(line_path)
-	else:
-		line_node = $Line2D  
-	points_global = line_node.get_global_transform() * line_node.points
-	print(points_global)
-
 
 func get_global_points() -> PackedVector2Array:
-	return line_node.get_global_transform() * line_node.points
+	var total_points = PackedVector2Array()
+	
+	# Scorre tutti i nodi figli di questo RailSegment
+	for child in get_children():
+		
+		# Controlla se il figlio è una Line2D
+		if child is Line2D:
+			var linea = child
+			var xform = linea.get_global_transform()
+			
+			# Converte i punti di QUESTA linea in globali e li aggiunge al totale
+			for p in linea.points:
+				total_points.append(xform * p)
+	
+	return total_points
