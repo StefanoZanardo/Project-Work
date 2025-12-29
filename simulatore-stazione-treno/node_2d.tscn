@@ -9,11 +9,11 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RailSegment1" type="Node2D" parent="."]
-position = Vector2(15, 100)
+[node name="RailSegments" type="Node2D" parent="."]
+position = Vector2(125, 209)
 script = ExtResource("1_epypp")
 
-[node name="Line2D" type="Line2D" parent="RailSegment1"]
+[node name="Line2D" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 scale = Vector2(0.97866994, 0.5347209)
@@ -22,15 +22,7 @@ width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
-[node name="BivioLinea" type="Line2D" parent="RailSegment1"]
-position = Vector2(938, 0)
-scale = Vector2(0.9577947, 0.5154252)
-points = PackedVector2Array(1.0440063, -3.0517578e-05, 192.10797, 23.281754, 221.34174, 240.57808, 137.81659, 205.65544)
-width = 20.0
-texture = ExtResource("2_epypp")
-texture_mode = 1
-
-[node name="Line2D2" type="Line2D" parent="RailSegment1"]
+[node name="Line2D2" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(1, 50)
@@ -40,7 +32,7 @@ width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
-[node name="Line2D3" type="Line2D" parent="RailSegment1"]
+[node name="Line2D3" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(1, 100)
@@ -50,7 +42,17 @@ width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
-[node name="Line2D4" type="Line2D" parent="RailSegment1"]
+[node name="Line2D5" type="Line2D" parent="RailSegments"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_q6r6c")
+position = Vector2(1010.99994, -53)
+scale = Vector2(0.97866994, 0.5347209)
+points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+width = 36.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="Line2D4" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(3, 151)
@@ -60,12 +62,56 @@ width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
+[node name="BivioLinea" type="Line2D" parent="RailSegments"]
+position = Vector2(743, 2)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea2" type="Line2D" parent="RailSegments"]
+position = Vector2(739, 53)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea3" type="Line2D" parent="RailSegments"]
+position = Vector2(743, 105)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea4" type="Line2D" parent="RailSegments"]
+position = Vector2(1738, -55)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea5" type="Line2D" parent="RailSegments"]
+position = Vector2(1733, 95)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
 [node name="Train" type="Node2D" parent="." node_paths=PackedStringArray("rail_")]
-position = Vector2(14, 103)
+position = Vector2(133, 209)
 script = ExtResource("4_q6r6c")
-line_2d = NodePath("../RailSegment1/Line2D")
-rail_ = NodePath("../RailSegment1")
+line_2d = NodePath("../RailSegments/Line2D")
+rail_ = NodePath("../RailSegments")
 
 [node name="Sprite2D" type="Sprite2D" parent="Train"]
 scale = Vector2(0.021019522, 0.02812844)
 texture = ExtResource("3_0hol4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 322)
+zoom = Vector2(0.5, 0.5)
