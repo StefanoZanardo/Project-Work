@@ -1,13 +1,9 @@
 extends Node2D
 class_name RailSegment
-#Qua ho messo tutti i punti dove i treni potranno partire o arrivare
-var InitialorEndPoints : Dictionary = {"L1": Vector2(-511, 210),
-	"L2":Vector2(-511,260),"R1":Vector2(1575,210),"R2":Vector2(1575,260),
-	"C2":Vector2(294,690),"C1":Vector2(227,708)}
+
 var info_rail = BinarioInfo.new()
+var mockPackedArray : PackedVector2Array
 func get_global_points() -> BinarioInfo:
-	
-	
 	# Scorre tutti i nodi figli di questo RailSegment
 	for child in get_children():
 		
@@ -27,5 +23,47 @@ func get_global_points() -> BinarioInfo:
 			# Converte i punti di QUESTA linea in globali e li aggiunge al totale
 			for p in linea.points:
 				info_rail.rail_segment.append(xform * p)
-	
+				mockPackedArray.append(xform * p)
+	print(mockPackedArray)
 	return info_rail
+
+func calcTargetPointTrain(_actualPos:Vector2,_targetEnd:Vector2)->Vector2:
+	var binary : BinarioInfo = get_global_points()
+	var vector = Vector2(99999,99999)
+	
+	if abs(_actualPos.y - _targetEnd.y) > 20:
+		for cross in binary.crossroad:
+			var dist_y = abs(cross.y - _actualPos.y)
+			if  (35 < dist_y and dist_y < 65) and (vector.x > cross.x) and (_actualPos.x < cross.x):
+				vector = cross
+	elif abs(_actualPos.distance_to(_targetEnd)) <= 10 :
+		vector = Vector2.ZERO
+	else :
+		for _rail in binary.rail_segment:
+			if (abs(_rail.y - _actualPos.y) < 20) and (abs(_rail.x - _actualPos.x)>200):
+				vector = _rail
+	
+	return vector
+# Cosa faccio creo due funzioni una che mi ritorna data la nostra posizione quando finisce 
+#ritorna il punto del binario così da farla andare avanti 
+#Un altra funzione chiamata dal treno quando passa vicino ad un punto crossroad 
+#il quale ritorna un Vector2 del camnio corsia
+func getBinary(_actualPos: Vector2, foward : bool) -> Vector2:
+	var _vector : Vector2 
+	var binary : BinarioInfo = get_global_points()
+	match foward:
+		true:
+			for point in binary.rail_segment:
+				if (_actualPos.x + point.x) > 100 and abs(_actualPos.y - point.y) < 20:
+					_vector = point
+		false:
+			for point in binary.rail_segment:
+				if (_actualPos.x - point.x) < 100 and abs(_actualPos.y - point.y) < 20:
+					_vector = point
+	return _vector
+
+			
+			
+	
+			
+	
