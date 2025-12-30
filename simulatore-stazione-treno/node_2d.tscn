@@ -42,7 +42,7 @@ texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(-123, 312)
 scale = Vector2(0.827353, 0.34769902)
-points = PackedVector2Array(4.2688904, -95.37683, 270.74295, 534.94543)
+points = PackedVector2Array(8.460717, -86.281494, 270.74295, 534.94543)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
@@ -129,6 +129,14 @@ texture_mode = 1
 position = Vector2(2151.0002, -4)
 scale = Vector2(0.9577947, 0.5154252)
 points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea8Inizio" type="Line2D" parent="RailSegments"]
+position = Vector2(333, 3)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-824.81134, -5.8204346, -771.564, 93.127)
 width = 20.0
 texture = ExtResource("2_epypp")
 texture_mode = 1

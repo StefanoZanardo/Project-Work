@@ -39,11 +39,11 @@ func _ready():
 	
 	
 	global_position = InitialorEndPoints["L1"]
-	targetEnd = InitialorEndPoints["C2"]
+	targetEnd = InitialorEndPoints["C1"]
 	current_point_index = 0
 	foward = _isFoward(global_position, targetEnd)
-	activepath.append(rail_.getBinary(global_position, foward))
-	StoryOfPoints.append(rail_.getBinary(global_position, foward))
+	activepath.append(rail_.getBinary(global_position, targetEnd, foward))
+	StoryOfPoints.append(rail_.getBinary(global_position,targetEnd, foward))
 	#Qua quello che facciamo è dire al nostro treno qual è la nostra crossroad attuale
 	#ActualCrossRoad = _actual_crossroadpoint(crossroadPoints)
 
@@ -55,20 +55,18 @@ func _physics_process(delta: float) -> void:
 		var distance_to_travel : float = delta * speed
 		var distance_to_target_point : float = global_position.distance_to(target_point)
 		_isNearToCross()
-		if ChangeLaneRail and StoryOfPoints[-1] != global_position  :
-			activepath[0]=rail_.calcTargetPointTrain(global_position,targetEnd)
+		if ChangeLaneRail and StoryOfPoints[-1] != global_position :
+			activepath[0]=_isNearToCross()
 			StoryOfPoints.append(activepath[0])
-			#activepath[0] = ActualCrossRoad[0]
-			#activepath[1] = ActualCrossRoad[1]
-			#ActualCrossRoad = _actual_crossroadpoint(crossroadPoints)
 		if distance_to_travel >= distance_to_target_point:
-			activepath[0]=rail_.getBinary(global_position, foward)
+			activepath[0]=rail_.getBinary(global_position, targetEnd, foward)
 			StoryOfPoints.append(activepath[0])
 			#_filter_points()
 			
 			print(activepath)
 			global_position = target_point
-			if activepath[0] >= targetEnd:
+			if global_position >= targetEnd:
+				print(StoryOfPoints)
 				set_physics_process(false)
 		
 		
@@ -105,15 +103,30 @@ func _isFoward(initialPos: Vector2, endPos : Vector2)->bool:
 	else:
 		return false
 
-func _isNearToCross() -> void:
+func _isNearToCross() -> Vector2:
+	var _vector : Vector2
 	var trovato_scambio : bool = false
-	
-	for punto in crossroadPoints:
-		if global_position.distance_to(punto) < 2.0:
-			trovato_scambio = true
-			break 
-	
-	
+	match foward:
+		true:
+			for i in range(crossroadPoints.size() -1):
+				if global_position.distance_to(crossroadPoints[i]) < 2.0:
+					trovato_scambio = true
+					_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i+1])
+					break 
+				else:
+					_vector = activepath[0]
+		false:
+			for i in range(crossroadPoints.size() -1):
+				if global_position.distance_to(crossroadPoints[i]) < 2.0:
+					trovato_scambio = true
+					_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i-1])
+					break
+				else:
+					_vector = activepath[0]
+					
 	ChangeLaneRail = trovato_scambio
+	return _vector
+	
+	
 				
 	
