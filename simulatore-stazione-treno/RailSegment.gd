@@ -1,9 +1,12 @@
 extends Node2D
 class_name RailSegment
-
-
+#Qua ho messo tutti i punti dove i treni potranno partire o arrivare
+var InitialorEndPoints : Dictionary = {"L1": Vector2(-511, 210),
+	"L2":Vector2(-511,260),"R1":Vector2(1575,210),"R2":Vector2(1575,260),
+	"C2":Vector2(294,690),"C1":Vector2(227,708)}
+var info_rail = BinarioInfo.new()
 func get_global_points() -> BinarioInfo:
-	var info_rail = BinarioInfo.new()
+	
 	
 	# Scorre tutti i nodi figli di questo RailSegment
 	for child in get_children():

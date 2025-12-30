@@ -36,11 +36,11 @@ func _ready():
 	ActualCrossRoad = _actual_crossroadpoint(crossroadPoints)
 	
 	print(ActualCrossRoad)
-	
-	
-	
 
 	
+
+
+
 	
 	
 	
@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		var direction: Vector2 = (target_point - global_position).normalized()
 		var distance_to_travel : float = delta * speed
 		var distance_to_target_point : float = global_position.distance_to(target_point)
-		if ChangeLaneRail == true && global_position.distance_to(ActualCrossRoad[0]) < 20.0:
+		if ChangeLaneRail == true && global_position.distance_to(ActualCrossRoad[0]) < 2.0:
 			activepath[0] = ActualCrossRoad[0]
 			activepath[1] = ActualCrossRoad[1]
 			ActualCrossRoad = _actual_crossroadpoint(crossroadPoints)

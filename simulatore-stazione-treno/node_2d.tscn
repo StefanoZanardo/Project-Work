@@ -9,14 +9,19 @@
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(436, 282)
+zoom = Vector2(0.5, 0.5)
+
 [node name="RailSegments" type="Node2D" parent="."]
-position = Vector2(125, 209)
+position = Vector2(126, 210)
 script = ExtResource("1_epypp")
 
-[node name="Line2D" type="Line2D" parent="RailSegments"]
+[node name="Line2D1" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
-scale = Vector2(0.97866994, 0.5347209)
+position = Vector2(-637.6455, 0)
+scale = Vector2(2.176515, 0.5347209)
 points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
 width = 36.0
 texture = ExtResource("2_epypp")
@@ -25,9 +30,29 @@ texture_mode = 1
 [node name="Line2D2" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
-position = Vector2(1, 50)
-scale = Vector2(0.97866994, 0.5347209)
+position = Vector2(-637.68036, 50)
+scale = Vector2(2.1755455, 0.5347209)
 points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+width = 36.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="Line2DCargo1" type="Line2D" parent="RailSegments"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_q6r6c")
+position = Vector2(-123, 312)
+scale = Vector2(0.827353, 0.34769902)
+points = PackedVector2Array(4.2688904, -95.37683, 270.74295, 534.94543)
+width = 36.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="Line2DCargo2" type="Line2D" parent="RailSegments"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_q6r6c")
+position = Vector2(-162, 187)
+scale = Vector2(0.827353, 0.34769902)
+points = PackedVector2Array(4.2688904, -95.37683, 398.86237, 842.68286)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
@@ -35,18 +60,8 @@ texture_mode = 1
 [node name="Line2D3" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
-position = Vector2(1, 100)
-scale = Vector2(0.97866994, 0.5347209)
-points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
-width = 36.0
-texture = ExtResource("2_epypp")
-texture_mode = 1
-
-[node name="Line2D5" type="Line2D" parent="RailSegments"]
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_q6r6c")
-position = Vector2(1010.99994, -53)
-scale = Vector2(0.97866994, 0.5347209)
+position = Vector2(-297.6928, 100)
+scale = Vector2(1.5085335, 0.5347209)
 points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
 width = 36.0
 texture = ExtResource("2_epypp")
@@ -55,15 +70,15 @@ texture_mode = 1
 [node name="Line2D4" type="Line2D" parent="RailSegments"]
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
-position = Vector2(3, 151)
-scale = Vector2(0.9757773, 0.5154252)
+position = Vector2(122.79569, 151)
+scale = Vector2(0.8554359, 0.5154252)
 points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
 [node name="BivioLinea" type="Line2D" parent="RailSegments"]
-position = Vector2(743, 2)
+position = Vector2(860, 2)
 scale = Vector2(0.9577947, 0.5154252)
 points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
 width = 20.0
@@ -71,7 +86,7 @@ texture = ExtResource("2_epypp")
 texture_mode = 1
 
 [node name="BivioLinea2" type="Line2D" parent="RailSegments"]
-position = Vector2(739, 53)
+position = Vector2(859, 53)
 scale = Vector2(0.9577947, 0.5154252)
 points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
 width = 20.0
@@ -79,7 +94,7 @@ texture = ExtResource("2_epypp")
 texture_mode = 1
 
 [node name="BivioLinea3" type="Line2D" parent="RailSegments"]
-position = Vector2(743, 105)
+position = Vector2(859, 103)
 scale = Vector2(0.9577947, 0.5154252)
 points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
 width = 20.0
@@ -87,7 +102,7 @@ texture = ExtResource("2_epypp")
 texture_mode = 1
 
 [node name="BivioLinea4" type="Line2D" parent="RailSegments"]
-position = Vector2(1738, -55)
+position = Vector2(1739, -5)
 scale = Vector2(0.9577947, 0.5154252)
 points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
 width = 20.0
@@ -102,16 +117,52 @@ width = 20.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
+[node name="BivioLinea6" type="Line2D" parent="RailSegments"]
+position = Vector2(1949, 50)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea7" type="Line2D" parent="RailSegments"]
+position = Vector2(2151.0002, -4)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea8CargoBivio" type="Line2D" parent="RailSegments"]
+position = Vector2(443, 52)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea8CargoBivio2" type="Line2D" parent="RailSegments"]
+position = Vector2(583, 105)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-822.72327, -1.9401398, -771.564, 93.127)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
+[node name="BivioLinea8CargoBivio3" type="Line2D" parent="RailSegments"]
+position = Vector2(683, 217)
+scale = Vector2(0.9577947, 0.5154252)
+points = PackedVector2Array(-822.72327, -1.9401398, -838.38416, 122.22919)
+width = 20.0
+texture = ExtResource("2_epypp")
+texture_mode = 1
+
 [node name="Train" type="Node2D" parent="." node_paths=PackedStringArray("rail_")]
-position = Vector2(133, 209)
+position = Vector2(88, 16)
 script = ExtResource("4_q6r6c")
-line_2d = NodePath("../RailSegments/Line2D")
+line_2d = NodePath("../RailSegments/Line2D1")
 rail_ = NodePath("../RailSegments")
 
 [node name="Sprite2D" type="Sprite2D" parent="Train"]
 scale = Vector2(0.021019522, 0.02812844)
 texture = ExtResource("3_0hol4")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(577, 322)
-zoom = Vector2(0.5, 0.5)
