@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		var distance_to_travel : float = delta * speed
 		var distance_to_target_point : float = global_position.distance_to(target_point)
 		_isNearToCross()
-		if ChangeLaneRail and StoryOfPoints[-1] != global_position :
+		if ChangeLaneRail  and StoryOfPoints[-1] != global_position:
 			activepath[0]=_isNearToCross()
 			StoryOfPoints.append(activepath[0])
 		if distance_to_travel >= distance_to_target_point:
@@ -109,7 +109,8 @@ func _isNearToCross() -> Vector2:
 	match foward:
 		true:
 			for i in range(crossroadPoints.size() -1):
-				if global_position.distance_to(crossroadPoints[i]) < 2.0:
+				var a = global_position.distance_to(crossroadPoints[i])
+				if global_position.distance_to(crossroadPoints[i]) < 1.5:
 					trovato_scambio = true
 					_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i+1])
 					break 
@@ -117,7 +118,7 @@ func _isNearToCross() -> Vector2:
 					_vector = activepath[0]
 		false:
 			for i in range(crossroadPoints.size() -1):
-				if global_position.distance_to(crossroadPoints[i]) < 2.0:
+				if global_position.distance_to(crossroadPoints[i]) < 1.5:
 					trovato_scambio = true
 					_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i-1])
 					break

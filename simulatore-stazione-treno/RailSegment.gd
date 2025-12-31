@@ -52,9 +52,9 @@ func calcTargetPointTrain(_actualPos:Vector2,_targetEnd:Vector2)->Vector2:
 #Un altra funzione chiamata dal treno quando passa vicino ad un punto crossroad 
 #il quale ritorna un Vector2 del camnio corsia
 func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vector2:
-	var _vector : Vector2 = targetPoint
+	var _vector : Vector2 
 	var binary : BinarioInfo = get_global_points()
-	var distance : float = 99999.0
+	var a = targetPoint.angle_to(_actualPos)
 	match foward:
 		true:
 			for point in binary.rail_segment:
@@ -70,7 +70,11 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossTarget:Vector2) -> Vector2:
 	var _vector : Vector2
 	var pos = abs(_actualPos.y-_targetPos.y)
-	if pos > 40 and abs(_crossTarget.y - _targetPos.y) < pos:
+	var a = _targetPos.angle_to(_actualPos)
+	var b = _activePath.angle_to(_actualPos)
+	var c = abs(a - b)
+	if pos > 40 and abs(_crossTarget.y - _targetPos.y) < pos and c > 0.2:
+		
 		return _crossTarget
 	else:
 		return _activePath
