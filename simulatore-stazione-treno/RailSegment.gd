@@ -2,6 +2,7 @@ extends Node2D
 class_name RailSegment
 
 var info_rail = BinarioInfo.new()
+
 var mockPackedArray : PackedVector2Array
 func get_global_points() -> BinarioInfo:
 	info_rail.crossroad.clear()
@@ -60,6 +61,8 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 			for point in binary.rail_segment:
 				if (_actualPos.x + point.x) > 30 and abs(_actualPos.y - point.y) < 10:
 					_vector = point
+				else:
+					_vector = targetPoint
 					#distance = _actualPos.distance_to(_vector)
 		false:
 			for point in binary.rail_segment:
@@ -73,11 +76,25 @@ func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vecto
 	var a = _targetPos.angle_to(_actualPos)
 	var b = _activePath.angle_to(_actualPos)
 	var c = abs(a - b)
-	if pos > 40 and abs(_crossTarget.y - _targetPos.y) < pos and c > 0.2:
+	if pos > 40 and abs(_crossTarget.y - _targetPos.y) < pos and c > 0.01:
 		
 		return _crossTarget
 	else:
 		return _activePath
+
+func ArraySegmentBinaryGet() -> BinarioInfo.BinarioInfoTratti:
+	var binary : BinarioInfo = get_global_points()
+	var railReturn = BinarioInfo.BinarioInfoTratti.new()
+	for i in range(0, binary.rail_segment.size() - 1, 2):
+		var inizio = binary.rail_segment[i]
+		var fine = binary.rail_segment[i+1]
+		railReturn.rail_segment.append(BinarioInfo.PezzoBinario.new(inizio, fine))
+	for i in range(0, binary.crossroad.size() - 1, 2):
+		var inizio = binary.crossroad[i]
+		var fine = binary.crossroad[i+1]
+		railReturn.crossroad.append(BinarioInfo.PezzoBinario.new(inizio, fine))
+	return railReturn
+	
 
 			
 

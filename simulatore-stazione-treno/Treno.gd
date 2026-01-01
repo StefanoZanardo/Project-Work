@@ -19,12 +19,14 @@ var InitialorEndPoints : Dictionary = {"L1": Vector2(-511, 210),
 var targetEnd : Vector2
 #Questo serve per tenere conto dei punti già fatti bisognerà migliorarlo
 var StoryOfPoints : PackedVector2Array
+#Questo serve per avere tutti i tratti in una lista ben ordinata 
+var railSegmentPoints : BinarioInfo.BinarioInfoTratti
 
 
 func _ready():
 	
 		
-	railPoints = rail_.get_global_points()
+	railPoints = await rail_.get_global_points()
 	
 	crossroadPoints = railPoints.crossroad
 	#rail_point = railPoints.rail_segment
@@ -32,18 +34,18 @@ func _ready():
 	#Questo è hard coded poi dovrà essre messo dinamicamente 
 	ChangeLaneRail = false
 	#Anche questo è hardcoded
-	
+	railSegmentPoints = await rail_.ArraySegmentBinaryGet()
 	
 	
 	#Qua metto i punti di partenza e di arrivo
 	
 	
 	global_position = InitialorEndPoints["L1"]
-	targetEnd = InitialorEndPoints["C1"]
+	targetEnd = InitialorEndPoints["C2"]
 	current_point_index = 0
 	foward = _isFoward(global_position, targetEnd)
-	activepath.append(rail_.getBinary(global_position, targetEnd, foward))
-	StoryOfPoints.append(rail_.getBinary(global_position,targetEnd, foward))
+	activepath.append(await rail_.getBinary(global_position, targetEnd, foward))
+	StoryOfPoints.append(await rail_.getBinary(global_position,targetEnd, foward))
 	#Qua quello che facciamo è dire al nostro treno qual è la nostra crossroad attuale
 	#ActualCrossRoad = _actual_crossroadpoint(crossroadPoints)
 
@@ -54,9 +56,9 @@ func _physics_process(delta: float) -> void:
 		var direction: Vector2 = (target_point - global_position).normalized()
 		var distance_to_travel : float = delta * speed
 		var distance_to_target_point : float = global_position.distance_to(target_point)
-		_isNearToCross()
-		if ChangeLaneRail  and StoryOfPoints[-1] != global_position:
-			activepath[0]=_isNearToCross()
+		await _isNearToCross()
+		if ChangeLaneRail :
+			activepath[0]= await _isNearToCross()
 			StoryOfPoints.append(activepath[0])
 		if distance_to_travel >= distance_to_target_point:
 			activepath[0]=rail_.getBinary(global_position, targetEnd, foward)
@@ -108,11 +110,18 @@ func _isNearToCross() -> Vector2:
 	var trovato_scambio : bool = false
 	match foward:
 		true:
-			for i in range(crossroadPoints.size() -1):
-				var a = global_position.distance_to(crossroadPoints[i])
-				if global_position.distance_to(crossroadPoints[i]) < 1.5:
+			for i in range(railSegmentPoints.crossroad.size() -1):
+				var a = global_position.distance_to(railSegmentPoints.crossroad[i].punto0)
+				if a < 10 :
+					#var c = StoryOfPoints.find(crossroadPoints[i]) == -1
+					#Bisogna getire meglio questo
+					 
+					
+					#var printrail = test.rail_segment[0].punto0
+					
 					trovato_scambio = true
-					_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i+1])
+					_vector = await  rail_.getCrossRoad(global_position,targetEnd,
+					activepath[0],railSegmentPoints.crossroad[i].punto1)
 					break 
 				else:
 					_vector = activepath[0]
