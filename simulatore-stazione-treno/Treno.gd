@@ -13,7 +13,7 @@ var ActualCrossRoad : PackedVector2Array
 var foward : bool
 #Qua ho messo tutti i punti dove i treni potranno partire o arrivare
 var InitialorEndPoints : Dictionary = {"L1": Vector2(-511, 210),
-	"L2":Vector2(-511,260),"R1":Vector2(1575,210),"R2":Vector2(1575,260),
+	"L2":Vector2(-511,260),"R1":Vector2(1576.6,210),"R2":Vector2(1575.6,260),
 	"C2":Vector2(294,690),"C1":Vector2(227,708)}
 #Il mio target end cioè dove deve arrivare il treno
 var targetEnd : Vector2
@@ -28,20 +28,18 @@ func _ready():
 		
 	railPoints = await rail_.get_global_points()
 	
-	crossroadPoints = railPoints.crossroad
-	#rail_point = railPoints.rail_segment
-	
 	#Questo è hard coded poi dovrà essre messo dinamicamente 
 	ChangeLaneRail = false
 	#Anche questo è hardcoded
 	railSegmentPoints = await rail_.ArraySegmentBinaryGet()
-	
-	
-	#Qua metto i punti di partenza e di arrivo
-	
+	#var test : PackedVector2Array
+	#for rail in railSegmentPoints.rail_segment:
+		#test.append(rail.punto1)
+	##Qua metto i punti di partenza e di arrivo
+	#print(test)
 	
 	global_position = InitialorEndPoints["L1"]
-	targetEnd = InitialorEndPoints["C1"]
+	targetEnd = InitialorEndPoints["R1"]
 	current_point_index = 0
 	foward = _isFoward(global_position, targetEnd)
 	activepath.append(await rail_.getBinary(global_position, targetEnd, foward))
@@ -67,7 +65,7 @@ func _physics_process(delta: float) -> void:
 			
 			print(activepath)
 			global_position = target_point
-			if global_position >= targetEnd:
+			if global_position.distance_to(targetEnd) < 0.2:
 				print(StoryOfPoints)
 				set_physics_process(false)
 		
@@ -107,23 +105,26 @@ func _isFoward(initialPos: Vector2, endPos : Vector2)->bool:
 
 func _isNearToCross() -> Vector2:
 	var _vector : Vector2
+	var _testVectorPacked : PackedVector2Array
 	var trovato_scambio : bool = false
 	match foward:
 		true:
-			for i in range(railSegmentPoints.crossroad.size() -1):
+			for i in range(railSegmentPoints.crossroad.size()):
 				var a = global_position.distance_to(railSegmentPoints.crossroad[i].punto0)
-				if a < 12 :
+				var test = global_position.distance_to(railSegmentPoints.crossroad[10].punto0)
+				if a < 8 :
 					trovato_scambio = true
 					_vector = await  rail_.getCrossRoad(global_position,targetEnd,
-					activepath[0],railSegmentPoints.crossroad[i].punto1)
+					activepath[0],railSegmentPoints.crossroad[i].punto0,railSegmentPoints.crossroad[i].punto1)
 					break 
 				else:
 					_vector = activepath[0]
+		#Non funziona con foward false adesso bisogna migliorarlo
 		false:
 			for i in range(crossroadPoints.size() -1):
 				if global_position.distance_to(crossroadPoints[i]) < 1.5:
 					trovato_scambio = true
-					_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i-1])
+					#_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i-1])
 					break
 				else:
 					_vector = activepath[0]

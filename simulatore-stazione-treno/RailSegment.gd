@@ -78,26 +78,31 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 					break
 	return _vector
 
-func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossTarget:Vector2) -> Vector2:
+func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossInit:Vector2 ,_crossTarget:Vector2) -> Vector2:
 	var _vector : Vector2
-	var pos = abs(_actualPos.y-_targetPos.y)
-	var a = _targetPos.angle_to(_actualPos)
-	var b = _activePath.angle_to(_actualPos)
-	var c = abs(a - b)
-	if pos > 40 and abs(_crossTarget.y - _targetPos.y) < pos and c > 0.01:
-		
+	var ab = _crossTarget - _crossInit
+	var bc = _activePath - _crossInit
+	var radianteB = ab.angle_to(bc)
+	var dot = ab.dot(bc) 
+	var lenght_square = bc.length_squared()
+	var t = dot / lenght_square
+	var point_bc =  _crossInit + bc * t
+	if _targetPos.distance_to(_crossTarget) < _targetPos.distance_to(point_bc):
 		return _crossTarget
 	else:
 		return _activePath
+		
+	 
+	
 
 func ArraySegmentBinaryGet() -> BinarioInfo.BinarioInfoTratti:
 	var binary : BinarioInfo = get_global_points()
 	var railReturn = BinarioInfo.BinarioInfoTratti.new()
-	for i in range(0, binary.rail_segment.size() - 1, 2):
+	for i in range(0, binary.rail_segment.size(), 2):
 		var inizio = binary.rail_segment[i]
 		var fine = binary.rail_segment[i+1]
 		railReturn.rail_segment.append(BinarioInfo.PezzoBinario.new(inizio, fine))
-	for i in range(0, binary.crossroad.size() - 1, 2):
+	for i in range(0, binary.crossroad.size(), 2):
 		var inizio = binary.crossroad[i]
 		var fine = binary.crossroad[i+1]
 		railReturn.crossroad.append(BinarioInfo.PezzoBinario.new(inizio, fine))
