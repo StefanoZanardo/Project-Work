@@ -54,20 +54,28 @@ func calcTargetPointTrain(_actualPos:Vector2,_targetEnd:Vector2)->Vector2:
 #il quale ritorna un Vector2 del camnio corsia
 func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vector2:
 	var _vector : Vector2 
-	var binary : BinarioInfo = get_global_points()
-	var a = targetPoint.angle_to(_actualPos)
+	var binary : BinarioInfo.BinarioInfoTratti = ArraySegmentBinaryGet()
 	match foward:
 		true:
 			for point in binary.rail_segment:
-				if (_actualPos.x + point.x) > 30 and abs(_actualPos.y - point.y) < 10:
-					_vector = point
-				else:
-					_vector = targetPoint
+				var radiantetraPunti = point.punto0.direction_to(point.punto1)
+				var radiantePunto1 = _actualPos.direction_to(point.punto1)
+				var diffradiante = abs(radiantetraPunti - radiantePunto1) 
+				var distance = _actualPos.distance_to(point.punto0)
+				var punto0 = point.punto0 #Per debug 
+				if distance < 3 :
+					_vector = point.punto1
+					break
+				elif diffradiante < Vector2(0.00001,0.5) and distance > 0.3:
+					_vector = point.punto1
+					var test = _actualPos.distance_to(binary.rail_segment[3].punto0)
+					print(test)#per debug
 					#distance = _actualPos.distance_to(_vector)
 		false:
 			for point in binary.rail_segment:
 				if (_actualPos.x - point.x) < 30 and abs(_actualPos.y - point.y) < 10:
-					_vector = point
+					_vector = point.punto1
+					break
 	return _vector
 
 func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossTarget:Vector2) -> Vector2:
