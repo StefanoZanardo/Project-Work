@@ -12,8 +12,8 @@ var ChangeLaneRail : bool
 var ActualCrossRoad : PackedVector2Array
 var foward : bool
 #Qua ho messo tutti i punti dove i treni potranno partire o arrivare
-var InitialorEndPoints : Dictionary = {"L1": Vector2(-511, 210),
-	"L2":Vector2(-511,260),"R1":Vector2(1576.6,210),"R2":Vector2(1575.6,260),
+var InitialorEndPoints : Dictionary = {"L1": Vector2(-511.6, 210),
+	"L2":Vector2(-511.6,260),"R1":Vector2(1576.6,210),"R2":Vector2(1575.6,260),
 	"C2":Vector2(294,690),"C1":Vector2(227,708)}
 #Il mio target end cioè dove deve arrivare il treno
 var targetEnd : Vector2
@@ -32,14 +32,15 @@ func _ready():
 	ChangeLaneRail = false
 	#Anche questo è hardcoded
 	railSegmentPoints = await rail_.ArraySegmentBinaryGet()
+	
 	#var test : PackedVector2Array
 	#for rail in railSegmentPoints.rail_segment:
-		#test.append(rail.punto1)
+		#test.append(rail.punto0)
 	##Qua metto i punti di partenza e di arrivo
 	#print(test)
-	
-	global_position = InitialorEndPoints["L1"]
-	targetEnd = InitialorEndPoints["R1"]
+	#
+	global_position = InitialorEndPoints["C1"]
+	targetEnd = InitialorEndPoints["L1"]
 	current_point_index = 0
 	foward = _isFoward(global_position, targetEnd)
 	activepath.append(await rail_.getBinary(global_position, targetEnd, foward))
@@ -121,14 +122,15 @@ func _isNearToCross() -> Vector2:
 					_vector = activepath[0]
 		#Non funziona con foward false adesso bisogna migliorarlo
 		false:
-			for i in range(crossroadPoints.size() -1):
-				if global_position.distance_to(crossroadPoints[i]) < 1.5:
+			for i in range(railSegmentPoints.crossroad.size()):
+				var a = global_position.distance_to(railSegmentPoints.crossroad[i].punto1)
+				if a < 8 :
 					trovato_scambio = true
-					#_vector = rail_.getCrossRoad(global_position,targetEnd,activepath[0],crossroadPoints[i-1])
-					break
+					_vector = await  rail_.getCrossRoad(global_position,targetEnd,
+					activepath[0],railSegmentPoints.crossroad[i].punto1,railSegmentPoints.crossroad[i].punto0)
+					break 
 				else:
 					_vector = activepath[0]
-					
 	ChangeLaneRail = trovato_scambio
 	return _vector
 	
