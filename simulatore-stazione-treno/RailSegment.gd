@@ -31,23 +31,23 @@ func get_global_points() -> BinarioInfo:
 	print(mockPackedArray)
 	return info_rail
 
-func calcTargetPointTrain(_actualPos:Vector2,_targetEnd:Vector2)->Vector2:
-	var binary : BinarioInfo = get_global_points()
-	var vector = Vector2(99999,99999)
-	
-	if abs(_actualPos.y - _targetEnd.y) > 20:
-		for cross in binary.crossroad:
-			var dist_y = abs(cross.y - _actualPos.y)
-			if  (35 < dist_y and dist_y < 65) and (vector.x > cross.x) and (_actualPos.x < cross.x):
-				vector = cross
-	elif abs(_actualPos.distance_to(_targetEnd)) <= 10 :
-		vector = Vector2.ZERO
-	else :
-		for _rail in binary.rail_segment:
-			if (abs(_rail.y - _actualPos.y) < 20) and (abs(_rail.x - _actualPos.x)>200):
-				vector = _rail
-	
-	return vector
+#func calcTargetPointTrain(_actualPos:Vector2,_targetEnd:Vector2)->Vector2:
+	#var binary : BinarioInfo = get_global_points()
+	#var vector = Vector2(99999,99999)
+	#
+	#if abs(_actualPos.y - _targetEnd.y) > 20:
+		#for cross in binary.crossroad:
+			#var dist_y = abs(cross.y - _actualPos.y)
+			#if  (35 < dist_y and dist_y < 65) and (vector.x > cross.x) and (_actualPos.x < cross.x):
+				#vector = cross
+	#elif abs(_actualPos.distance_to(_targetEnd)) <= 10 :
+		#vector = Vector2.ZERO
+	#else :
+		#for _rail in binary.rail_segment:
+			#if (abs(_rail.y - _actualPos.y) < 20) and (abs(_rail.x - _actualPos.x)>200):
+				#vector = _rail
+	#
+	#return vector
 # Cosa faccio creo due funzioni una che mi ritorna data la nostra posizione quando finisce 
 #ritorna il punto del binario così da farla andare avanti 
 #Un altra funzione chiamata dal treno quando passa vicino ad un punto crossroad 
@@ -58,30 +58,33 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 	match foward:
 		true:
 			for point in binary.rail_segment:
-				var radiantetraPunti = point.punto0.direction_to(point.punto1)
-				var radiantePunto1 = _actualPos.direction_to(point.punto1)
-				var diffradiante = abs(radiantetraPunti - radiantePunto1) 
-				var distance = _actualPos.distance_to(point.punto0)
-				var punto0 = point.punto0 #Per debug 
-				if distance < 3 :
+				var point_near_segment = Geometry2D.get_closest_point_to_segment(_actualPos, point.punto0, point.punto1)
+				var distance_to_segment = point_near_segment.distance_to(_actualPos)
+				if distance_to_segment < 4 :
 					_vector = point.punto1
 					break
-				elif diffradiante < Vector2(0.00001,0.5) and distance > 0.3:
-					_vector = point.punto1
-					var test = _actualPos.distance_to(binary.rail_segment[3].punto0)
-					print(test)#per debug
-					#distance = _actualPos.distance_to(_vector)
+				else:
+					#Sarà da gestire gli errori in caso
+					print()
 		false:
 			for point in binary.rail_segment:
-				if (_actualPos.x - point.x) < 30 and abs(_actualPos.y - point.y) < 10:
-					_vector = point.punto1
+				var point_near_segment = Geometry2D.get_closest_point_to_segment(_actualPos, point.punto1, point.punto0)
+				var distance_to_segment = point_near_segment.distance_to(_actualPos)
+				if distance_to_segment < 4 :
+					_vector = point.punto0
 					break
+				else:
+					#Sarà da gestire gli errori in caso
+					print()
 	return _vector
 
 func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossInit:Vector2 ,_crossTarget:Vector2) -> Vector2:
 	var _vector : Vector2
 	var ab = _crossTarget - _crossInit
 	var bc = _activePath - _crossInit
+	#Tutti quest calcoli servono per calcolare la proiezione 
+	#da parte di _crossInit -> _ crossTarget 
+	#nella retta _crossInit -> _targetPos
 	var radianteB = ab.angle_to(bc)
 	var dot = ab.dot(bc) 
 	var lenght_square = bc.length_squared()

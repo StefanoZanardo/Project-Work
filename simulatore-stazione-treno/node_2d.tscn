@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqe6x2pykhlhi"]
 
 [ext_resource type="Script" uid="uid://ci40fyrx3oesq" path="res://RailSegment.gd" id="1_epypp"]
-[ext_resource type="Texture2D" uid="uid://c07bmsxgq4i5o" path="res://Assets/NormalRails.png" id="2_epypp"]
-[ext_resource type="Texture2D" uid="uid://bebqtcfeoumjc" path="res://Assets/RedTrain_.png" id="3_0hol4"]
-[ext_resource type="Script" uid="uid://qcwvetrxmiqb" path="res://Treno.gd" id="4_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://d3mask724r07o" path="res://Assets/NormalRails.png" id="2_epypp"]
+[ext_resource type="Script" uid="uid://dmvje2gtt76kx" path="res://ManagerTrain.gd" id="3_0hol4"]
+[ext_resource type="PackedScene" uid="uid://c5b72b37vcphx" path="res://train.tscn" id="3_epypp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q6r6c"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(436, 282)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(530, 296)
+zoom = Vector2(0.53, 0.53)
 
 [node name="RailSegments" type="Node2D" parent="."]
 position = Vector2(126, 210)
@@ -32,7 +32,7 @@ texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(-637.68036, 50)
 scale = Vector2(2.1755455, 0.5347209)
-points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+points = PackedVector2Array(0, 0, 959.465, 0)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
@@ -62,7 +62,7 @@ texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(-297.6928, 100)
 scale = Vector2(1.5085335, 0.5347209)
-points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+points = PackedVector2Array(0, 0, 964.97217, 0)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
@@ -118,7 +118,7 @@ texture = ExtResource("2_epypp")
 texture_mode = 1
 
 [node name="BivioLinea6" type="Line2D" parent="RailSegments"]
-position = Vector2(1949, 50)
+position = Vector2(1951, 48)
 scale = Vector2(0.9577947, 0.5154252)
 points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
 width = 20.0
@@ -165,12 +165,50 @@ width = 20.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
-[node name="Train" type="Node2D" parent="." node_paths=PackedStringArray("rail_")]
-position = Vector2(88, 16)
-script = ExtResource("4_q6r6c")
-line_2d = NodePath("../RailSegments/Line2D1")
-rail_ = NodePath("../RailSegments")
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("rail_system")]
+script = ExtResource("3_0hol4")
+train_scene = ExtResource("3_epypp")
+rail_system = NodePath("../RailSegments")
 
-[node name="Sprite2D" type="Sprite2D" parent="Train"]
-scale = Vector2(0.021019522, 0.02812844)
-texture = ExtResource("3_0hol4")
+[node name="VBoxContainer" type="VBoxContainer" parent="Node"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = -224.0
+offset_right = -52.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Node/VBoxContainer"]
+layout_direction = 4
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Form creazione coda treno"
+horizontal_alignment = 1
+
+[node name="StartPoint" type="OptionButton" parent="Node/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+allow_reselect = true
+
+[node name="EndPoint" type="OptionButton" parent="Node/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+allow_reselect = true
+
+[node name="BtnAddToQueue" type="Button" parent="Node/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Aggiungi Treno a coda"
+
+[node name="BtnLaunchQueue" type="Button" parent="Node/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Lancio Coda"
+
+[node name="LabelCoda" type="Label" parent="Node/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Coda:0"
+horizontal_alignment = 1
