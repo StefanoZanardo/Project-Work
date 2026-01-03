@@ -5,6 +5,15 @@ html, body {
 a, .btn-link {
     color: #006bb7;
 }
+/*h3 {
+    display: flex;
+    align-items: center;
+    -webkit-justify-content: inherit;
+    justify-content: inherit;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}*/
 
 .btn-primary {
     color: #fff;

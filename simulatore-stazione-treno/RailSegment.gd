@@ -58,29 +58,24 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 	match foward:
 		true:
 			for point in binary.rail_segment:
-				var radiantetraPunti = point.punto0.direction_to(point.punto1)
-				var radiantePunto1 = _actualPos.direction_to(point.punto1)
-				var diffradiante = abs(radiantetraPunti - radiantePunto1) 
-				var distance = _actualPos.distance_to(point.punto0)
-				var punto0 = point.punto0 #Per debug 
-				if distance < 3 :
+				var point_near_segment = Geometry2D.get_closest_point_to_segment(_actualPos, point.punto0, point.punto1)
+				var distance_to_segment = point_near_segment.distance_to(_actualPos)
+				if distance_to_segment < 4 :
 					_vector = point.punto1
 					break
-				elif diffradiante < Vector2(0.00001,0.5) and distance > 0.3:
-					_vector = point.punto1
+				else:
+					#Sarà da gestire gli errori in caso
+					print()
 		false:
 			for point in binary.rail_segment:
-				var radiantetraPunti = point.punto1.direction_to(point.punto0)
-				var radiantePuntoO = _actualPos.direction_to(point.punto0)
-				var diffradiante = abs(radiantetraPunti - radiantePuntoO) 
-				var distance = _actualPos.distance_to(point.punto1)
-				var punto0 = point.punto1 #Per debug 
-				if distance < 3 :
+				var point_near_segment = Geometry2D.get_closest_point_to_segment(_actualPos, point.punto1, point.punto0)
+				var distance_to_segment = point_near_segment.distance_to(_actualPos)
+				if distance_to_segment < 4 :
 					_vector = point.punto0
 					break
-				elif diffradiante < Vector2(0.01,0.5) and distance > 0.3:
-					_vector = point.punto0
-					
+				else:
+					#Sarà da gestire gli errori in caso
+					print()
 	return _vector
 
 func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossInit:Vector2 ,_crossTarget:Vector2) -> Vector2:

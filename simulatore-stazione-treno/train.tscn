@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5b72b37vcphx"]
+
+[ext_resource type="Script" uid="uid://qcwvetrxmiqb" path="res://Treno.gd" id="1_lomod"]
+[ext_resource type="Texture2D" uid="uid://d2lp4vsrxknru" path="res://Assets/RedTrain.png" id="2_lomod"]
+
+[node name="Train" type="Node2D"]
+script = ExtResource("1_lomod")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.021019522, 0.02812844)
+texture = ExtResource("2_lomod")
