@@ -31,23 +31,7 @@ func get_global_points() -> BinarioInfo:
 	print(mockPackedArray)
 	return info_rail
 
-#func calcTargetPointTrain(_actualPos:Vector2,_targetEnd:Vector2)->Vector2:
-	#var binary : BinarioInfo = get_global_points()
-	#var vector = Vector2(99999,99999)
-	#
-	#if abs(_actualPos.y - _targetEnd.y) > 20:
-		#for cross in binary.crossroad:
-			#var dist_y = abs(cross.y - _actualPos.y)
-			#if  (35 < dist_y and dist_y < 65) and (vector.x > cross.x) and (_actualPos.x < cross.x):
-				#vector = cross
-	#elif abs(_actualPos.distance_to(_targetEnd)) <= 10 :
-		#vector = Vector2.ZERO
-	#else :
-		#for _rail in binary.rail_segment:
-			#if (abs(_rail.y - _actualPos.y) < 20) and (abs(_rail.x - _actualPos.x)>200):
-				#vector = _rail
-	#
-	#return vector
+
 # Cosa faccio creo due funzioni una che mi ritorna data la nostra posizione quando finisce 
 #ritorna il punto del binario così da farla andare avanti 
 #Un altra funzione chiamata dal treno quando passa vicino ad un punto crossroad 
@@ -112,7 +96,23 @@ func ArraySegmentBinaryGet() -> BinarioInfo.BinarioInfoTratti:
 	return railReturn
 	
 
-			
+#func calcTargetPointTrain(_actualPos:Vector2,_targetEnd:Vector2)->Vector2:
+	#var binary : BinarioInfo = get_global_points()
+	#var vector = Vector2(99999,99999)
+	#
+	#if abs(_actualPos.y - _targetEnd.y) > 20:
+		#for cross in binary.crossroad:
+			#var dist_y = abs(cross.y - _actualPos.y)
+			#if  (35 < dist_y and dist_y < 65) and (vector.x > cross.x) and (_actualPos.x < cross.x):
+				#vector = cross
+	#elif abs(_actualPos.distance_to(_targetEnd)) <= 10 :
+		#vector = Vector2.ZERO
+	#else :
+		#for _rail in binary.rail_segment:
+			#if (abs(_rail.y - _actualPos.y) < 20) and (abs(_rail.x - _actualPos.x)>200):
+				#vector = _rail
+	#
+	#return vector
 
 			
 			
