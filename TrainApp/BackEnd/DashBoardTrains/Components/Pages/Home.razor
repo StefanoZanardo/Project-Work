@@ -1,33 +1,10 @@
 ﻿@page "/"
-@using DashBoardTrains.Services
-@using Microsoft.AspNetCore.Components.QuickGrid
-@using DashBoardTrains.Models.MockUp_Models
-@using static DashBoardTrains.Models.MockUp_Models.Scelta
-@inject DbFalso Db
+@inject NavigationManager NavManager
+<h3>Home</h3>
 
-
-<h3 >Simulatore Treni </h3>
-
-
-<div class="game-container">
-    <iframe src="/game/SimulatoreTreni.html"
-            width="80%"
-            height="500px"
-            style="border-radius: 10px; overflow: hidden;"
-            allow="fullscreen; autoplay; focus-without-user-activation">
-    </iframe>
-</div>
-
-<style>
- 
-    .game-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 10px;
-        height: 100%;
-        border-radius: 10px;
-        border: 2px solid #111;
+@code {
+    protected  override void OnInitialized()
+    {
+        NavManager.NavigateTo("/Simulator");
     }
-</style>
+}
