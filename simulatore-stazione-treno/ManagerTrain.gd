@@ -7,7 +7,7 @@ extends Node
 var InitialorEndPoints : Dictionary = {
 	"L1": Vector2(-511.6, 210), "L2": Vector2(-511.6, 260),
 	"R1": Vector2(1576.6, 210), "R2": Vector2(1575.6, 260),
-	"C2": Vector2(294, 690), "C1": Vector2(227, 708)
+	"C1": Vector2(227, 708),"C2": Vector2(294, 690)
 }
 
 var train_queue : Array = []
@@ -20,35 +20,61 @@ var LabelQueueCount : Label
 
 func _ready():
 	var stazioni = InitialorEndPoints.keys()
-	stazioni.sort()
 	start_menu = find_child("StartPoint", true, false)
 	end_menu = find_child("EndPoint", true, false)
 	BtnAddQueue = find_child("BtnAddToQueue",true, false)
 	BtnLaunchQueue = find_child("BtnLaunchQueue",true,false)
 	LabelQueueCount = find_child("LabelCoda", true, false)
 
-
-	start_menu.clear()
-	end_menu.clear()
-	
-
-	for s in stazioni:
-		start_menu.add_item(s)
-		end_menu.add_item(s)
-	
+	start_menu.item_selected.connect(_on_start_selected)
+	end_menu.item_selected.connect(_on_end_selected)
 
 	BtnAddQueue.pressed.connect(_on_aggiungi_premuto)
 	BtnLaunchQueue.pressed.connect(_on_partenza_premuto)
 	
 	aggiorna_label()
+	if start_menu.item_count > 0:
+		start_menu.select(0)
+		_on_start_selected(0)
+
+func _on_start_selected(index: int) -> void:
+	var pos = start_menu.get_item_text(index)
+	var vectorselected = InitialorEndPoints[pos]
+	aggiorna_menu(end_menu, vectorselected,pos)
+
+func _on_end_selected(index: int) -> void:
+	var pos = end_menu.get_item_text(index)
+	var vectorselected = InitialorEndPoints[pos]
+	aggiorna_menu(start_menu, vectorselected,pos)
 
 
+func aggiorna_menu(menu: OptionButton, valore_scelto: Vector2, nameindex:String) -> void:
+	
+	for i in range(menu.item_count):
+		var key = menu.get_item_text(i)
+		var pos: Vector2 = InitialorEndPoints[key]
+		var disable = abs(valore_scelto.x - pos.x) < 200 or disablePoints(key,nameindex) 
+		menu.set_item_disabled(i, disable)
+
+func disablePoints(listpoint:String, pointselected : String) -> bool:
+	if pointselected.begins_with('C') :
+		if listpoint.begins_with('R'):
+			return true
+	if pointselected.begins_with('R'):
+		if listpoint.begins_with('C'):
+			return true
+	return false
+			
+		 
+	
 
 func _on_aggiungi_premuto():
+	
+	
 	var start_idx = start_menu.selected
 	var end_idx = end_menu.selected
 	
-	if start_idx == -1 or end_idx == -1 and start_idx.distance_to(end_idx) > 100:
+	if start_idx == -1 or end_idx == -1:
 		return 
 
 	var start_val = start_menu.get_item_text(start_idx)
@@ -89,4 +115,12 @@ func spawn_train(start_key: String, end_key: String):
 
 
 func aggiorna_label():
+	
+	var stazioni = InitialorEndPoints.keys()
+	start_menu.clear()
+	end_menu.clear()
+	
+	for s in stazioni:
+		start_menu.add_item(s)
+		end_menu.add_item(s)
 	LabelQueueCount.text = "Treni in coda: " + str(train_queue.size())

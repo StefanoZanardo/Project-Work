@@ -8,65 +8,100 @@
     <h1>Dashboard Generale</h1>
     <hr />
 
-    <div class="mb-4">
-        <label class="form-label fw-bold">Seleziona la tabella da visualizzare:</label>
-        <select class="form-select w-auto" @bind="_option">
-            <option value="tutto">Vedi Tutto</option>
-            <option value="train">Treni</option>
-            <option value="category">Categorie</option>
-            <option value="wagon">Vagoni</option>
-            <option value="stoplight">Semafori</option>
-            <option value="rail">Binari</option>
-            <option value="segment">Pezzi di binario</option>
-            <option value="crossroad">Incroci</option>
-        </select>
+    <div class="d-flex justify-content-start mb-4">
+        <div class="btn-group dropend position-relative">
+            <button class="btn btn-secondary dropdown-toggle" @onclick="() => _isDropdownOpen = !_isDropdownOpen">
+                Seleziona tabelle
+            </button>
+
+            @if (_isDropdownOpen)
+            {
+                <ul class="dropdown-menu show"
+                    style="background-color: rgba(255, 255, 255, 0.95);
+                           display: grid;
+                           grid-template-columns: repeat(8, 1fr);
+                           gap: 0.5rem;
+                           padding: 10px;
+                           border: 1px solid #ccc;
+                           position: absolute;
+                           top: 0;
+                           left: 100%;
+                           margin-left: 0.5rem;
+                           width: max-content;">
+
+                    @foreach (var table in Tables.Keys)
+                    {   @if(table == "tutte")
+                        {
+                            <li>
+                                <div class="form-check">
+                                    <input type="checkbox"
+                                           class="form-check-input"
+                                           id="@table"
+                                           checked="@Tables[table]"
+                                           @onchange="(e) => ToggleAll((bool)e.Value)" />
+                                    <label class="form-check-label fw-bold" for="@table">@table</label>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                        <li>
+                            <div class="form-check">
+                                <InputCheckbox @bind-Value="Tables[table]" class="form-check-input" id="@table" />
+                                <label class="form-check-label" for="@table">@table</label>
+                            </div>
+                        </li>
+                        }
+                    }
+                </ul>
+            }
+        </div>
     </div>
+        <div class="row">
 
-    <div class="row">
-
-        @if (_option == "tutto" || _option == "train")
+        @if (Tables["treni"])
         {
             <div class="col-md-6 mb-4">
                 <ShowTable T="Train" ApiUrl="/train" Title="Lista Treni" />
             </div>
         }
 
-        @if (_option == "tutto" || _option == "category")
+        @if (  Tables["categorie"])
         {
             <div class="col-md-6 mb-4">
                 <ShowTable T="Category" ApiUrl="/category" Title="Categorie" />
             </div>
         }
 
-        @if (_option == "tutto" || _option == "wagon")
+        @if (  Tables["vagoni"])
         {
             <div class="col-md-6 mb-4">
                 <ShowTable T="Wagon" ApiUrl="/wagon" Title="Vagoni" />
             </div>
         }
 
-        @if (_option == "tutto" || _option == "stoplight")
+        @if (  Tables["semafori"])
         {
             <div class="col-md-6 mb-4">
                 <ShowTable T="Stoplight" ApiUrl="/stoplight" Title="Semafori" />
             </div>
         }
 
-        @if (_option == "tutto" || _option == "rail")
+        @if (  Tables["binari"])
         {
             <div class="col-md-6 mb-4">
                 <ShowTable T="Rail" ApiUrl="/rail" Title="Binari" />
             </div>
         }
 
-        @if (_option == "tutto" || _option == "segment")
+        @if (  Tables["segmenti"])
         {
             <div class="col-md-6 mb-4">
                 <ShowTable T="SegmentRail" ApiUrl="/segmentrail" Title="Pezzi di binario" />
             </div>
         }
 
-        @if (_option == "tutto" || _option == "crossroad")
+        @if (  Tables["bivi"])
         {
             <div class="col-md-6 mb-4">
                 <ShowTable T="Crossroad" ApiUrl="/crossroad" Title="Incroci" />
