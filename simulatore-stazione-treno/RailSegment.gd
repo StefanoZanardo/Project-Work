@@ -4,6 +4,7 @@ class_name RailSegment
 var info_rail = BinarioInfo.new()
 
 var mockPackedArray : PackedVector2Array
+
 func get_global_points() -> BinarioInfo:
 	info_rail.crossroad.clear()
 	info_rail.rail_segment.clear()
@@ -27,9 +28,11 @@ func get_global_points() -> BinarioInfo:
 			# Converte i punti di QUESTA linea in globali e li aggiunge al totale
 			for p in linea.points:
 				info_rail.rail_segment.append(xform * p)
+		
 				
 	print(mockPackedArray)
 	return info_rail
+
 
 
 # Cosa faccio creo due funzioni una che mi ritorna data la nostra posizione quando finisce 

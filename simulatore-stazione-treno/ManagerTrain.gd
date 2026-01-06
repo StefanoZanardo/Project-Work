@@ -1,7 +1,8 @@
 extends Node
 
 @export var train_scene : PackedScene 
-@export var rail_system : Node2D        
+@export var rail_system : Node2D   
+@export var rail_middle : StationPoints
 
 
 var InitialorEndPoints : Dictionary = {
@@ -9,18 +10,25 @@ var InitialorEndPoints : Dictionary = {
 	"R1": Vector2(1576.6, 210), "R2": Vector2(1575.6, 260),
 	"C1": Vector2(227, 708),"C2": Vector2(294, 690)
 }
+#Punti intermedi 
+var MiddlePoints : Dictionary  
+
 
 var train_queue : Array = []
 var is_spawning : bool = false 
 var start_menu : OptionButton
+var middle_menu : OptionButton
 var end_menu : OptionButton
 var BtnAddQueue : Button
 var BtnLaunchQueue : Button
 var LabelQueueCount : Label
 
 func _ready():
+	MiddlePoints = rail_middle.getintermediatePoint()
+	#Assegnare tutti gli elementi grafici a una variabile
 	var stazioni = InitialorEndPoints.keys()
 	start_menu = find_child("StartPoint", true, false)
+	middle_menu = find_child("MiddlePoint", true, false)
 	end_menu = find_child("EndPoint", true, false)
 	BtnAddQueue = find_child("BtnAddToQueue",true, false)
 	BtnLaunchQueue = find_child("BtnLaunchQueue",true,false)
@@ -33,6 +41,9 @@ func _ready():
 	BtnLaunchQueue.pressed.connect(_on_partenza_premuto)
 	
 	aggiorna_label()
+	for pmid in MiddlePoints:
+		middle_menu.add_item(pmid)
+	middle_menu.select(0)
 	if start_menu.item_count > 0:
 		start_menu.select(0)
 		_on_start_selected(0)
@@ -41,6 +52,7 @@ func _on_start_selected(index: int) -> void:
 	var pos = start_menu.get_item_text(index)
 	var vectorselected = InitialorEndPoints[pos]
 	aggiorna_menu(end_menu, vectorselected,pos)
+
 
 func _on_end_selected(index: int) -> void:
 	var pos = end_menu.get_item_text(index)
@@ -72,17 +84,22 @@ func _on_aggiungi_premuto():
 	
 	
 	var start_idx = start_menu.selected
+	var middle_idx = middle_menu.selected
 	var end_idx = end_menu.selected
+	
+	
+	var name_middle = middle_menu.get_item_text(middle_idx)
 	
 	if start_idx == -1 or end_idx == -1:
 		return 
 
 	var start_val = start_menu.get_item_text(start_idx)
+	var middle_val = MiddlePoints.get(name_middle)
 	var end_val = end_menu.get_item_text(end_idx)
 	
 
 	
-	train_queue.append({"start": start_val, "end": end_val})
+	train_queue.append({"start": start_val, "middle": middle_val , "end": end_val})
 	aggiorna_label()
 
 func _on_partenza_premuto():
@@ -96,7 +113,7 @@ func _on_partenza_premuto():
 		var dati_treno = train_queue.pop_front()
 		aggiorna_label()
 		
-		spawn_train(dati_treno["start"], dati_treno["end"])
+		spawn_train(dati_treno["start"], dati_treno["middle"], dati_treno["end"])
 		
 		#Qua è la pausa fra treni bisognerà migliorarla
 		await get_tree().create_timer(2.0).timeout
@@ -105,13 +122,13 @@ func _on_partenza_premuto():
 	BtnLaunchQueue.disabled = false
 
 
-func spawn_train(start_key: String, end_key: String):
+func spawn_train(start_key: String,middle_key : Vector2, end_key: String):
 		
 	var new_train = train_scene.instantiate()
 	add_child(new_train)
 	
 
-	new_train.setup_train(start_key, end_key, rail_system)
+	new_train.setup_train(start_key,middle_key, end_key, rail_system)
 
 
 func aggiorna_label():
@@ -120,7 +137,9 @@ func aggiorna_label():
 	start_menu.clear()
 	end_menu.clear()
 	
+	
 	for s in stazioni:
 		start_menu.add_item(s)
 		end_menu.add_item(s)
+	start_menu.select(0)
 	LabelQueueCount.text = "Treni in coda: " + str(train_queue.size())

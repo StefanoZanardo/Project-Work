@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqe6x2pykhlhi"]
+[gd_scene load_steps=7 format=3 uid="uid://cqe6x2pykhlhi"]
 
 [ext_resource type="Script" uid="uid://ci40fyrx3oesq" path="res://RailSegment.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://d3mask724r07o" path="res://Assets/NormalRails.png" id="2_epypp"]
 [ext_resource type="Script" uid="uid://dmvje2gtt76kx" path="res://ManagerTrain.gd" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://c5b72b37vcphx" path="res://train.tscn" id="3_epypp"]
+[ext_resource type="Script" uid="uid://bgg7evswd8rew" path="res://station_points.gd" id="3_q6r6c"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q6r6c"]
 
@@ -165,10 +166,43 @@ width = 20.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
 
-[node name="Node" type="Node" parent="." node_paths=PackedStringArray("rail_system")]
+[node name="StationPoints" type="Node2D" parent="."]
+position = Vector2(124, 208)
+script = ExtResource("3_q6r6c")
+
+[node name="PuntoL1R1" type="Line2D" parent="StationPoints"]
+modulate = Color(0.006728449, 0.006728449, 0.006728449, 0)
+show_behind_parent = true
+position = Vector2(528, 1)
+points = PackedVector2Array(-3, -2)
+
+[node name="PuntoL2R2" type="Line2D" parent="StationPoints"]
+position = Vector2(528, 53)
+points = PackedVector2Array(-5, 0)
+
+[node name="PuntoL3R3" type="Line2D" parent="StationPoints"]
+position = Vector2(1234, 314)
+points = PackedVector2Array(-709, -210)
+
+[node name="PuntoL4R4" type="Line2D" parent="StationPoints"]
+position = Vector2(1912, 572)
+points = PackedVector2Array(-1384, -419)
+
+[node name="PuntoC2" type="Line2D" parent="StationPoints"]
+position = Vector2(1555, 903)
+points = PackedVector2Array(-1384, -419)
+
+[node name="PuntoC1" type="Line2D" parent="StationPoints"]
+position = Vector2(1487, 922)
+points = PackedVector2Array(-1384, -419)
+
+[node name="traintrafficlights" type="Node2D" parent="."]
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("rail_system", "rail_middle")]
 script = ExtResource("3_0hol4")
 train_scene = ExtResource("3_epypp")
 rail_system = NodePath("../RailSegments")
+rail_middle = NodePath("../StationPoints")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Node"]
 clip_contents = true
@@ -189,6 +223,11 @@ text = "Form creazione coda treno"
 horizontal_alignment = 1
 
 [node name="StartPoint" type="OptionButton" parent="Node/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+allow_reselect = true
+
+[node name="MiddlePoint" type="OptionButton" parent="Node/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 allow_reselect = true
