@@ -63,7 +63,7 @@ texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(-297.6928, 100)
 scale = Vector2(1.5085335, 0.5347209)
-points = PackedVector2Array(0, 0, 964.97217, 0)
+points = PackedVector2Array(0, 0, 968.2866, 0)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
@@ -73,7 +73,7 @@ texture_repeat = 2
 material = SubResource("CanvasItemMaterial_q6r6c")
 position = Vector2(122.79569, 151)
 scale = Vector2(0.8554359, 0.5154252)
-points = PackedVector2Array(0, 0, 959.46545, 0.33662415)
+points = PackedVector2Array(-3.2681274, 0, 959.46545, 0.33662415)
 width = 36.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
@@ -121,7 +121,7 @@ texture_mode = 1
 [node name="BivioLinea6" type="Line2D" parent="RailSegments"]
 position = Vector2(1951, 48)
 scale = Vector2(0.9577947, 0.5154252)
-points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
+points = PackedVector2Array(-822.72314, 100.8876, -761.1234, 3.88031)
 width = 20.0
 texture = ExtResource("2_epypp")
 texture_mode = 1
@@ -193,7 +193,7 @@ position = Vector2(1555, 903)
 points = PackedVector2Array(-1384, -419)
 
 [node name="PuntoC1" type="Line2D" parent="StationPoints"]
-position = Vector2(1487, 922)
+position = Vector2(1487, 919)
 points = PackedVector2Array(-1384, -419)
 
 [node name="traintrafficlights" type="Node2D" parent="."]

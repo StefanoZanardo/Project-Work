@@ -65,19 +65,12 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 					print()
 	return _vector
 
-func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossInit:Vector2 ,_crossTarget:Vector2) -> Vector2:
+func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossInit:Vector2 ,_crossTarget:Vector2, _crossBinary:Vector2) -> Vector2:
 	var _vector : Vector2
-	var ab = _crossTarget - _crossInit
-	var bc = _activePath - _crossInit
-	#Tutti quest calcoli servono per calcolare la proiezione 
-	#da parte di _crossInit -> _ crossTarget 
-	#nella retta _crossInit -> _targetPos
-	var radianteB = ab.angle_to(bc)
-	var dot = ab.dot(bc) 
-	var lenght_square = bc.length_squared()
-	var t = dot / lenght_square
-	var point_bc =  _crossInit + bc * t
-	if _targetPos.distance_to(_crossTarget) < _targetPos.distance_to(point_bc):
+	var pointActivePath = Geometry2D.get_closest_point_to_segment(_targetPos, _crossInit, _activePath)
+	var pointTarget = Geometry2D.get_closest_point_to_segment(_targetPos, _crossTarget, _crossBinary) 
+	
+	if pointTarget.distance_to(_targetPos) < pointActivePath.distance_to(_targetPos):
 		return _crossTarget
 	else:
 		return _activePath

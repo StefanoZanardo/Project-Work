@@ -8,6 +8,7 @@ size = Vector2(2569.04, 426.6145)
 
 [node name="Train" type="Node2D"]
 script = ExtResource("1_lomod")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.021019522, 0.02812844)

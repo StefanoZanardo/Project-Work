@@ -95,11 +95,12 @@ func _isNearToCross() -> Vector2:
 		true:
 			for i in range(railSegmentPoints.crossroad.size()):
 				var a = global_position.distance_to(railSegmentPoints.crossroad[i].punto0)
-				var test = global_position.distance_to(railSegmentPoints.crossroad[10].punto0)
 				if a < 8 :
 					trovato_scambio = true
+					var crossBinary = await  rail_.getBinary(railSegmentPoints.crossroad[i].punto1,targetEnd[0],foward)
+					
 					_vector = await  rail_.getCrossRoad(global_position,targetEnd[0],
-					activepath[0],railSegmentPoints.crossroad[i].punto0,railSegmentPoints.crossroad[i].punto1)
+					activepath[0],railSegmentPoints.crossroad[i].punto0,railSegmentPoints.crossroad[i].punto1,crossBinary)
 					break 
 				else:
 					_vector = activepath[0]
@@ -108,8 +109,9 @@ func _isNearToCross() -> Vector2:
 				var a = global_position.distance_to(railSegmentPoints.crossroad[i].punto1)
 				if a < 8 :
 					trovato_scambio = true
+					var crossBinary = await  rail_.getBinary(railSegmentPoints.crossroad[i].punto0,targetEnd[0],foward)
 					_vector = await  rail_.getCrossRoad(global_position,targetEnd[0],
-					activepath[0],railSegmentPoints.crossroad[i].punto1,railSegmentPoints.crossroad[i].punto0)
+					activepath[0],railSegmentPoints.crossroad[i].punto1,railSegmentPoints.crossroad[i].punto0,crossBinary)
 					break 
 				else:
 					_vector = activepath[0]
