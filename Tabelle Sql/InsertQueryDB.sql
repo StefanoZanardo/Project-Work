@@ -93,3 +93,27 @@ VALUES
     (9, 5, 1500),
     (9, 5, 1500),
     (9, 5, 1200);
+
+CREATE TABLE ACTUALPOSITION (
+    ActualPositionId INT IDENTITY(1,1) NOT NULL,
+    x REAL NOT NULL,
+    y REAL NOT NULL,
+    speed REAL NOT NULL,
+    TrainId INT NULL,
+    
+    -- Definizione della Chiave Primaria
+    CONSTRAINT PK_ActualPosition PRIMARY KEY (ActualPositionId),
+    
+    -- Definizione della Chiave Esterna (Assumendo che esista una tabella 'Train')
+    CONSTRAINT FK_ActualPosition_Train FOREIGN KEY (TrainId) REFERENCES TRAINS(TrainId)
+);
+
+ALTER TABLE TRAINS
+ADD ActualPositionId INT NULL;
+GO
+
+-- 2. Crea il vincolo di Chiave Esterna che punta ad ActualPosition
+ALTER TABLE TRAINS
+ADD CONSTRAINT FK_Train_ActualPosition 
+FOREIGN KEY (ActualPositionId) REFERENCES ActualPosition(ActualPositionId);
+GO

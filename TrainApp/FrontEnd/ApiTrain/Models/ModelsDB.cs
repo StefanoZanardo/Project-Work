@@ -13,6 +13,7 @@ namespace ApiTrain.Models
 
         [JsonIgnore]
         public ICollection<Train> Trains { get; set; } = new List<Train>();
+
     }
 
     public class Train
@@ -26,11 +27,16 @@ namespace ApiTrain.Models
 
         public int? CategoryId { get; set; }
 
+        public int? ActualPositionId { get; set; }
+
         [JsonIgnore]
         public Category? Category { get; set; }
 
         [JsonIgnore]
         public ICollection<Wagon> Wagons { get; set; } = new List<Wagon>();
+
+        [JsonIgnore]
+        public ActualPosition? ActualPositions { get; set; }
     }
 
     public class Rail
@@ -102,6 +108,22 @@ namespace ApiTrain.Models
 
         [JsonIgnore]
         public SegmentRail? SegmentRail { get; set; }
+    }
+
+    public class ActualPosition
+    {
+        public int ActualPositionId { get; set; }
+
+        public float x { get; set; }
+
+        public float y { get; set; }
+
+
+        public float speed { get; set; }
+
+        public int? TrainId { get; set; }
+
+        public Train? Train { get; set; }
     }
 }
 

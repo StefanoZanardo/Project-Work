@@ -26,6 +26,7 @@ namespace ApiTrain.DependecyInjection
             app.MapGenericEndPointsCrude<Crossroad>("/crossroad");
             app.MapGenericEndPointsCrude<Stoplight>("/stoplight");
             app.MapGenericEndPointsCrude<Wagon>("/wagon");
+            app.MapGenericEndPointsCrude<ActualPosition>("/actualposition");
         }
     }
 }
