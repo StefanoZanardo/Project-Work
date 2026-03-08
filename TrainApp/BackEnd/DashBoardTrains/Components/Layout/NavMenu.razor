@@ -1,32 +1,46 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">DashBoardTrains</a>
+﻿<div class="top-row ps-3 navbar navbar-dark shadow-sm">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="">
+            <i class="bi bi-train-front-fill nav-icon-brand" aria-hidden="true"></i>
+            <span class="fw-semibold">DashBoardTrains</span>
+        </a>
+        <span class="badge badge-pill-status d-none d-md-inline-flex align-items-center gap-1">
+            <i class="bi bi-activity"></i>
+            <span>Monitor Treni</span>
+        </span>
     </div>
 </div>
 
 <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column">
+    <nav class="nav flex-column py-3">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="dashboard">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Tabelle Dati Treni
+            <NavLink class="nav-link nav-link-pill d-flex align-items-center" href="dashboard">
+                <i class="bi bi-table nav-icon me-2"></i>
+                <span>Tabelle Dati Treni</span>
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="trains">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Form Treni
+            <NavLink class="nav-link nav-link-pill d-flex align-items-center" href="trains">
+                <i class="bi bi-pencil-square nav-icon me-2"></i>
+                <span>Form Treni</span>
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link d-flex align-items-center" href="Simulator">
-                <span class="bi bi-train-front-fill"
-                      style="font-size:1.2rem; line-height:1;"> </span>
+            <NavLink class="nav-link nav-link-pill d-flex align-items-center" href="Simulator">
+                <i class="bi bi-train-front nav-icon me-2"></i>
                 <span>Simulatore Treni</span>
             </NavLink>
         </div>
-
-
+        <div class="nav-item px-3 mt-3 pt-2 border-top border-light">
+            <NavLink class="nav-link nav-link-pill d-flex align-items-center justify-content-between" href="login">
+                <span class="d-flex align-items-center">
+                    <i class="bi bi-box-arrow-in-right nav-icon me-2"></i>
+                    <span>Login</span>
+                </span>
+                <span class="badge bg-primary text-white small">UI</span>
+            </NavLink>
+        </div>
     </nav>
 </div>
-

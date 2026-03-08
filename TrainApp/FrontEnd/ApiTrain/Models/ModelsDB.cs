@@ -125,6 +125,15 @@ namespace ApiTrain.Models
 
         public Train? Train { get; set; }
     }
+
+    public class Credential
+    {
+        public int Id { get; set; }
+        public string NomeUtente { get; set; } = null!;
+        public string Password { get; set; } = null!;
+        public string Salt { get; set; } = null!;
+        public DateTime DataCreazione { get; set; }
+    }
 }
 
 

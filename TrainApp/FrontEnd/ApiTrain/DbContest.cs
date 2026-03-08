@@ -18,7 +18,9 @@ namespace ApiTrain
         public DbSet<Stoplight> Stoplights { get; set; }
         public DbSet<Wagon> Wagons { get; set; }
 
-        public DbSet<ActualPosition> ActualPosition { get; set; }   
+        public DbSet<ActualPosition> ActualPosition { get; set; }
+
+        public DbSet<Credential> Credentials { get; set; }   
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,6 +34,7 @@ namespace ApiTrain
             modelBuilder.Entity<Stoplight>().ToTable("STOPLIGHT").HasKey(s=>s.StoplightId);
             modelBuilder.Entity<Wagon>().ToTable("WAGONS").HasKey(W=>W.WagonId);
             modelBuilder.Entity<ActualPosition>().ToTable("ACTUALPOSITION").HasKey(A=> A.ActualPositionId);
+            modelBuilder.Entity<Credential>().ToTable("credential").HasKey(c => c.Id);
 
 
 

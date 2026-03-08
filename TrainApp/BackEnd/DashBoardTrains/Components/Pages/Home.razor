@@ -1,10 +1,10 @@
 ﻿@page "/"
 @inject NavigationManager NavManager
-<h3>Home</h3>
 
 @code {
-    protected  override void OnInitialized()
+    protected override void OnInitialized()
     {
-        NavManager.NavigateTo("/Simulator");
+        // Quando si apre il sito per la prima volta, vai subito alla pagina di login
+        NavManager.NavigateTo("/login", forceLoad: false);
     }
 }

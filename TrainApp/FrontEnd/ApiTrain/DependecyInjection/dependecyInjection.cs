@@ -1,4 +1,5 @@
-﻿    using ApiTrain.EndPoints.CRUDE;
+﻿    using ApiTrain.EndPoints;
+    using ApiTrain.EndPoints.CRUDE;
 using ApiTrain.Interfaces.CRUDE;
 using ApiTrain.Models;
 using ApiTrain.Services.CRUDE;
@@ -18,6 +19,7 @@ namespace ApiTrain.DependecyInjection
 
         public static void appEndPoints(this WebApplication app) 
         {
+            app.MapAuthEndpoints();
             
             app.MapGenericEndPointsCrude<Category>("/category");
             app.MapGenericEndPointsCrude<Train>("/train");

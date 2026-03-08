@@ -24,6 +24,9 @@ namespace DashBoardTrains.Components.Pages.TrainPages
         public List<T>? Items { get; set; }
         public List<PropertyInfo> Properties { get; set; } = new();
 
+        private PropertyInfo? _currentSortProperty;
+        private bool _sortAscending = true;
+
         protected override async Task OnInitializedAsync()
         {
 
@@ -43,6 +46,56 @@ namespace DashBoardTrains.Components.Pages.TrainPages
                     Items = new List<T>(); 
                 }
             }
+        }
+
+        private void SortBy(PropertyInfo property)
+        {
+            if (Items == null || Items.Count == 0)
+            {
+                return;
+            }
+
+            if (_currentSortProperty == property)
+            {
+                // Toggle direction
+                _sortAscending = !_sortAscending;
+            }
+            else
+            {
+                _currentSortProperty = property;
+                _sortAscending = true;
+            }
+
+            Func<T, string?> keySelector = item =>
+            {
+                var value = property.GetValue(item);
+                return value?.ToString();
+            };
+
+            if (_sortAscending)
+            {
+                Items = Items
+                    .OrderBy(keySelector, StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+            }
+            else
+            {
+                Items = Items
+                    .OrderByDescending(keySelector, StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+            }
+        }
+
+        private string GetSortIconClass(PropertyInfo property)
+        {
+            if (_currentSortProperty != property)
+            {
+                return "bi bi-arrow-down-up text-muted";
+            }
+
+            return _sortAscending
+                ? "bi bi-arrow-up-short"
+                : "bi bi-arrow-down-short";
         }
 
         //private async Task Canc(int id)

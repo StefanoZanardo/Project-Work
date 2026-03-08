@@ -1,28 +1,48 @@
 ﻿@typeparam T
 @using System.Reflection
 
-<div class="card mb-3">
-    <div class="card-header bg-primary text-white">
-        <h5>@Title</h5>
+<div class="card mb-3 shadow-sm border-0 rounded-3">
+    <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
+        <h5 class="mb-0">@Title</h5>
+        @if (Items != null && Items.Count > 0)
+        {
+            <span class="badge bg-light text-primary">
+                @Items.Count elementi
+            </span>
+        }
     </div>
-    <div class="card-body">
+    <div class="card-body p-0">
         @if (Items == null)
         {
-            <p><em>Caricamento in corso...</em></p>
+            <div class="p-3">
+                <p class="mb-0 text-muted"><em>Caricamento in corso...</em></p>
+            </div>
         }
         else if (Items.Count == 0)
         {
-            <p>Nessun dato trovato.</p>
+            <div class="p-3">
+                <p class="mb-0 text-muted">Nessun dato trovato.</p>
+            </div>
         }
         else
         {
             <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead>
+                <table class="table table-hover table-striped align-middle mb-0">
+                    <thead class="table-light">
                         <tr>
                             @foreach (var prop in Properties)
                             {
-                                <th>@prop.Name</th>
+                                <th scope="col" class="text-nowrap">
+                                    <div class="d-flex align-items-center justify-content-between gap-1">
+                                        <span>@prop.Name</span>
+                                        <button type="button"
+                                                class="btn btn-sm btn-outline-secondary border-0 bg-transparent p-0 ms-1"
+                                                title="Ordina per @prop.Name"
+                                                @onclick="() => SortBy(prop)">
+                                            <i class="@GetSortIconClass(prop)"></i>
+                                        </button>
+                                    </div>
+                                </th>
                             }
                         </tr>
                     </thead>

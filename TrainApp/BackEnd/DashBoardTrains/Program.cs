@@ -2,6 +2,7 @@ using DashBoardTrains.Components;
 using DashBoardTrains.Components.Pages;
 using DashBoardTrains.Models;
 using DashBoardTrains.Models.MockUp_Models;
+using DashBoardTrains.Services;
 using DashBoardTrains.Services.CRUDE;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +19,7 @@ namespace DashBoardTrains
             builder.Services.AddHttpClient("GenericHttpClient", opt => { opt.BaseAddress = new Uri("https://apiprojectworktrains.azurewebsites.net"); });
             builder.Services.AddScoped(typeof(ServicesGenerics<>));
             builder.Services.AddScoped<ProductService>();
+            builder.Services.AddScoped<AuthService>();
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
             var app = builder.Build();

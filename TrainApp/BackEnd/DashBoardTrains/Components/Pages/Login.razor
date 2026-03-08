@@ -1,0 +1,132 @@
+@page "/login"
+@using DashBoardTrains.Services
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Accesso</PageTitle>
+
+<div class="d-flex align-items-center justify-content-center min-vh-100 py-4">
+    <div class="card shadow-lg border-0 w-100" style="max-width: 420px;">
+        <div class="card-body p-4 p-md-5">
+            <div class="text-center mb-4">
+                <div class="rounded-circle bg-primary bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-3" style="width:3.5rem;height:3.5rem;">
+                    <i class="bi bi-person-lock text-primary fs-4"></i>
+                </div>
+                <h2 class="h4 mb-1 fw-semibold">Accedi alla Dashboard</h2>
+                <p class="text-muted mb-0">Inserisci le tue credenziali per continuare.</p>
+            </div>
+
+            @if (!string.IsNullOrEmpty(_errorMessage))
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    @_errorMessage
+                    <button type="button" class="btn-close" @onclick="() => _errorMessage = string.Empty" aria-label="Close"></button>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(_successMessage))
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle me-2"></i>
+                    @_successMessage
+                </div>
+            }
+
+            <EditForm Model="@_loginModel" OnValidSubmit="HandleLogin">
+                <DataAnnotationsValidator />
+                <ValidationSummary class="text-danger mb-3" />
+
+                <div class="mb-3">
+                    <label for="username" class="form-label fw-medium">Nome utente</label>
+                    <InputText id="username"
+                               class="@($"form-control form-control-lg {(_isLoading ? "disabled" : "")}")"
+                               @bind-Value="_loginModel.NomeUtente"
+                               placeholder="Inserisci il nome utente"
+                               disabled="@_isLoading" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="password" class="form-label fw-medium d-flex justify-content-between align-items-center">
+                        <span>Password</span>
+                        <a href="#" class="small text-decoration-none">Password dimenticata?</a>
+                    </label>
+                    <InputText id="password"
+                               type="password"
+                               class="@($"form-control form-control-lg {(_isLoading ? "disabled" : "")}")"
+                               @bind-Value="_loginModel.Password"
+                               placeholder="Inserisci la password"
+                               disabled="@_isLoading" />
+                </div>
+
+                <div class="form-check my-2">
+                    <InputCheckbox class="form-check-input" @bind-Value="_rememberMe" id="rememberMe" disabled="@_isLoading" />
+                    <label class="form-check-label" for="rememberMe">
+                        Ricordami su questo dispositivo
+                    </label>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg" disabled="@_isLoading">
+                        @if (_isLoading)
+                        {
+                            <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                            <span>Accesso in corso...</span>
+                        }
+                        else
+                        {
+                            <span>Accedi</span>
+                        }
+                    </button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginModel _loginModel = new();
+    private bool _rememberMe = false;
+    private bool _isLoading = false;
+    private string _errorMessage = string.Empty;
+    private string _successMessage = string.Empty;
+
+    private async Task HandleLogin()
+    {
+        _errorMessage = string.Empty;
+        _successMessage = string.Empty;
+        _isLoading = true;
+
+        try
+        {
+            var response = await AuthService.LoginAsync(_loginModel.NomeUtente, _loginModel.Password);
+
+            if (response != null && response.Success)
+            {
+                _successMessage = response.Message ?? "Login effettuato con successo!";
+                
+                // Reindirizza alla dashboard dopo un breve delay
+                await Task.Delay(1000);
+                NavigationManager.NavigateTo("/dashboard");
+            }
+            else
+            {
+                _errorMessage = response?.Message ?? "Credenziali non valide. Riprova.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Errore durante il login: {ex.Message}";
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    private class LoginModel
+    {
+        public string NomeUtente { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}

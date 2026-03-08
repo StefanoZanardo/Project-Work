@@ -81,3 +81,15 @@ CREATE TABLE WAGONS (
     CONSTRAINT FK_WAGONS_SEGMENTRAIL FOREIGN KEY (WagonsSegment)
         REFERENCES SEGMENTRAIL(SegmentRailID)
 );
+
+---------------------------------------------------
+-- 8) credential
+---------------------------------------------------
+CREATE TABLE [dbo].[credential]
+(
+    [Id]            INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_credential PRIMARY KEY,
+    [NomeUtente]    NVARCHAR(100)     NOT NULL,
+    [Password]      NVARCHAR(256)     NOT NULL,
+    [Salt]          NVARCHAR(256)     NOT NULL,
+    [DataCreazione] DATETIME2(0)      NOT NULL CONSTRAINT DF_credential_DataCreazione DEFAULT (SYSUTCDATETIME())
+);
