@@ -19,10 +19,20 @@ namespace ApiTrain.Services.CRUDE
 
         public async Task<T> AddAsync(T entity)
         {
-            await _db.AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return entity;
-        }
+            try
+            {
+
+
+                await _db.AddAsync(entity);
+                var result = await _context.SaveChangesAsync();
+                return entity;
+            }
+            catch (Exception ex) 
+            {
+                Console.Write(ex.Message);
+                return entity;
+            }
+         }
 
         public async Task UpdateAsync(T entity)
         {

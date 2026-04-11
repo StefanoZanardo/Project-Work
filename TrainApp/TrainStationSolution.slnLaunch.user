@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "BackEnd\\DashBoardTrains\\DashBoardTrains.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "FrontEnd\\ApiTrain\\ApiTrain.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -40,6 +40,8 @@
                 <div class="mb-3">
                     <label for="username" class="form-label fw-medium">Nome utente</label>
                     <InputText id="username"
+                               name="username"
+                               autocomplete="username"
                                class="@($"form-control form-control-lg {(_isLoading ? "disabled" : "")}")"
                                @bind-Value="_loginModel.NomeUtente"
                                placeholder="Inserisci il nome utente"
@@ -53,18 +55,14 @@
                     </label>
                     <InputText id="password"
                                type="password"
+                               name="password"
+                               autocomplete="current-password"
                                class="@($"form-control form-control-lg {(_isLoading ? "disabled" : "")}")"
                                @bind-Value="_loginModel.Password"
                                placeholder="Inserisci la password"
                                disabled="@_isLoading" />
                 </div>
 
-                <div class="form-check my-2">
-                    <InputCheckbox class="form-check-input" @bind-Value="_rememberMe" id="rememberMe" disabled="@_isLoading" />
-                    <label class="form-check-label" for="rememberMe">
-                        Ricordami su questo dispositivo
-                    </label>
-                </div>
 
                 <div class="d-grid gap-2 mt-4">
                     <button type="submit" class="btn btn-primary btn-lg" disabled="@_isLoading">
@@ -105,8 +103,6 @@
             {
                 _successMessage = response.Message ?? "Login effettuato con successo!";
                 
-                // Reindirizza alla dashboard dopo un breve delay
-                await Task.Delay(1000);
                 NavigationManager.NavigateTo("/dashboard");
             }
             else

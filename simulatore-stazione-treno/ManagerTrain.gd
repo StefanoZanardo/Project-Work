@@ -13,7 +13,7 @@ var InitialorEndPoints : Dictionary = {
 #Punti intermedi 
 var MiddlePoints : Dictionary  
 
-
+var http_request: HTTPRequest
 var train_queue : Array = []
 var is_spawning : bool = false 
 var start_menu : OptionButton
@@ -22,6 +22,7 @@ var end_menu : OptionButton
 var BtnAddQueue : Button
 var BtnLaunchQueue : Button
 var LabelQueueCount : Label
+var type_menu : OptionButton
 
 func _ready():
 	MiddlePoints = rail_middle.getintermediatePoint()
@@ -33,14 +34,23 @@ func _ready():
 	BtnAddQueue = find_child("BtnAddToQueue",true, false)
 	BtnLaunchQueue = find_child("BtnLaunchQueue",true,false)
 	LabelQueueCount = find_child("LabelCoda", true, false)
+	type_menu = find_child("TypeTrain", true, false)
 
 	start_menu.item_selected.connect(_on_start_selected)
 	end_menu.item_selected.connect(_on_end_selected)
+	
+	http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(_on_request_completed)
 
 	BtnAddQueue.pressed.connect(_on_aggiungi_premuto)
 	BtnLaunchQueue.pressed.connect(_on_partenza_premuto)
 	
 	aggiorna_label()
+	type_menu.clear()
+	var tipi_treno = ["stazionario", "regionale", "veloce", "freccia", "transito"]
+	for tipo in tipi_treno:
+		type_menu.add_item(tipo)
 	for pmid in MiddlePoints:
 		middle_menu.add_item(pmid)
 	middle_menu.select(0)
@@ -87,7 +97,7 @@ func _on_aggiungi_premuto():
 	var middle_idx = middle_menu.selected
 	var end_idx = end_menu.selected
 	
-	
+	var tipo_treno_selezionato = type_menu.get_item_text(type_menu.selected)
 	var name_middle = middle_menu.get_item_text(middle_idx)
 	
 	if start_idx == -1 or end_idx == -1:
@@ -99,7 +109,7 @@ func _on_aggiungi_premuto():
 	
 
 	
-	train_queue.append({"start": start_val, "middle": middle_val , "end": end_val})
+	train_queue.append({"start": start_val, "middle": middle_val , "end": end_val, "type": tipo_treno_selezionato})
 	aggiorna_label()
 
 func _on_partenza_premuto():
@@ -113,7 +123,7 @@ func _on_partenza_premuto():
 		var dati_treno = train_queue.pop_front()
 		aggiorna_label()
 		
-		spawn_train(dati_treno["start"], dati_treno["middle"], dati_treno["end"])
+		spawn_train(dati_treno["start"], dati_treno["middle"], dati_treno["end"], dati_treno["type"])
 		
 		#Qua è la pausa fra treni bisognerà migliorarla
 		await get_tree().create_timer(2.0).timeout
@@ -122,15 +132,55 @@ func _on_partenza_premuto():
 	BtnLaunchQueue.disabled = false
 
 
-func spawn_train(start_key: String,middle_key : Vector2, end_key: String):
+func spawn_train(start_key: String,middle_key : Vector2, end_key: String, type_tr: String):
 		
 	var new_train = train_scene.instantiate()
 	add_child(new_train)
 	
 
-	new_train.setup_train(start_key,middle_key, end_key, rail_system)
+	new_train.setup_train(start_key,middle_key, end_key, rail_system,type_tr)
+	# Mettendo false al secondo parametro, Godot userà la 'T' invece dello spazio
+	var data_odierna_iso = Time.get_datetime_string_from_system(true, false) + ".000Z"
+	
+	# 2. Creiamo il dizionario ESATTAMENTE come lo vuole l'API (omettendo trainId)
+	var dati_da_inviare = {
+		"destination": end_key,       # es. "L1", "C2", ecc.
+		"vagons": 4,                  # Sostituisci con il numero reale di vagoni
+		"timeDelay": 0,
+		"departureTrain": data_odierna_iso,
+		"arrivalTrain": data_odierna_iso, # Sostituisci se riesci a calcolare l'arrivo previsto
+		"categoryId": 1,              # Sostituisci con l'ID categoria corretto
+		"actualPositionId": 1         # Dovrai mappare start_key (es "L1") a un ID numerico
+	}
+	
+	# Lancia la richiesta
+	invia_dati_api(dati_da_inviare)
+	
+	
+func invia_dati_api(dati: Dictionary):
+	var url = "http://localhost:5136/train"
+	var headers = ["Content-Type: application/json"]
+	
+	# Convertiamo il dizionario in una stringa JSON
+	var json_body = JSON.stringify(dati)
+	
+	# Eseguiamo la richiesta POST
+	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_body)
+	
+	if error != OK:
+		push_error("Si è verificato un errore durante l'avvio della richiesta HTTP.")
 
-
+func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
+	if response_code >= 200 and response_code < 300:
+		print("✅ API CHIAMATA CON SUCCESSO! Codice: ", response_code)
+	else:
+		print("❌ ERRORE API!")
+		print("Codice HTTP: ", response_code)
+		if body.size() > 0:
+			print("Motivo del rifiuto dal server: ", body.get_string_from_utf8())
+		if result != HTTPRequest.RESULT_SUCCESS:
+			print("Errore interno di Godot (es. server spento o irraggiungibile). Codice Result: ", result)
+			
 func aggiorna_label():
 	
 	var stazioni = InitialorEndPoints.keys()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0hj3fneustfy"
-path="res://.godot/imported/SimulatoreTreni_test.icon.png-a4dc0a14bbea7277a8e27aa9d554335e.ctex"
+uid="uid://b1dy6fuahl6d4"
+path="res://.godot/imported/Frait train assets blue.png-61f119b32c00a6224f8ca902bea60b23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Exports/SimulatoreTreni_test.icon.png"
-dest_files=["res://.godot/imported/SimulatoreTreni_test.icon.png-a4dc0a14bbea7277a8e27aa9d554335e.ctex"]
+source_file="res://Assets/Frait train assets blue.png"
+dest_files=["res://.godot/imported/Frait train assets blue.png-61f119b32c00a6224f8ca902bea60b23.ctex"]
 
 [params]
 

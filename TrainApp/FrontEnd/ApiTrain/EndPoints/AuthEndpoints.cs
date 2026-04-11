@@ -83,5 +83,8 @@ namespace ApiTrain.EndPoints
                 return Convert.ToHexString(hashBytes);
             }
         }
+
+        //admin
+        //Admin!123
     }
 }

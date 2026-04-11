@@ -117,3 +117,13 @@ ALTER TABLE TRAINS
 ADD CONSTRAINT FK_Train_ActualPosition 
 FOREIGN KEY (ActualPositionId) REFERENCES ActualPosition(ActualPositionId);
 GO
+
+
+INSERT INTO [dbo].[ACTUALPOSITION] ([x], [y], [speed], [TrainId])
+VALUES 
+    (-511.6, 210.0, 0, NULL), -- L1
+    (-511.6, 260.0, 0, NULL), -- L2
+    (1576.6, 210.0, 0, NULL), -- R1
+    (1575.6, 260.0, 0, NULL), -- R2
+    (227.0,  708.0, 0, NULL), -- C1
+    (294.0,  690.0, 0, NULL); -- C2

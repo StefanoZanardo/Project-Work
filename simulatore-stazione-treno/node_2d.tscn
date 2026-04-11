@@ -237,6 +237,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 allow_reselect = true
 
+[node name="TypeTrain" type="OptionButton" parent="Node/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
 [node name="BtnAddToQueue" type="Button" parent="Node/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25

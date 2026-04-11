@@ -1,6 +1,7 @@
 extends Node2D 
 
 @export var speed : float = 200.0
+@onready var sprite = $Sprite2D
 var rail_ : RailSegment 
 
 var current_point_index : int = 0
@@ -9,6 +10,8 @@ var activepath : PackedVector2Array
 var ChangeLaneRail : bool
 var ActualCrossRoad : PackedVector2Array
 var foward : bool
+var _httpreq : HTTPRequest
+
 
 var InitialorEndPoints : Dictionary = {
 	"L1": Vector2(-511.6, 210), "L2": Vector2(-511.6, 260),
@@ -24,10 +27,22 @@ var is_active : bool = false
 func _ready():
 	set_physics_process(false)
 
-func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_system: RailSegment):
+func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_system: RailSegment,type_train: String):
 	rail_ = rail_system 
 	railPoints = await rail_.get_global_points()
 	railSegmentPoints = await rail_.ArraySegmentBinaryGet()
+	
+	match type_train:
+		"stazionario":
+			sprite.texture = load("res://Immagini/Treni/stazionario.png")
+		"regionale":
+			sprite.texture = load("res://Assets/Frait train assets blue.png")
+		"veloce":
+			sprite.texture = load("res://Assets/RedTrain_.png")
+		"freccia":
+			sprite.texture = load("res://Assets/trenoVelocità.png")
+		"transito":
+			sprite.texture = load("res://Assets/transizioneTreno.png")
 	
 	ChangeLaneRail = false
 	#Carico prima il punto intermedio
@@ -35,6 +50,7 @@ func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_syst
 	if InitialorEndPoints.has(start_key) and InitialorEndPoints.has(end_key):
 		global_position = InitialorEndPoints[start_key]
 		targetEnd.append(InitialorEndPoints[end_key])
+		
 	else:
 		printerr("Chiavi partenza/arrivo non valide: ", start_key, end_key)
 		return
