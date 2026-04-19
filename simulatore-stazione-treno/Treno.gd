@@ -29,6 +29,7 @@ var StoryOfPoints : PackedVector2Array
 var railSegmentPoints : BinarioInfo.BinarioInfoTratti
 var is_active : bool = false
 
+
 func _ready():
 	set_physics_process(false)
 
@@ -36,10 +37,10 @@ func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_syst
 	rail_ = rail_system 
 	railPoints = await rail_.get_global_points()
 	railSegmentPoints = await rail_.ArraySegmentBinaryGet()
-	
+
 	match type_train:
 		"stazionario":
-			sprite.texture = load("res://Immagini/Treni/stazionario.png")
+			sprite.texture = load("res://Assets/RedTrain_.png")
 			speed = 100
 		"regionale":
 			sprite.texture = load("res://Assets/Frait train assets blue.png")
@@ -69,7 +70,7 @@ func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_syst
 	for j in range(history_length):
 		position_history.append(global_position)
 		rotation_history.append(rotation)
-	_spawn_wagons(num_wagons)
+	_spawn_wagons(num_wagons,type_train)
 	var first_path = await rail_.getBinary(global_position, targetEnd[0], foward)
 	activepath.append(first_path)
 	StoryOfPoints.append(first_path)
@@ -166,7 +167,7 @@ func _update_wagons() -> void:
 		wagons[i].global_position = position_history[history_index]
 		wagons[i].rotation = rotation_history[history_index]
 
-func _spawn_wagons(num_wagons: int) -> void:
+func _spawn_wagons(num_wagons: int, type_train:String) -> void:
 	for w in wagons:
 		w.queue_free()
 	wagons.clear()
@@ -174,7 +175,20 @@ func _spawn_wagons(num_wagons: int) -> void:
 	for i in range(num_wagons):
 		var wagon = Node2D.new()
 		var wagon_sprite = Sprite2D.new()
-		wagon_sprite.texture = load("res://Assets/transizioneTreno.png")
+		match type_train:
+			"stazionario":
+				wagon_sprite.texture = load("res://Assets/Wagons/VagoneMerci.png")
+				wagon_spacing = 45
+			"regionale":
+				wagon_sprite.texture = load("res://Assets/Frait train assets blue.png")
+				wagon_spacing = 40
+			"veloce":
+				wagon_sprite.texture = load("res://Assets/RedTrain_.png")
+				wagon_spacing = 45
+			"freccia":
+				wagon_sprite.texture = load("res://Assets/trenoVelocità.png")
+			"transito":
+				wagon_sprite.texture = load("res://Assets/transizioneTreno.png")
 		wagon_sprite.scale = sprite.scale
 		wagon.add_child(wagon_sprite)
 		
