@@ -8,10 +8,11 @@ extends Node
 var InitialorEndPoints : Dictionary = {
 	"L1": Vector2(-511.6, 210), "L2": Vector2(-511.6, 260),
 	"R1": Vector2(1576.6, 210), "R2": Vector2(1575.6, 260),
-	"C1": Vector2(227, 708),"C2": Vector2(294, 690)
+	#"C1": Vector2(227, 708),"C2": Vector2(294, 690)
 }
 #Punti intermedi 
 var MiddlePoints : Dictionary  
+var numwagons : int = 0
 
 var http_request: HTTPRequest
 var train_queue : Array = []
@@ -23,6 +24,9 @@ var BtnAddQueue : Button
 var BtnLaunchQueue : Button
 var LabelQueueCount : Label
 var type_menu : OptionButton
+var LabelNunWagons : Label
+var BtnAddWagons : Button
+var BtnRemoveWagons : Button
 
 func _ready():
 	MiddlePoints = rail_middle.getintermediatePoint()
@@ -35,6 +39,11 @@ func _ready():
 	BtnLaunchQueue = find_child("BtnLaunchQueue",true,false)
 	LabelQueueCount = find_child("LabelCoda", true, false)
 	type_menu = find_child("TypeTrain", true, false)
+	LabelNunWagons = find_child("LabelNumWag", true, false)
+	BtnAddWagons = find_child("ButtonAdd", true, false)
+	BtnRemoveWagons = find_child("ButtonRemove", true , false)
+	
+	
 
 	start_menu.item_selected.connect(_on_start_selected)
 	end_menu.item_selected.connect(_on_end_selected)
@@ -45,6 +54,9 @@ func _ready():
 
 	BtnAddQueue.pressed.connect(_on_aggiungi_premuto)
 	BtnLaunchQueue.pressed.connect(_on_partenza_premuto)
+	
+	BtnAddWagons.pressed.connect(wagonbtn.bind(true))
+	BtnRemoveWagons.pressed.connect(wagonbtn.bind(false))
 	
 	aggiorna_label()
 	type_menu.clear()
@@ -57,6 +69,20 @@ func _ready():
 	if start_menu.item_count > 0:
 		start_menu.select(0)
 		_on_start_selected(0)
+
+func wagonbtn(isAdd:bool):
+	if(isAdd):
+		if(numwagons < 10):
+			numwagons = numwagons + 1
+		else:
+			return
+	else:
+		if(numwagons > 0):
+			numwagons = numwagons - 1
+		else:
+			return;
+	LabelNunWagons.text = "N° Wagons: %s" % numwagons
+	
 
 func _on_start_selected(index: int) -> void:
 	var pos = start_menu.get_item_text(index)
@@ -138,7 +164,7 @@ func spawn_train(start_key: String,middle_key : Vector2, end_key: String, type_t
 	add_child(new_train)
 	
 
-	new_train.setup_train(start_key,middle_key, end_key, rail_system,type_tr)
+	new_train.setup_train(start_key,middle_key, end_key, rail_system,type_tr,numwagons)
 	# Mettendo false al secondo parametro, Godot userà la 'T' invece dello spazio
 	var data_odierna_iso = Time.get_datetime_string_from_system(true, false) + ".000Z"
 	

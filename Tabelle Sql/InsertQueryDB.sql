@@ -127,3 +127,17 @@ VALUES
     (1575.6, 260.0, 0, NULL), -- R2
     (227.0,  708.0, 0, NULL), -- C1
     (294.0,  690.0, 0, NULL); -- C2
+
+
+
+INSERT INTO [dbo].[credential]
+           ([NomeUtente]
+           ,[Password]
+           ,[Salt]
+           ,[DataCreazione])
+     VALUES
+           ('admin'
+           ,'CC0100C727B22BFAD52EE2E91BC18198D3B15EA387A970CEDAED98BA0357C1FC'
+           ,'55CF12AFE04808AA722ECE7963869509'
+           ,SYSDATETIME())
+GO

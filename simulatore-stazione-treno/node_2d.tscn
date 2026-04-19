@@ -310,3 +310,67 @@ offset_bottom = 276.0
 theme_override_font_sizes/font_size = 25
 text = "R2"
 horizontal_alignment = 1
+
+[node name="LabelPointL1R1" type="Label" parent="Node"]
+anchors_preset = -1
+anchor_top = 0.018000001
+anchor_bottom = 0.018000001
+offset_left = 615.0
+offset_top = 151.336
+offset_right = 665.0
+offset_bottom = 174.336
+text = "L1R1"
+
+[node name="LabelPointL2R2" type="Label" parent="Node"]
+anchors_preset = -1
+anchor_top = 0.018000001
+anchor_bottom = 0.018000001
+offset_left = 612.0
+offset_top = 214.336
+offset_right = 662.0
+offset_bottom = 237.336
+text = "L2R2"
+
+[node name="LabelPointL3R3" type="Label" parent="Node"]
+anchors_preset = -1
+anchor_top = 0.018000001
+anchor_bottom = 0.018000001
+offset_left = 611.0
+offset_top = 265.336
+offset_right = 661.0
+offset_bottom = 288.336
+text = "L3R3"
+
+[node name="LabelPointL4R4" type="Label" parent="Node"]
+anchors_preset = -1
+anchor_top = 0.018000001
+anchor_bottom = 0.018000001
+offset_left = 611.0
+offset_top = 316.336
+offset_right = 661.0
+offset_bottom = 339.336
+text = "L4R4"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Node"]
+offset_left = -407.0
+offset_top = -183.0
+offset_right = -317.0
+offset_bottom = -143.0
+
+[node name="LabelNumWag" type="Label" parent="Node/VBoxContainer2"]
+layout_mode = 2
+text = "N° Wagons:"
+
+[node name="ButtonAdd" type="Button" parent="Node"]
+offset_left = -335.0
+offset_top = -151.0
+offset_right = -293.0
+offset_bottom = -120.0
+text = " + "
+
+[node name="ButtonRemove" type="Button" parent="Node"]
+offset_left = -391.0
+offset_top = -151.0
+offset_right = -349.0
+offset_bottom = -120.0
+text = " - "
