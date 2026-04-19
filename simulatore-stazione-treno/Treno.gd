@@ -16,6 +16,7 @@ var wagon_spacing : float = 50.0
 var position_history : Array = []
 var rotation_history : Array = []
 var history_length : int = 500
+var is_arrived_at_end : bool = false
 
 
 var InitialorEndPoints : Dictionary = {
@@ -80,46 +81,49 @@ func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_syst
 
 func _physics_process(delta: float) -> void:
 	if not is_active: return
-	if current_point_index <= activepath.size():
-		var target_point:Vector2 = activepath[current_point_index]
-		var direction: Vector2 = (target_point - global_position).normalized()
-		var distance_to_travel : float = delta * speed
-		var distance_to_target_point : float = global_position.distance_to(target_point)
-		
-		await _isNearToCross() 
-		
-		if ChangeLaneRail:
-			activepath[0] = await _isNearToCross()
-			StoryOfPoints.append(activepath[0])
+	if not is_arrived_at_end:
+		if current_point_index <= activepath.size():
+			var target_point:Vector2 = activepath[current_point_index]
+			var direction: Vector2 = (target_point - global_position).normalized()
+			var distance_to_travel : float = delta * speed
+			var distance_to_target_point : float = global_position.distance_to(target_point)
 			
-		if distance_to_travel >= distance_to_target_point:
-			activepath[0] = rail_.getBinary(global_position, targetEnd[0], foward)
-			StoryOfPoints.append(activepath[0])
-			global_position = target_point
+			await _isNearToCross() 
+			
+			if ChangeLaneRail:
+				activepath[0] = await _isNearToCross()
+				StoryOfPoints.append(activepath[0])
+				
+			if distance_to_travel >= distance_to_target_point:
+				activepath[0] = rail_.getBinary(global_position, targetEnd[0], foward)
+				StoryOfPoints.append(activepath[0])
+				global_position = target_point
 
-		if global_position.distance_to(targetEnd[0]) < 3:
-			if targetEnd.size() <= 1:
-				sprite.visible = false
-				is_active = false
-				_wait_for_wagons_and_free()
+			if global_position.distance_to(targetEnd[0]) < 3:
+				if targetEnd.size() <= 1:
+					
+					sprite.visible = false
+					_wait_for_wagons_and_free()
+				else:
+					targetEnd.remove_at(0)
+					foward = _isFoward(global_position, targetEnd[0])
+					var next_step = await rail_.getBinary(global_position, targetEnd[0], foward)
+					activepath[0] = next_step
 			else:
-				targetEnd.remove_at(0)
-				foward = _isFoward(global_position, targetEnd[0])
-				var next_step = await rail_.getBinary(global_position, targetEnd[0], foward)
-				activepath[0] = next_step
-		else:
-			global_position += direction * distance_to_travel
-			rotation = direction.angle()
+				global_position += direction * distance_to_travel
+				rotation = direction.angle()
 
-	# Aggiorna storico
-	position_history.push_front(global_position)
-	rotation_history.push_front(rotation)
-	if position_history.size() > history_length:
-		position_history.pop_back()
-		rotation_history.pop_back()
+		# Aggiorna storico
+		position_history.push_front(global_position)
+		rotation_history.push_front(rotation)
+		if position_history.size() > history_length:
+			position_history.pop_back()
+			rotation_history.pop_back()
 
 	# Aggiorna vagoni — questa riga mancava!
-	_update_wagons()
+		_update_wagons()
+	if is_arrived_at_end:
+		_wait_for_wagons_and_free()
 
 func _isFoward(initialPos: Vector2, endPos : Vector2)->bool:
 	if (initialPos.x < endPos.x):
@@ -159,13 +163,19 @@ func _isNearToCross() -> Vector2:
 	return _vector
 func _update_wagons() -> void:
 	for i in range(wagons.size()):
-		# Calcola quanti punti indietro nello storico deve stare questo vagone
-		# wagon_spacing è in pixel, quindi convertiamo in "indice storia"
-		# Usiamo un passo fisso: più wagon_spacing è grande, più è indietro
-		var history_index : int = int(wagon_spacing * (i + 1) * 0.5)
-		history_index = clamp(history_index, 0, position_history.size() - 1)
-		wagons[i].global_position = position_history[history_index]
-		wagons[i].rotation = rotation_history[history_index]
+		var w = wagons[i]
+		# Leggi l'indice che abbiamo salvato nel vagone
+		var current_h_index = w.get_meta("h_index")
+		
+		# Se il treno è fermo, facciamo scorrere il vagone in avanti nello storico
+		if is_arrived_at_end:
+			current_h_index -= 1 # Muove il vagone verso il traguardo
+			current_h_index = max(0, current_h_index) # Non andare sotto lo zero
+			w.set_meta("h_index", current_h_index) # Salva la nuova posizione
+			
+		var safe_index = clamp(current_h_index, 0, position_history.size() - 1)
+		w.global_position = position_history[safe_index]
+		w.rotation = rotation_history[safe_index]
 
 func _spawn_wagons(num_wagons: int, type_train:String) -> void:
 	for w in wagons:
@@ -187,27 +197,46 @@ func _spawn_wagons(num_wagons: int, type_train:String) -> void:
 				wagon_spacing = 45
 			"freccia":
 				wagon_sprite.texture = load("res://Assets/trenoVelocità.png")
+				wagon_spacing = 40
 			"transito":
 				wagon_sprite.texture = load("res://Assets/transizioneTreno.png")
+				wagon_spacing = 80
 		wagon_sprite.scale = sprite.scale
 		wagon.add_child(wagon_sprite)
+			
 		
 		# I vagoni sono figli della SCENA (get_parent()), NON del treno
 		# Così si muovono indipendentemente senza essere trascinati
 		get_parent().add_child(wagon)
 		wagons.append(wagon)
+		
+		var starting_history_index : int = int(wagon_spacing * (i + 1) * 0.5)
+		wagon.set_meta("h_index", starting_history_index)
 	
 func _wait_for_wagons_and_free() -> void:
 	# Calcola quanti frame servono perché anche l'ultimo vagone raggiunga la fine
 	# L'ultimo vagone è il più indietro nello storico
-	var last_index : int = int(wagon_spacing * wagons.size() * 0.5)
-	# Converti in secondi: ogni frame a 60fps è ~0.016s
-	# last_index = numero di frame di ritardo
-	var wait_time : float = last_index / 60.0
 	
-	await get_tree().create_timer(wait_time).timeout
+	#var last_index : int = int(wagon_spacing * wagons.size() * 0.5)
+	## Converti in secondi: ogni frame a 60fps è ~0.016s
+	## last_index = numero di frame di ritardo
+	#var wait_time : float = last_index / 60.0
+	#
+	#await get_tree().create_timer(wait_time).timeout
 	
-	for w in wagons:
-		w.queue_free()
-	wagons.clear()
-	queue_free()
+
+	for i in range(wagons.size() - 1, -1, -1):
+		if wagons[i].global_position.distance_to(targetEnd[0]) < 3:
+			wagons[i].queue_free()
+			wagons.remove_at(i)
+			
+	
+	if(wagons.size() <= 0):
+		
+		wagons.clear()
+	
+	
+	
+	
+			
+	 

@@ -123,6 +123,7 @@ func _on_aggiungi_premuto():
 	var middle_idx = middle_menu.selected
 	var end_idx = end_menu.selected
 	
+	
 	var tipo_treno_selezionato = type_menu.get_item_text(type_menu.selected)
 	var name_middle = middle_menu.get_item_text(middle_idx)
 	
@@ -135,7 +136,7 @@ func _on_aggiungi_premuto():
 	
 
 	
-	train_queue.append({"start": start_val, "middle": middle_val , "end": end_val, "type": tipo_treno_selezionato})
+	train_queue.append({"start": start_val, "middle": middle_val , "end": end_val, "type": tipo_treno_selezionato,"number_wagon": numwagons})
 	aggiorna_label()
 
 func _on_partenza_premuto():
@@ -149,7 +150,7 @@ func _on_partenza_premuto():
 		var dati_treno = train_queue.pop_front()
 		aggiorna_label()
 		
-		spawn_train(dati_treno["start"], dati_treno["middle"], dati_treno["end"], dati_treno["type"])
+		spawn_train(dati_treno["start"], dati_treno["middle"], dati_treno["end"], dati_treno["type"], dati_treno["number_wagon"])
 		
 		#Qua è la pausa fra treni bisognerà migliorarla
 		await get_tree().create_timer(2.0).timeout
@@ -158,13 +159,13 @@ func _on_partenza_premuto():
 	BtnLaunchQueue.disabled = false
 
 
-func spawn_train(start_key: String,middle_key : Vector2, end_key: String, type_tr: String):
+func spawn_train(start_key: String,middle_key : Vector2, end_key: String, type_tr: String, number_wagon:int):
 		
 	var new_train = train_scene.instantiate()
 	add_child(new_train)
 	
 
-	new_train.setup_train(start_key,middle_key, end_key, rail_system,type_tr,numwagons)
+	new_train.setup_train(start_key,middle_key, end_key, rail_system,type_tr,number_wagon)
 	# Mettendo false al secondo parametro, Godot userà la 'T' invece dello spazio
 	var data_odierna_iso = Time.get_datetime_string_from_system(true, false) + ".000Z"
 	

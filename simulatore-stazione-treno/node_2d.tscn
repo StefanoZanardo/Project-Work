@@ -129,7 +129,7 @@ texture_mode = 1
 [node name="BivioLinea7" type="Line2D" parent="RailSegments"]
 position = Vector2(2151.0002, -4)
 scale = Vector2(0.9577947, 0.5154252)
-points = PackedVector2Array(-824.8114, 106.70804, -761.1234, 3.88031)
+points = PackedVector2Array(-824.8114, 106.70804, -763.2117, 7.7605896)
 width = 20.0
 texture = ExtResource("2_epypp")
 texture_mode = 1

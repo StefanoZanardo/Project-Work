@@ -30,7 +30,7 @@ func get_global_points() -> BinarioInfo:
 				info_rail.rail_segment.append(xform * p)
 		
 				
-	print(mockPackedArray)
+	
 	return info_rail
 
 
