@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daxg5xrb2hag7"
-path="res://.godot/imported/SimulatoreTreni_.apple-touch-icon.png-912c5ca1c44b106762314ce1d0b645a5.ctex"
+uid="uid://b0hj3fneustfy"
+path="res://.godot/imported/SimulatoreTreni_test.icon.png-a4dc0a14bbea7277a8e27aa9d554335e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Exports/SimulatoreTreni_.apple-touch-icon.png"
-dest_files=["res://.godot/imported/SimulatoreTreni_.apple-touch-icon.png-912c5ca1c44b106762314ce1d0b645a5.ctex"]
+source_file="res://Assets/Exports/SimulatoreTreni_test.icon.png"
+dest_files=["res://.godot/imported/SimulatoreTreni_test.icon.png-a4dc0a14bbea7277a8e27aa9d554335e.ctex"]
 
 [params]
 

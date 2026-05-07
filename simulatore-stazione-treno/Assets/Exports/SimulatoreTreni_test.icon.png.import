@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ogdhxlci2emw"
-path="res://.godot/imported/VagoneMerci (1).png-d28b1fde0f991780e1446a348cad3fa1.ctex"
+uid="uid://b0hj3fneustfy"
+path="res://.godot/imported/SimulatoreTreni_test.icon.png-a4dc0a14bbea7277a8e27aa9d554335e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Exports/VagoneMerci (1).png"
-dest_files=["res://.godot/imported/VagoneMerci (1).png-d28b1fde0f991780e1446a348cad3fa1.ctex"]
+source_file="res://Assets/Exports/SimulatoreTreni_test.icon.png"
+dest_files=["res://.godot/imported/SimulatoreTreni_test.icon.png-a4dc0a14bbea7277a8e27aa9d554335e.ctex"]
 
 [params]
 

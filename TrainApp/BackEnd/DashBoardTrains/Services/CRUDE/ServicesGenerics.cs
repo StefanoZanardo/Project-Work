@@ -14,7 +14,7 @@
         {
             var response = await _httpClient.GetFromJsonAsync<List<T>>(connection);
 
-            if (response != null) 
+            if (response != null)                                   
             {
                 return response;
             }

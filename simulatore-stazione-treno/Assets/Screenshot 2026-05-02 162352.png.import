@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv82b25hlfte4"
-path="res://.godot/imported/SimulatoreTreni_.png-886f7f644f7ad4d1d1d1a03cd5d5cecc.ctex"
+uid="uid://m10c53mvofo7"
+path="res://.godot/imported/Screenshot 2026-05-02 162352.png-a35fb3464dc590cbc1488663342c7c42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Exports/SimulatoreTreni_.png"
-dest_files=["res://.godot/imported/SimulatoreTreni_.png-886f7f644f7ad4d1d1d1a03cd5d5cecc.ctex"]
+source_file="res://Assets/Screenshot 2026-05-02 162352.png"
+dest_files=["res://.godot/imported/Screenshot 2026-05-02 162352.png-a35fb3464dc590cbc1488663342c7c42.ctex"]
 
 [params]
 

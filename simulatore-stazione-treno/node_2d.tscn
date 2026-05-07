@@ -1,12 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqe6x2pykhlhi"]
+[gd_scene load_steps=10 format=3 uid="uid://cqe6x2pykhlhi"]
 
 [ext_resource type="Script" uid="uid://ci40fyrx3oesq" path="res://RailSegment.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://d3mask724r07o" path="res://Assets/NormalRails.png" id="2_epypp"]
 [ext_resource type="Script" uid="uid://dmvje2gtt76kx" path="res://ManagerTrain.gd" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://c5b72b37vcphx" path="res://train.tscn" id="3_epypp"]
 [ext_resource type="Script" uid="uid://bgg7evswd8rew" path="res://station_points.gd" id="3_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://drh32q4qy3pel" path="res://Assets/Screenshot 2026-05-02 161608.png" id="7_d21ai"]
+[ext_resource type="Texture2D" uid="uid://m10c53mvofo7" path="res://Assets/Screenshot 2026-05-02 162352.png" id="7_rj586"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q6r6c"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4d7sh"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -171,7 +175,6 @@ position = Vector2(124, 208)
 script = ExtResource("3_q6r6c")
 
 [node name="PuntoL1R1" type="Line2D" parent="StationPoints"]
-modulate = Color(0.006728449, 0.006728449, 0.006728449, 0)
 show_behind_parent = true
 position = Vector2(528, 1)
 points = PackedVector2Array(-3, -2)
@@ -208,16 +211,17 @@ rail_middle = NodePath("../StationPoints")
 clip_contents = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -259.0
-offset_top = -231.0
-offset_right = -259.0
-offset_bottom = 35.0
+offset_left = -264.0
+offset_top = -279.0
+offset_right = -264.0
+offset_bottom = 55.0
 grow_horizontal = 2
 theme_override_constants/separation = 14
 
 [node name="Label" type="Label" parent="Node/VBoxContainer"]
 layout_direction = 4
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
 theme_override_font_sizes/font_size = 25
 text = "Form creazione coda treno"
 horizontal_alignment = 1
@@ -253,6 +257,7 @@ text = "Lancio Coda"
 
 [node name="LabelCoda" type="Label" parent="Node/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
 theme_override_font_sizes/font_size = 25
 text = "Coda:0"
 horizontal_alignment = 1
@@ -262,6 +267,7 @@ offset_left = -553.0
 offset_top = 190.0
 offset_right = -513.0
 offset_bottom = 225.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "L1"
 horizontal_alignment = 1
@@ -271,6 +277,7 @@ offset_left = -554.0
 offset_top = 241.0
 offset_right = -514.0
 offset_bottom = 276.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "L2"
 horizontal_alignment = 1
@@ -280,6 +287,7 @@ offset_left = 217.0
 offset_top = 716.0
 offset_right = 257.0
 offset_bottom = 739.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "C1"
 horizontal_alignment = 1
@@ -289,6 +297,7 @@ offset_left = 290.0
 offset_top = 694.0
 offset_right = 330.0
 offset_bottom = 717.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "C2"
 horizontal_alignment = 1
@@ -298,6 +307,7 @@ offset_left = 1580.0
 offset_top = 192.0
 offset_right = 1620.0
 offset_bottom = 227.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "R1"
 horizontal_alignment = 1
@@ -307,6 +317,7 @@ offset_left = 1580.0
 offset_top = 241.0
 offset_right = 1620.0
 offset_bottom = 276.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "R2"
 horizontal_alignment = 1
@@ -315,20 +326,22 @@ horizontal_alignment = 1
 anchors_preset = -1
 anchor_top = 0.018000001
 anchor_bottom = 0.018000001
-offset_left = 615.0
+offset_left = 611.0
 offset_top = 151.336
-offset_right = 665.0
+offset_right = 661.0
 offset_bottom = 174.336
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "L1R1"
 
 [node name="LabelPointL2R2" type="Label" parent="Node"]
 anchors_preset = -1
 anchor_top = 0.018000001
 anchor_bottom = 0.018000001
-offset_left = 612.0
-offset_top = 214.336
-offset_right = 662.0
-offset_bottom = 237.336
+offset_left = 611.0
+offset_top = 211.336
+offset_right = 661.0
+offset_bottom = 234.336
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "L2R2"
 
 [node name="LabelPointL3R3" type="Label" parent="Node"]
@@ -336,9 +349,10 @@ anchors_preset = -1
 anchor_top = 0.018000001
 anchor_bottom = 0.018000001
 offset_left = 611.0
-offset_top = 265.336
+offset_top = 261.336
 offset_right = 661.0
-offset_bottom = 288.336
+offset_bottom = 284.336
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "L3R3"
 
 [node name="LabelPointL4R4" type="Label" parent="Node"]
@@ -346,9 +360,10 @@ anchors_preset = -1
 anchor_top = 0.018000001
 anchor_bottom = 0.018000001
 offset_left = 611.0
-offset_top = 316.336
+offset_top = 311.336
 offset_right = 661.0
-offset_bottom = 339.336
+offset_bottom = 334.336
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "L4R4"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Node"]
@@ -359,6 +374,7 @@ offset_bottom = -143.0
 
 [node name="LabelNumWag" type="Label" parent="Node/VBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
 text = "N° Wagons:"
 
 [node name="ButtonAdd" type="Button" parent="Node"]
@@ -374,3 +390,21 @@ offset_top = -151.0
 offset_right = -349.0
 offset_bottom = -120.0
 text = " - "
+
+[node name="Screenshot20260423093926" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-3716, 1177)
+scale = Vector2(33.43284, 43.1831)
+texture = SubResource("CompressedTexture2D_4d7sh")
+
+[node name="Screenshot20260502161608" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(4369, 1963)
+scale = Vector2(14.953351, 15.108757)
+texture = ExtResource("7_d21ai")
+
+[node name="Screenshot20260502162352" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(973.49994, 227.50006)
+scale = Vector2(44.135715, 33.008335)
+texture = ExtResource("7_rj586")
