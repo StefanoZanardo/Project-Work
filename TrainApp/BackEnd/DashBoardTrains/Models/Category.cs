@@ -4,9 +4,9 @@ namespace DashBoardTrains.Models
 {
     public class Category
     {
-        public int categoryId { get; set; }
-        public string? trainCategory { get; set; }
-        public int priorityValue { get; set; }
+        public int CategoryId { get; set; }
+        public string? TrainCategory { get; set; }
+        public int PriorityValue { get; set; }
 
         [JsonIgnore]
         public ICollection<Train> Trains { get; set; } = new List<Train>();
@@ -14,8 +14,7 @@ namespace DashBoardTrains.Models
 
     public class Train
     {
-        public int TrainId { get; set; }
-        
+        public Guid TrainId { get; set; }
         public string? Destination { get; set; }
         public int Vagons { get; set; }
         public int TimeDelay { get; set; }
@@ -23,18 +22,22 @@ namespace DashBoardTrains.Models
         public DateTime ArrivalTrain { get; set; }
 
         public int? CategoryId { get; set; }
+        public Guid ActualPositionId { get; set; }
 
         [JsonIgnore]
         public Category? Category { get; set; }
 
         [JsonIgnore]
         public ICollection<Wagon> Wagons { get; set; } = new List<Wagon>();
+
+        [JsonIgnore]
+        public ActualPosition? ActualPositions { get; set; }
     }
 
     public class Rail
     {
         public int RailId { get; set; }
-        public string RailName { get; set; }
+        public string? RailName { get; set; }
 
         [JsonIgnore]
         public ICollection<SegmentRail> SegmentRails { get; set; } = new List<SegmentRail>();
@@ -44,7 +47,7 @@ namespace DashBoardTrains.Models
     {
         public int SegmentRailId { get; set; }
         public int? RailId { get; set; }
-        public string SegmentName { get; set; }
+        public string? SegmentName { get; set; }
         public bool IsOccupied { get; set; } = false;
 
         [JsonIgnore]
@@ -91,7 +94,7 @@ namespace DashBoardTrains.Models
     public class Wagon
     {
         public int WagonId { get; set; }
-        public int? TrainId { get; set; }
+        public Guid? TrainId { get; set; }       // <-- era int?, ora Guid?
         public int? WagonsSegment { get; set; }
         public int Capacity { get; set; }
 
@@ -100,5 +103,26 @@ namespace DashBoardTrains.Models
 
         [JsonIgnore]
         public SegmentRail? SegmentRail { get; set; }
+    }
+
+    public class ActualPosition
+    {
+        public Guid ActualPositionId { get; set; }
+        public float x { get; set; }
+        public float y { get; set; }
+        public float speed { get; set; }
+       // <-- era int?, ora Guid?
+
+        [JsonIgnore]
+        public Train? Train { get; set; }
+    }
+
+    public class Credential
+    {
+        public int Id { get; set; }
+        public string NomeUtente { get; set; } = null!;
+        public string Password { get; set; } = null!;
+        public string Salt { get; set; } = null!;
+        public DateTime DataCreazione { get; set; }
     }
 }

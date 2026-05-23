@@ -1,4 +1,5 @@
 ﻿using ApiTrain.Interfaces.CRUDE;
+using ApiTrain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiTrain.Services.CRUDE
@@ -17,20 +18,41 @@ namespace ApiTrain.Services.CRUDE
         public async Task<IEnumerable<T>> GetAllAsync() => await _db.ToListAsync();
         public async Task<T?> GetAsync(int id) => await _db.FindAsync(id);
 
-        public async Task<T> AddAsync(T entity)
+        public async Task<int> AddAsync(T entity)
         {
             try
             {
 
+                if (entity is Train)
+                {
+                    var value = entity as Train;
+                    var actualPosition = new ActualPosition()
+                    {
+                        ActualPositionId = value.ActualPositionId,
+                        x = 0,
+                        y = 0,
+                        speed = 0
 
-                await _db.AddAsync(entity);
-                var result = await _context.SaveChangesAsync();
-                return entity;
+                    };
+                    await _context.ActualPosition.AddAsync(actualPosition);
+                    await _context.Trains.AddAsync(value);
+                    var result = await _context.SaveChangesAsync();
+                }
+                else
+                {
+
+                    await _db.AddAsync(entity);
+                    var result = await _context.SaveChangesAsync();
+                }
+                return 0;
+
+
+
             }
             catch (Exception ex) 
             {
                 Console.Write(ex.Message);
-                return entity;
+                return default!;
             }
          }
 

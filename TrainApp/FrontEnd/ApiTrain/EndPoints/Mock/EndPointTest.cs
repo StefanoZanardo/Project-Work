@@ -13,7 +13,7 @@ namespace ApiTrain.EndPoints.Mock
             endpoint.MapGet("Categorie", GetProvaAsync);
             endpoint.MapPost("inserisci/",PostProvaEndpoint);
             endpoint.MapDelete("cancella/{id:int}", DeleteProvaEndPoint);
-            endpoint.MapGet("Leftjointprova", GetProvaQueryAsync);
+            //endpoint.MapGet("Leftjointprova", GetProvaQueryAsync);
             endpoint.MapGet("ProvaQuery", ProvaQuery);
 
             return route;
@@ -57,14 +57,14 @@ namespace ApiTrain.EndPoints.Mock
             }
         }
 
-        private static async Task<IResult> GetProvaQueryAsync(HttpContext context, ProvaQueryEF service)
-        {
-            Console.WriteLine(context);
+        //private static async Task<IResult> GetProvaQueryAsync(HttpContext context, ProvaQueryEF service)
+        //{
+        //    Console.WriteLine(context);
 
-            var response = await service.LeftJointQueryProva();
+        //    var response = await service.LeftJointQueryProva();
 
-            return TypedResults.Ok(response);
-        }
+        //    return TypedResults.Ok(response);
+        //}
 
         private static async Task<IResult> ProvaQuery(HttpContext context, ProvaQueryEF service)
         {

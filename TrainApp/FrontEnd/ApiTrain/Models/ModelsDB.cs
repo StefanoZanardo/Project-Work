@@ -1,10 +1,8 @@
-﻿
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace ApiTrain.Models
 {
-    //[Table("CATEGORY", Schema = "dbo")]
     public class Category
     {
         public int CategoryId { get; set; }
@@ -13,12 +11,11 @@ namespace ApiTrain.Models
 
         [JsonIgnore]
         public ICollection<Train> Trains { get; set; } = new List<Train>();
-
     }
 
     public class Train
     {
-        public int TrainId { get; set; }
+        public Guid TrainId { get; set; }
         public string? Destination { get; set; }
         public int Vagons { get; set; }
         public int TimeDelay { get; set; }
@@ -26,8 +23,7 @@ namespace ApiTrain.Models
         public DateTime ArrivalTrain { get; set; }
 
         public int? CategoryId { get; set; }
-
-        public int? ActualPositionId { get; set; }
+        public Guid ActualPositionId { get; set; }
 
         [JsonIgnore]
         public Category? Category { get; set; }
@@ -42,7 +38,7 @@ namespace ApiTrain.Models
     public class Rail
     {
         public int RailId { get; set; }
-        public string RailName { get; set; }
+        public string? RailName { get; set; }
 
         [JsonIgnore]
         public ICollection<SegmentRail> SegmentRails { get; set; } = new List<SegmentRail>();
@@ -52,7 +48,7 @@ namespace ApiTrain.Models
     {
         public int SegmentRailId { get; set; }
         public int? RailId { get; set; }
-        public string SegmentName { get; set; }
+        public string? SegmentName { get; set; }
         public bool IsOccupied { get; set; } = false;
 
         [JsonIgnore]
@@ -99,7 +95,7 @@ namespace ApiTrain.Models
     public class Wagon
     {
         public int WagonId { get; set; }
-        public int? TrainId { get; set; }
+        public Guid? TrainId { get; set; }       // <-- era int?, ora Guid?
         public int? WagonsSegment { get; set; }
         public int Capacity { get; set; }
 
@@ -112,17 +108,12 @@ namespace ApiTrain.Models
 
     public class ActualPosition
     {
-        public int ActualPositionId { get; set; }
-
+        public Guid ActualPositionId { get; set; }
         public float x { get; set; }
-
         public float y { get; set; }
+        public float speed { get; set; }      
 
-
-        public float speed { get; set; }
-
-        public int? TrainId { get; set; }
-
+        [JsonIgnore]
         public Train? Train { get; set; }
     }
 
@@ -135,5 +126,3 @@ namespace ApiTrain.Models
         public DateTime DataCreazione { get; set; }
     }
 }
-
-

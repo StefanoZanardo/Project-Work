@@ -34,19 +34,19 @@ namespace ApiTrain.Services.Mock
 
             return TypedResults.Ok(rail);
         }
-        public async Task<IResult> LeftJointQueryProva()
-        {
-            var response = await contestoDB.Trains.Include(a=>a.Category)
-                .Select(a=> new ProvaDTO
-                {
-                    TrainId = a.TrainId,
-                    Destination = a.Destination,
-                    CategoryName = a.Category.TrainCategory
+        //public async Task<IResult> LeftJointQueryProva()
+        //{
+        //    var response = await contestoDB.Trains.Include(a=>a.Category)
+        //        .Select(a=> new ProvaDTO
+        //        {
+        //            TrainId = a.TrainId,
+        //            Destination = a.Destination,
+        //            CategoryName = a.Category.TrainCategory
 
-                }).FirstAsync();
+        //        }).FirstAsync();
 
-            return TypedResults.Ok(response);
-        }
+        //    return TypedResults.Ok(response);
+        //}
 
         public async Task<IResult> QueryCompose()
         {
