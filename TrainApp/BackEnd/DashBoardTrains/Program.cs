@@ -16,7 +16,7 @@ namespace DashBoardTrains
 
             builder.Services.AddSingleton<DbFalso>();
             builder.Services.AddHttpClient<CategoryService>(opt => { opt.BaseAddress = new Uri("http://localhost:5136");  });
-            builder.Services.AddHttpClient("GenericHttpClient", opt => { opt.BaseAddress = new Uri("http://lo   calhost:5136"); });
+            builder.Services.AddHttpClient("GenericHttpClient", opt => { opt.BaseAddress = new Uri("http://localhost:5136"); });
             builder.Services.AddScoped(typeof(ServicesGenerics<>));
             builder.Services.AddScoped<ProductService>();
             builder.Services.AddScoped<AuthService>();

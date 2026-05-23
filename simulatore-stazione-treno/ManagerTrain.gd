@@ -185,7 +185,7 @@ func spawn_train(start_key: String,middle_key : Vector2, end_key: String, type_t
 	
 	
 func invia_dati_api(dati: Dictionary):
-	var url = "http://localhost:5136/train"
+	var url = "https://localhost:7283/train"
 	var headers = ["Content-Type: application/json"]
 	
 	# Convertiamo il dizionario in una stringa JSON
@@ -199,9 +199,9 @@ func invia_dati_api(dati: Dictionary):
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
 	if response_code >= 200 and response_code < 300:
-		print("✅ API CHIAMATA CON SUCCESSO! Codice: ", response_code)
+		print("Successo chiamata", response_code)
 	else:
-		print("❌ ERRORE API!")
+		print("Errore del api")
 		print("Codice HTTP: ", response_code)
 		if body.size() > 0:
 			print("Motivo del rifiuto dal server: ", body.get_string_from_utf8())

@@ -39,6 +39,8 @@ builder.Services.AddCors(opt =>
 }
 );
 
+
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -46,7 +48,7 @@ var app = builder.Build();
 app.UseSwagger();
 
 app.MapOpenApi();
-
+app.UseCors("AllowAll");
 app.UseSwaggerUI();
 
 
