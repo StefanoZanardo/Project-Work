@@ -17,6 +17,13 @@ var position_history : Array = []
 var rotation_history : Array = []
 var history_length : int = 500
 var is_arrived_at_end : bool = false
+var IdTrain : String
+var IdActualPosition : String
+var http_request: HTTPRequest
+var datapartenza : String
+var number_wagons : int
+var end_point : String
+var update_timer : Timer
 
 
 var InitialorEndPoints : Dictionary = {
@@ -32,9 +39,20 @@ var is_active : bool = false
 
 
 func _ready():
+	http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(_on_request_completed)
+	update_timer = Timer.new()
+	add_child(update_timer)
+	update_timer.wait_time = 5.0  # 5 secondi
+	update_timer.one_shot = false # Ripetilo continuamente
+	update_timer.timeout.connect(_on_update_timer_timeout)
 	set_physics_process(false)
 
 func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_system: RailSegment,type_train: String,num_wagons:int = 1):
+	end_point = end_key
+	number_wagons = num_wagons
+	postTrain(true)
 	rail_ = rail_system 
 	railPoints = await rail_.get_global_points()
 	railSegmentPoints = await rail_.ArraySegmentBinaryGet()
@@ -42,19 +60,19 @@ func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_syst
 	match type_train:
 		"stazionario":
 			sprite.texture = load("res://Assets/RedTrain_.png")
-			speed = 100
+			speed = 100 / 2
 		"regionale":
 			sprite.texture = load("res://Assets/Frait train assets blue.png")
-			speed = 130
+			speed = 130 / 2
 		"veloce":
 			sprite.texture = load("res://Assets/RedTrain_.png")
-			speed = 180
+			speed = 180 / 2
 		"freccia":
 			sprite.texture = load("res://Assets/trenoVelocità.png")
-			speed = 200
+			speed = 200 / 2
 		"transito":
 			sprite.texture = load("res://Assets/transizioneTreno.png")
-			speed = 80
+			speed = 80 / 2
 	
 	ChangeLaneRail = false
 	#Carico prima il punto intermedio
@@ -78,9 +96,12 @@ func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_syst
 	
 	is_active = true
 	set_physics_process(true)
+	update_timer.start()
 
 func _physics_process(delta: float) -> void:
 	if not is_active: return
+	
+	# 1. GESTIONE MOVIMENTO (Solo se il treno NON è ancora arrivato)
 	if not is_arrived_at_end:
 		if current_point_index <= activepath.size():
 			var target_point:Vector2 = activepath[current_point_index]
@@ -99,11 +120,14 @@ func _physics_process(delta: float) -> void:
 				StoryOfPoints.append(activepath[0])
 				global_position = target_point
 
+			# Controllo Arrivo a Destinazione
 			if global_position.distance_to(targetEnd[0]) < 3:
 				if targetEnd.size() <= 1:
-					
-					sprite.visible = false
-					_wait_for_wagons_and_free()
+					# --- IL TRENO È ARRIVATO ORA ---
+					is_arrived_at_end = true
+					update_timer.stop() 
+					postTrain(false)         # Fa il PUT IMMEDIATAMENTE e una sola volta!
+					sprite.visible = false   # Nasconde la motrice
 				else:
 					targetEnd.remove_at(0)
 					foward = _isFoward(global_position, targetEnd[0])
@@ -113,15 +137,18 @@ func _physics_process(delta: float) -> void:
 				global_position += direction * distance_to_travel
 				rotation = direction.angle()
 
-		# Aggiorna storico
+		# Aggiorna lo storico delle posizioni
 		position_history.push_front(global_position)
 		rotation_history.push_front(rotation)
 		if position_history.size() > history_length:
 			position_history.pop_back()
 			rotation_history.pop_back()
 
-	# Aggiorna vagoni — questa riga mancava!
-		_update_wagons()
+	# 2. GESTIONE VAGONI (Fuori dall'IF precedente!)
+	# Deve girare sempre, sia mentre il treno cammina, sia quando si ferma per farli sfilare
+	_update_wagons()
+
+	# 3. CONTROLLO RIMOZIONE FINALE
 	if is_arrived_at_end:
 		_wait_for_wagons_and_free()
 
@@ -188,19 +215,19 @@ func _spawn_wagons(num_wagons: int, type_train:String) -> void:
 		match type_train:
 			"stazionario":
 				wagon_sprite.texture = load("res://Assets/Wagons/VagoneMerci.png")
-				wagon_spacing = 45
+				wagon_spacing = 55 * 2
 			"regionale":
 				wagon_sprite.texture = load("res://Assets/Frait train assets blue.png")
-				wagon_spacing = 40
+				wagon_spacing = 40 * 2
 			"veloce":
 				wagon_sprite.texture = load("res://Assets/RedTrain_.png")
-				wagon_spacing = 45
+				wagon_spacing = 45 * 2
 			"freccia":
 				wagon_sprite.texture = load("res://Assets/trenoVelocità.png")
-				wagon_spacing = 40
+				wagon_spacing = 40 * 2
 			"transito":
 				wagon_sprite.texture = load("res://Assets/transizioneTreno.png")
-				wagon_spacing = 80
+				wagon_spacing = 80 * 2
 		wagon_sprite.scale = sprite.scale
 		wagon.add_child(wagon_sprite)
 			
@@ -214,26 +241,136 @@ func _spawn_wagons(num_wagons: int, type_train:String) -> void:
 		wagon.set_meta("h_index", starting_history_index)
 	
 func _wait_for_wagons_and_free() -> void:
-	# Calcola quanti frame servono perché anche l'ultimo vagone raggiunga la fine
-	# L'ultimo vagone è il più indietro nello storico
-	
-	#var last_index : int = int(wagon_spacing * wagons.size() * 0.5)
-	## Converti in secondi: ogni frame a 60fps è ~0.016s
-	## last_index = numero di frame di ritardo
-	#var wait_time : float = last_index / 60.0
-	#
-	#await get_tree().create_timer(wait_time).timeout
-	
-
+	# 1. Scorriamo la lista dei vagoni al contrario (obbligatorio quando si usa remove_at)
 	for i in range(wagons.size() - 1, -1, -1):
+		# Se il vagone corrente ha raggiunto il punto finale (distanza < 3 pixel)
 		if wagons[i].global_position.distance_to(targetEnd[0]) < 3:
-			wagons[i].queue_free()
-			wagons.remove_at(i)
+			wagons[i].queue_free() # Rimuovilo dalla scena di gioco
+			wagons.remove_at(i)    # Rimuovilo dall'array
 			
-	
-	if(wagons.size() <= 0):
-		
+	# 2. Quando TUTTI i vagoni sono stati eliminati...
+	if wagons.size() <= 0:
 		wagons.clear()
+		set_physics_process(false) # IMPORTANTE: Spegne il loop della fisica per liberare memoria
+		queue_free()
+		
+
+func postTrain(IsStart: bool):
+	var data_odierna_iso = Time.get_datetime_string_from_system(true, false) + ".000Z"
+	
+	# Variabile per decidere il tipo di richiesta HTTP
+	var tipo_richiesta = "PUT"
+	
+	if IsStart:
+		datapartenza = data_odierna_iso
+		IdTrain = generate_guid()
+		
+		tipo_richiesta = "POST" # Se parte adesso, creiamo il treno con POST
+	else:
+		# Se non è l'inizio, aggiorna la posizione attuale con un nuovo GUID per il PUT
+		tipo_richiesta = "PUT"  # Se è già in viaggio, aggiorniamo con PUT
+
+	# Dizionario con le chiavi IDENTICHE a Swagger (fai attenzione a "trainId")
+	var dati_da_inviare = {
+		"trainId": IdTrain,              # <-- Corretto da "TrainID" a "trainId"
+		"destination": end_point,
+		"vagons": number_wagons,
+		"timeDelay": 0,
+		"departureTrain": datapartenza,
+		"arrivalTrain": data_odierna_iso, 
+		"categoryId": 1
+	}
+	
+	# Invia i dati specificando se POST o PUT
+	invia_dati_api(dati_da_inviare, tipo_richiesta,"train")
+	
+func generate_guid() -> String:
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	
+	var b = PackedByteArray()
+	for i in range(16):
+		b.append(rng.randi() % 256)
+	
+	b[6] = (b[6] & 0x0F) | 0x40
+	b[8] = (b[8] & 0x3F) | 0x80
+	
+	return "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x" % [
+		b[0], b[1], b[2], b[3],
+		b[4], b[5],
+		b[6], b[7],
+		b[8], b[9],
+		b[10], b[11], b[12], b[13], b[14], b[15]
+	]
+func invia_dati_api(dati: Dictionary, typerequest: String, endpointAPI:String):
+	var base_url = "http://localhost:5136/%s" % [endpointAPI]
+	var url = base_url
+	var headers = ["Content-Type: application/json"]
+	
+	# Convertiamo il dizionario in stringa JSON (di default)
+	var json_body = JSON.stringify(dati)
+	
+	# Variabile che conterrà il metodo HTTP corretto
+	var metodo_http = HTTPClient.METHOD_POST
+	
+	# Usiamo .to_upper() così accetta sia "post" che "POST"
+	match typerequest.to_upper():
+		"POST":
+			metodo_http = HTTPClient.METHOD_POST
+			# Il body serve completo, l'url rimane quello base
+			
+		"PUT":
+			metodo_http = HTTPClient.METHOD_PUT
+			# Spesso le API vogliono l'ID nell'URL per le modifiche: /train/ID
+			if dati.has("TrainID"):
+				url = base_url + "/" + str(dati["TrainID"])
+				
+		"DELETE":
+			metodo_http = HTTPClient.METHOD_DELETE
+			# Anche per eliminare serve l'ID nell'URL
+			if dati.has("TrainID"):
+				url = base_url + "/" + str(dati["TrainID"])
+			json_body = "" # Le richieste DELETE di solito non hanno un body JSON
+			
+		"GET":
+			metodo_http = HTTPClient.METHOD_GET
+			# Se passi un ID cerchi un treno specifico, altrimenti li prendi tutti
+			if dati.has("TrainID") and dati["TrainID"] != "":
+				url = base_url + "/" + str(dati["TrainID"])
+			json_body = "" # Le richieste GET non devono avere un body JSON
+			
+		_:
+			push_error("Errore: Tipo di richiesta '" + typerequest + "' non supportato.")
+			return
+
+	# Eseguiamo la richiesta usando le variabili dinamiche impostate dal match
+	var error = http_request.request(url, headers, metodo_http, json_body)
+	
+	if error != OK:
+		push_error("Si è verificato un errore durante l'avvio della richiesta HTTP. Codice errore: " + str(error))
+
+func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
+	if response_code >= 200 and response_code < 300:
+		print("Successo chiamata", response_code)
+	else:
+		print("Errore del api")
+		print("Codice HTTP: ", response_code)
+		if body.size() > 0:
+			print("Motivo del rifiuto dal server: ", body.get_string_from_utf8())
+		if result != HTTPRequest.RESULT_SUCCESS:
+			print("Errore interno di Godot (es. server spento o irraggiungibile). Codice Result: ", result)
+			
+
+func _on_update_timer_timeout():
+	IdActualPosition = generate_guid()
+	var actualPos = {
+			  "actualPositionId": IdActualPosition,
+			  "x": global_position.x,
+			  "y": global_position.y,
+			  "speed": speed,
+			  "trainId": IdTrain
+	}
+	invia_dati_api(actualPos,"POST","actualposition")
 	
 	
 	

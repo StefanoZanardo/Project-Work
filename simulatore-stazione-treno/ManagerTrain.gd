@@ -48,9 +48,9 @@ func _ready():
 	start_menu.item_selected.connect(_on_start_selected)
 	end_menu.item_selected.connect(_on_end_selected)
 	
-	http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.request_completed.connect(_on_request_completed)
+	#http_request = HTTPRequest.new()
+	#add_child(http_request)
+	#http_request.request_completed.connect(_on_request_completed)
 
 	BtnAddQueue.pressed.connect(_on_aggiungi_premuto)
 	BtnLaunchQueue.pressed.connect(_on_partenza_premuto)
@@ -167,72 +167,10 @@ func spawn_train(start_key: String,middle_key : Vector2, end_key: String, type_t
 
 	new_train.setup_train(start_key,middle_key, end_key, rail_system,type_tr,number_wagon)
 	# Mettendo false al secondo parametro, Godot userà la 'T' invece dello spazio
-	var data_odierna_iso = Time.get_datetime_string_from_system(true, false) + ".000Z"
 	
-	# 2. Creiamo il dizionario ESATTAMENTE come lo vuole l'API (omettendo trainId)
-	
-	var guid_position = generate_guid()
-	
-	var guid_IdTrain = generate_guid()
-	
-	var dati_da_inviare = {
-		"TrainID": guid_IdTrain,
-		"destination": end_key,       # es. "L1", "C2", ecc.
-		"vagons": number_wagon,                  # Sostituisci con il numero reale di vagoni
-		"timeDelay": 0,
-		"departureTrain": data_odierna_iso,
-		"arrivalTrain": data_odierna_iso, # Sostituisci se riesci a calcolare l'arrivo previsto
-		"categoryId": 1,              # Sostituisci con l'ID categoria corretto
-		"actualPositionId": guid_position         # Dovrai mappare start_key (es "L1") a un ID numerico
-	}
-	
-	# Lancia la richiesta
-	invia_dati_api(dati_da_inviare)
 	
 
-func generate_guid() -> String:
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	
-	var b = PackedByteArray()
-	for i in range(16):
-		b.append(rng.randi() % 256)
-	
-	b[6] = (b[6] & 0x0F) | 0x40
-	b[8] = (b[8] & 0x3F) | 0x80
-	
-	return "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x" % [
-		b[0], b[1], b[2], b[3],
-		b[4], b[5],
-		b[6], b[7],
-		b[8], b[9],
-		b[10], b[11], b[12], b[13], b[14], b[15]
-	]
-func invia_dati_api(dati: Dictionary):
-	var url = "http://localhost:5136/train"
-	var headers = ["Content-Type: application/json"]
-	
-	# Convertiamo il dizionario in una stringa JSON
-	var json_body = JSON.stringify(dati)
-	
-	# Eseguiamo la richiesta POST
-	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_body)
-	
-	if error != OK:
-		push_error("Si è verificato un errore durante l'avvio della richiesta HTTP.")
 
-func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
-	if response_code >= 200 and response_code < 300:
-		print("Successo chiamata", response_code)
-		body
-	else:
-		print("Errore del api")
-		print("Codice HTTP: ", response_code)
-		if body.size() > 0:
-			print("Motivo del rifiuto dal server: ", body.get_string_from_utf8())
-		if result != HTTPRequest.RESULT_SUCCESS:
-			print("Errore interno di Godot (es. server spento o irraggiungibile). Codice Result: ", result)
-			
 func aggiorna_label():
 	
 	var stazioni = InitialorEndPoints.keys()

@@ -22,7 +22,6 @@ namespace DashBoardTrains.Models
         public DateTime ArrivalTrain { get; set; }
 
         public int? CategoryId { get; set; }
-        public Guid ActualPositionId { get; set; }
 
         [JsonIgnore]
         public Category? Category { get; set; }
@@ -112,7 +111,7 @@ namespace DashBoardTrains.Models
         public float y { get; set; }
         public float speed { get; set; }
        // <-- era int?, ora Guid?
-
+       public Guid? TrainId { get; set; }
         [JsonIgnore]
         public Train? Train { get; set; }
     }

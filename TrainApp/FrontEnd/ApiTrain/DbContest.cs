@@ -85,12 +85,12 @@ namespace ApiTrain
             modelBuilder.Entity<ActualPosition>()
                 .HasOne(w => w.Train)
                 .WithOne(t => t.ActualPositions)
-                .HasForeignKey<Train>(f=>f.ActualPositionId)
                 .OnDelete(DeleteBehavior.SetNull);
             
             modelBuilder.Entity<Train>()
                 .HasOne(w => w.ActualPositions)
                 .WithOne(t => t.Train)
+                .HasForeignKey<ActualPosition>(a => a.TrainId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
 

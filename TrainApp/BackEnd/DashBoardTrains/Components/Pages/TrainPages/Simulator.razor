@@ -12,6 +12,102 @@
     </iframe>
 </div>
 
+<div class="train-table-page">
+    <div class="page-header">
+        <h1>🚆 Train Monitor</h1>
+        <span class="badge-live">● LIVE</span>
+    </div>
+
+    <table class="train-table">
+        <thead>
+            <tr>
+                <th style="width:36px"></th>
+                <th>Train ID</th>
+                <th>Destination</th>
+                <th>Wagons</th>
+                <th>Category</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Delay</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var train in Trains)
+{
+    bool isExpanded = expandedTrainIds.Contains(train.TrainId);
+
+   <tr class="train-row @(isExpanded ? "expanded" : string.Empty)"
+    @onclick="() => ToggleExpand(train.TrainId.ToString())">
+        <td>
+            <span class="expand-icon">▶</span>
+        </td>
+        <td><span class="train-id">@train.TrainId.ToString()[..8]…</span></td>
+        <td><span class="destination-badge">@train.Destination</span></td>
+        <td>@train.Vagons</td>
+        <td><span class="category-chip">CAT @train.CategoryId</span></td>
+        <td><span class="timestamp">@train.DepartureTrain.ToString("HH:mm:ss")</span></td>
+        <td><span class="timestamp">@train.ArrivalTrain.ToString("HH:mm:ss")</span></td>
+        <td>
+            @{
+                var delayClass = train.TimeDelay == 0 ? "delay-ok" :
+                                 train.TimeDelay <= 5 ? "delay-warn" : "delay-bad";
+            }
+            <span class="@delayClass">
+                @(train.TimeDelay == 0 ? "✓ On time" : $"+{train.TimeDelay}m")
+            </span>
+        </td>
+    </tr>
+
+    @if (isExpanded)
+    {
+        <tr class="positions-container-row">
+            <td colspan="8">
+                <div class="positions-container">
+                    <div class="positions-label">📍 Actual Position</div>
+
+                    @if (train.ActualPositions == null)
+                    {
+                        <div class="no-positions">No position data available for this train.</div>
+                    }
+                    else
+                    {
+                        
+                            var pos = train.ActualPositions;
+                            double speedPct = Math.Min(pos.speed / 200.0 * 100, 100);
+
+                        <table class="pos-table">
+                            <thead>
+                                <tr>
+                                    <th>Position ID</th>
+                                    <th>X</th>
+                                    <th>Y</th>
+                                    <th>Speed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pos-id">@pos.ActualPositionId.ToString()[..8]…</td>
+                                    <td class="coord">@pos.x.ToString("F1")</td>
+                                    <td class="coord">@pos.y.ToString("F1")</td>
+                                    <td>
+                                        <div class="speed-bar-wrap">
+                                            <div class="speed-bar" style="width: @(speedPct)px"></div>
+                                            <span class="speed-val">@pos.speed.ToString("F0") u/s</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </td>
+        </tr>
+    }
+}
+        </tbody>
+    </table>
+</div>
+
 <style>
 
     .game-container {
@@ -23,4 +119,256 @@
         border-radius: 10px;
         border: 2px solid #111;
     }
+
+
+    :root {
+        --bg: #0a0e17;
+        --surface: #111827;
+        --surface2: #1a2235;
+        --border: #1e3a5f;
+        --accent: #00c8ff;
+        --accent2: #0077b6;
+        --green: #00e5a0;
+        --yellow: #ffd166;
+        --red: #ff4d6d;
+        --text: #cdd9e8;
+        --text-dim: #5a7a99;
+        --mono: 'Share Tech Mono', monospace;
+        --sans: 'Exo 2', sans-serif;
+    }
+
+    body, .train-table-page {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        min-height: 100vh;
+    }
+
+    .train-table-page {
+        padding: 2rem;
+    }
+
+    .page-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1.2rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .badge-live {
+        background: var(--green);
+        color: #000;
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        animation: pulse 2s infinite;
+    }
+
+    @@keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+
+    /* OUTER TABLE */
+    .train-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+    }
+
+    .train-table thead th {
+        background: var(--surface2);
+        color: var(--text-dim);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.75rem 1rem;
+        border-bottom: 2px solid var(--accent2);
+        text-align: left;
+    }
+
+    .train-row {
+        cursor: pointer;
+        transition: background 0.15s;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .train-row:hover > td {
+        background: var(--surface2);
+    }
+
+    .train-row.expanded > td {
+        background: var(--surface2);
+        border-bottom: none;
+    }
+
+    .train-row td {
+        padding: 0.85rem 1rem;
+        background: var(--surface);
+        vertical-align: middle;
+        transition: background 0.15s;
+    }
+
+    .expand-icon {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--accent2);
+        border-radius: 3px;
+        text-align: center;
+        line-height: 16px;
+        font-size: 0.8rem;
+        color: var(--accent);
+        margin-right: 0.5rem;
+        transition: transform 0.2s;
+        font-family: var(--mono);
+    }
+
+    .expanded .expand-icon {
+        transform: rotate(90deg);
+        background: var(--accent);
+        color: #000;
+    }
+
+    .train-id {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--accent);
+    }
+
+    .destination-badge {
+        background: #0077b620;
+        border: 1px solid var(--accent2);
+        color: var(--accent);
+        padding: 2px 8px;
+        border-radius: 3px;
+        font-size: 0.78rem;
+        font-family: var(--mono);
+    }
+
+    .category-chip {
+        background: #00e5a015;
+        border: 1px solid #00e5a040;
+        color: var(--green);
+        padding: 2px 8px;
+        border-radius: 3px;
+        font-size: 0.75rem;
+    }
+
+    .delay-ok { color: var(--green); font-family: var(--mono); }
+    .delay-warn { color: var(--yellow); font-family: var(--mono); }
+    .delay-bad { color: var(--red); font-family: var(--mono); }
+
+    /* EXPANDED POSITIONS ROW */
+    .positions-container-row td {
+        padding: 0;
+        background: #0d1520;
+        border-bottom: 2px solid var(--accent2);
+    }
+
+    .positions-container {
+        padding: 0.5rem 1rem 1rem 2.5rem;
+    }
+
+    .positions-label {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        color: var(--text-dim);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.6rem 0 0.4rem 0;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0.5rem;
+    }
+
+    /* INNER TABLE */
+    .pos-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.82rem;
+    }
+
+    .pos-table thead th {
+        color: var(--text-dim);
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.4rem 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .pos-table tbody tr {
+        border-bottom: 1px solid #1a2a3a;
+        transition: background 0.1s;
+    }
+
+    .pos-table tbody tr:hover {
+        background: #162030;
+    }
+
+    .pos-table tbody td {
+        padding: 0.45rem 0.75rem;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--text);
+    }
+
+    .pos-id {
+        color: var(--text-dim);
+        font-size: 0.7rem;
+    }
+
+    .coord {
+        color: var(--yellow);
+    }
+
+    .speed-bar-wrap {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .speed-bar {
+        height: 4px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--accent2), var(--accent));
+        min-width: 4px;
+        transition: width 0.3s;
+    }
+
+    .speed-val {
+        color: var(--accent);
+        font-size: 0.78rem;
+    }
+
+    .no-positions {
+        color: var(--text-dim);
+        font-style: italic;
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
+    }
+
+    .timestamp {
+        color: var(--text-dim);
+        font-size: 0.72rem;
+    }
 </style>
+
+

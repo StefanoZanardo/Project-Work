@@ -26,15 +26,6 @@ namespace ApiTrain.Services.CRUDE
                 if (entity is Train)
                 {
                     var value = entity as Train;
-                    var actualPosition = new ActualPosition()
-                    {
-                        ActualPositionId = value.ActualPositionId,
-                        x = 0,
-                        y = 0,
-                        speed = 0
-
-                    };
-                    await _context.ActualPosition.AddAsync(actualPosition);
                     await _context.Trains.AddAsync(value);
                     var result = await _context.SaveChangesAsync();
                 }
