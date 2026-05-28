@@ -50,9 +50,7 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 				if distance_to_segment < 4 :
 					_vector = point.punto1
 					break
-				else:
-					#Sarà da gestire gli errori in caso
-					print()
+			
 		false:
 			for point in binary.rail_segment:
 				var point_near_segment = Geometry2D.get_closest_point_to_segment(_actualPos, point.punto1, point.punto0)
@@ -60,9 +58,7 @@ func getBinary(_actualPos: Vector2, targetPoint : Vector2, foward : bool) -> Vec
 				if distance_to_segment < 4 :
 					_vector = point.punto0
 					break
-				else:
-					#Sarà da gestire gli errori in caso
-					print()
+				
 	return _vector
 
 func getCrossRoad(_actualPos: Vector2, _targetPos : Vector2, _activePath : Vector2 , _crossInit:Vector2 ,_crossTarget:Vector2, _crossBinary:Vector2) -> Vector2:

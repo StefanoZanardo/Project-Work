@@ -11,6 +11,7 @@ var ChangeLaneRail : bool
 var ActualCrossRoad : PackedVector2Array
 var foward : bool
 var _httpreq : HTTPRequest
+var http_position: HTTPRequest
 var wagons : Array = []
 var wagon_spacing : float = 50.0  
 var position_history : Array = []
@@ -40,13 +41,17 @@ var is_active : bool = false
 
 func _ready():
 	http_request = HTTPRequest.new()
+	http_position = HTTPRequest.new()
+	add_child(http_position)
+	http_position.request_completed.connect(_on_request_completed)
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed)
 	update_timer = Timer.new()
 	add_child(update_timer)
-	update_timer.wait_time = 5.0  # 5 secondi
+	update_timer.wait_time = 1  # 5 secondi
 	update_timer.one_shot = false # Ripetilo continuamente
-	update_timer.timeout.connect(_on_update_timer_timeout)
+	update_timer.timeout.connect(postTrainPosition)
+	IdActualPosition = generate_guid()
 	set_physics_process(false)
 
 func setup_train(start_key: String, WayPoint:Vector2, end_key: String, rail_system: RailSegment,type_train: String,num_wagons:int = 1):
@@ -123,11 +128,11 @@ func _physics_process(delta: float) -> void:
 			# Controllo Arrivo a Destinazione
 			if global_position.distance_to(targetEnd[0]) < 3:
 				if targetEnd.size() <= 1:
-					# --- IL TRENO È ARRIVATO ORA ---
 					is_arrived_at_end = true
 					update_timer.stop() 
-					postTrain(false)         # Fa il PUT IMMEDIATAMENTE e una sola volta!
-					sprite.visible = false   # Nasconde la motrice
+					puliscifinePosizioneTab() 
+					postTrain(false)
+					sprite.visible = false   
 				else:
 					targetEnd.remove_at(0)
 					foward = _isFoward(global_position, targetEnd[0])
@@ -282,7 +287,7 @@ func postTrain(IsStart: bool):
 	}
 	
 	# Invia i dati specificando se POST o PUT
-	invia_dati_api(dati_da_inviare, tipo_richiesta,"train")
+	invia_dati_api(dati_da_inviare, tipo_richiesta,"http://localhost:5136","train")
 	
 func generate_guid() -> String:
 	var rng = RandomNumberGenerator.new()
@@ -302,52 +307,48 @@ func generate_guid() -> String:
 		b[8], b[9],
 		b[10], b[11], b[12], b[13], b[14], b[15]
 	]
-func invia_dati_api(dati: Dictionary, typerequest: String, endpointAPI:String):
-	var base_url = "http://localhost:5136/%s" % [endpointAPI]
-	var url = base_url
+func invia_dati_api(
+	dati: Dictionary,
+	typerequest: String,
+	baseaddress: String,
+	endpointAPI: String
+):
+	var url = "%s/%s" % [baseaddress, endpointAPI]
+
 	var headers = ["Content-Type: application/json"]
-	
-	# Convertiamo il dizionario in stringa JSON (di default)
+
 	var json_body = JSON.stringify(dati)
-	
-	# Variabile che conterrà il metodo HTTP corretto
+
 	var metodo_http = HTTPClient.METHOD_POST
-	
-	# Usiamo .to_upper() così accetta sia "post" che "POST"
+
 	match typerequest.to_upper():
+
 		"POST":
 			metodo_http = HTTPClient.METHOD_POST
-			# Il body serve completo, l'url rimane quello base
-			
+
 		"PUT":
 			metodo_http = HTTPClient.METHOD_PUT
-			# Spesso le API vogliono l'ID nell'URL per le modifiche: /train/ID
-			if dati.has("TrainID"):
-				url = base_url + "/" + str(dati["TrainID"])
-				
+
 		"DELETE":
 			metodo_http = HTTPClient.METHOD_DELETE
-			# Anche per eliminare serve l'ID nell'URL
-			if dati.has("TrainID"):
-				url = base_url + "/" + str(dati["TrainID"])
-			json_body = "" # Le richieste DELETE di solito non hanno un body JSON
-			
+
 		"GET":
 			metodo_http = HTTPClient.METHOD_GET
-			# Se passi un ID cerchi un treno specifico, altrimenti li prendi tutti
-			if dati.has("TrainID") and dati["TrainID"] != "":
-				url = base_url + "/" + str(dati["TrainID"])
-			json_body = "" # Le richieste GET non devono avere un body JSON
-			
+			json_body = ""
+
 		_:
-			push_error("Errore: Tipo di richiesta '" + typerequest + "' non supportato.")
+			push_error("Metodo HTTP non supportato")
 			return
 
-	# Eseguiamo la richiesta usando le variabili dinamiche impostate dal match
-	var error = http_request.request(url, headers, metodo_http, json_body)
-	
+	var error = http_request.request(
+		url,
+		headers,
+		metodo_http,
+		json_body
+	)
+
 	if error != OK:
-		push_error("Si è verificato un errore durante l'avvio della richiesta HTTP. Codice errore: " + str(error))
+		push_error("Errore HTTP: " + str(error))
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
 	if response_code >= 200 and response_code < 300:
@@ -370,7 +371,83 @@ func _on_update_timer_timeout():
 			  "speed": speed,
 			  "trainId": IdTrain
 	}
-	invia_dati_api(actualPos,"POST","actualposition")
+	invia_dati_api(actualPos,"POST","localhost:5136","actualposition")
+	
+	
+func postTrainPosition():
+
+	var data_odierna_iso = Time.get_datetime_string_from_system(true, false) + ".000Z"
+
+	var tipo_richiesta = "PUT"
+
+
+
+
+
+	var dati_da_inviare = {
+		"trainId": IdTrain,
+		"destination": end_point,
+		"vagons": number_wagons,
+		"timeDelay": 0,
+
+		"departureTrain": datapartenza,
+		"arrivalTrain": data_odierna_iso,
+
+		"categoryId": 1,
+
+		"actualPositions": {
+			"actualPositionId": IdActualPosition,
+
+			"x": global_position.x,
+			"y": global_position.y,
+
+			"speed": speed,
+
+			"trainId": IdTrain
+		}
+	}
+
+	invia_dati_api(
+		dati_da_inviare,
+		tipo_richiesta,
+		"http://localhost:5143",
+		"TrainPosition"
+	)
+
+func puliscifinePosizioneTab():
+	
+	var tipo_richiesta = "PUT"
+	var dati_da_inviare = {
+		"trainId": IdTrain,
+		"destination": end_point,
+		"vagons": number_wagons,
+		"timeDelay": 0,
+
+		"departureTrain": datapartenza,
+		"arrivalTrain": datapartenza,
+
+		"categoryId": 1,
+
+		"actualPositions": {
+			"actualPositionId": IdActualPosition,
+
+			"x": global_position.x,
+			"y": global_position.y,
+
+			"speed": speed,
+
+			"trainId": IdTrain
+		}
+	}
+	
+	invia_dati_api(
+		dati_da_inviare,
+		tipo_richiesta,
+		"http://localhost:5143",
+		"TrainPositionCanc"
+	)
+	
+	
 	
 	
 	

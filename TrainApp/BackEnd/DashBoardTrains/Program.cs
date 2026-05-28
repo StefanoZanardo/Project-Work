@@ -1,5 +1,6 @@
 using DashBoardTrains.Components;
 using DashBoardTrains.Components.Pages;
+using DashBoardTrains.EndPoints;
 using DashBoardTrains.Models;
 using DashBoardTrains.Models.MockUp_Models;
 using DashBoardTrains.Services;
@@ -20,7 +21,22 @@ namespace DashBoardTrains
             builder.Services.AddScoped(typeof(ServicesGenerics<>));
             builder.Services.AddScoped<ProductService>();
             builder.Services.AddScoped<AuthService>();
+            builder.Services.AddSingleton<TrainListService>();
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+
+
+            builder.Services.AddCors(opt =>
+            {
+                opt.AddPolicy("AllowAll", pol =>
+                {
+                    pol.AllowAnyHeader().
+                        AllowAnyMethod()
+                        .AllowAnyOrigin()
+                        .AllowAnyHeader();
+                });
+            }
+            );
+
 
             var app = builder.Build();
 
@@ -49,8 +65,13 @@ namespace DashBoardTrains
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseAntiforgery();
+
+
+            app.UseCors("AllowAll");
+
+            app.MapEndPoint();
 
            
             app.MapRazorComponents<App>()

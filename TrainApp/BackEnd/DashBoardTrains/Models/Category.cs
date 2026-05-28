@@ -29,7 +29,6 @@ namespace DashBoardTrains.Models
         [JsonIgnore]
         public ICollection<Wagon> Wagons { get; set; } = new List<Wagon>();
 
-        [JsonIgnore]
         public ActualPosition? ActualPositions { get; set; }
     }
 

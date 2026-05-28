@@ -1,11 +1,15 @@
-﻿namespace DashBoardTrains.Services.CRUDE
+﻿using DashBoardTrains.Models;
+
+namespace DashBoardTrains.Services.CRUDE
 {
-    public class ServicesGenerics<T> where T : class 
+    public class ServicesGenerics<T> where T : class
     {
         private readonly HttpClient _httpClient;
-       
 
-        public ServicesGenerics(IHttpClientFactory httpClient) 
+
+
+
+        public ServicesGenerics(IHttpClientFactory httpClient)
         {
             _httpClient = httpClient.CreateClient("GenericHttpClient");
         }
@@ -14,7 +18,7 @@
         {
             var response = await _httpClient.GetFromJsonAsync<List<T>>(connection);
 
-            if (response != null)                                   
+            if (response != null)
             {
                 return response;
             }
@@ -48,5 +52,8 @@
                 throw;
             }
         }
+
+
+    
     }
 }
