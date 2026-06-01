@@ -1,45 +1,65 @@
-﻿<div class="top-row ps-3 navbar navbar-dark shadow-sm">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="">
-            <span class="fw-semibold">DashBoard</span>
+﻿<aside class="app-sidebar">
+    <header class="sidebar-brand">
+        <a class="sidebar-brand-link" href="/dashboard">
+            <span class="sidebar-brand-icon" aria-hidden="true">
+                <i class="bi bi-train-front-fill"></i>
+            </span>
+            <span class="sidebar-brand-text">
+                <span class="sidebar-brand-title">TrainApp</span>
+                <span class="sidebar-brand-subtitle">Dashboard</span>
+            </span>
         </a>
-        <span class="badge badge-pill-status d-none d-md-inline-flex align-items-center gap-1">
-            <i class="bi bi-activity"></i>
-            <span>Monitor Treni</span>
-        </span>
+        @* <span class="sidebar-status" role="status">
+            <span class="sidebar-status-dot" aria-hidden="true"></span>
+            Live
+        </span> *@
+    </header>
+
+    <input type="checkbox" title="Apri menu di navigazione" class="sidebar-toggler" id="sidebar-nav-toggle" />
+
+    <label class="sidebar-toggler-btn" for="sidebar-nav-toggle" aria-label="Menu navigazione">
+        <i class="bi bi-list" aria-hidden="true"></i>
+    </label>
+
+    <div class="sidebar-nav-panel nav-scrollable">
+        <nav class="sidebar-nav" aria-label="Navigazione principale">
+            <p class="nav-section-label">Navigazione</p>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="dashboard" Match="NavLinkMatch.Prefix"
+                         onclick="document.getElementById('sidebar-nav-toggle').checked = false">
+                    <span class="nav-link-icon" aria-hidden="true"><i class="bi bi-table"></i></span>
+                    <span class="nav-link-text">Tabelle dati treni</span>
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="trains" Match="NavLinkMatch.Prefix"
+                         onclick="document.getElementById('sidebar-nav-toggle').checked = false">
+                    <span class="nav-link-icon" aria-hidden="true"><i class="bi bi-pencil-square"></i></span>
+                    <span class="nav-link-text">Form treni</span>
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="Simulator" Match="NavLinkMatch.Prefix"
+                         onclick="document.getElementById('sidebar-nav-toggle').checked = false">
+                    <span class="nav-link-icon" aria-hidden="true"><i class="bi bi-play-circle"></i></span>
+                    <span class="nav-link-text">Simulatore treni</span>
+                </NavLink>
+            </div>
+        </nav>
+
+        <nav class="sidebar-nav sidebar-nav-footer" aria-label="Account">
+            <p class="nav-section-label">Account</p>
+
+            <div class="nav-item">
+                <NavLink class="nav-link nav-link-logout" href="login" Match="NavLinkMatch.Prefix"
+                         onclick="document.getElementById('sidebar-nav-toggle').checked = false">
+                    <span class="nav-link-icon" aria-hidden="true"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="nav-link-text">Esci</span>
+                </NavLink>
+            </div>
+        </nav>
     </div>
-</div>
-
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column py-3">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link nav-link-pill d-flex align-items-center" href="dashboard">
-                <i class="bi bi-table nav-icon me-2"></i>
-                <span>Tabelle Dati Treni</span>
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link nav-link-pill d-flex align-items-center" href="trains">
-                <i class="bi bi-pencil-square nav-icon me-2"></i>
-                <span>Form Treni</span>
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link nav-link-pill d-flex align-items-center" href="Simulator">
-                <i class="bi bi-train-front nav-icon me-2"></i>
-                <span>Simulatore Treni</span>
-            </NavLink>
-        </div>
-        <div class="nav-item px-3 mt-3 pt-2 border-top border-light">
-            <NavLink class="nav-link nav-link-pill d-flex align-items-center justify-content-between" href="login">
-                <span class="d-flex align-items-center">
-                    <i class="bi bi-box-arrow-in-right nav-icon me-2"></i>
-                    <span>Logout</span>
-                </span>
-                <span class="badge bg-primary text-white small">UI</span>
-            </NavLink>
-        </div>
-    </nav>
-</div>
+</aside>

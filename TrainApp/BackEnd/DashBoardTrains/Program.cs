@@ -57,8 +57,6 @@ namespace DashBoardTrains
                 ContentTypeProvider = provider
             });
 
-
-
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
