@@ -405,6 +405,6 @@ texture = ExtResource("7_d21ai")
 
 [node name="Screenshot20260502162352" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(973.49994, 227.50006)
+position = Vector2(8893, -1910)
 scale = Vector2(44.135715, 33.008335)
 texture = ExtResource("7_rj586")

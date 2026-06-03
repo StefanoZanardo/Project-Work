@@ -126,7 +126,7 @@ func _physics_process(delta: float) -> void:
 				global_position = target_point
 
 			# Controllo Arrivo a Destinazione
-			if global_position.distance_to(targetEnd[0]) < 3:
+			if global_position.distance_to(targetEnd[0]) < 2:
 				if targetEnd.size() <= 1:
 					is_arrived_at_end = true
 					update_timer.stop() 
